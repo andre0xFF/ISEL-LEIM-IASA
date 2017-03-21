@@ -24,7 +24,7 @@ public class Character {
     }
 
     private Action process(Stimulus stimulus) {
-        // TODO: Transform the Stimulus into some sort of action
+        // TODO: Transform the Stimulus into some sort of Action
         return null;
     }
 
