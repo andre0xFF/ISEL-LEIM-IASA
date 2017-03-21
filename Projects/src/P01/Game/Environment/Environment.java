@@ -1,5 +1,6 @@
-package P01.Game;
+package P01.Game.Environment;
 
+import P01.Game.NPC.Stimulus;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,9 +32,3 @@ public class Environment {
         // TODO: No idea what this shit does.
     }
 }
-
-enum EnvironmentEvent implements Stimulus {
-    EXIT, NOISE, SILENCE, ENEMY
-}
-
-interface Stimulus {}

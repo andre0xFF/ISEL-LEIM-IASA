@@ -1,4 +1,6 @@
-package P01.Game;
+package P01.Game.NPC;
+
+import P01.Game.Environment.Environment;
 
 public class Character {
 
@@ -31,8 +33,4 @@ public class Character {
     private void behave(Action action) {
         action.execute();
     }
-}
-
-interface Action {
-    public void execute();
 }
