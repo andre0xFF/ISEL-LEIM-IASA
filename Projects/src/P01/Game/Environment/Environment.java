@@ -1,6 +1,5 @@
 package P01.Game.Environment;
 
-import P01.Game.NPC.Stimulus;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +16,9 @@ public class Environment {
         this.events.put("NOISE", EnvironmentEvent.NOISE);
         this.events.put("SILENCE", EnvironmentEvent.SILENCE);
         this.events.put("ENEMY", EnvironmentEvent.ENEMY);
+        this.events.put("FLEE", EnvironmentEvent.FLEE);
+        this.events.put("VICTORY", EnvironmentEvent.VICTORY);
+        this.events.put("DEFEAT", EnvironmentEvent.DEFEAT);
     }
 
     public void evolve(String input) {
@@ -28,7 +30,18 @@ public class Environment {
         return this.event;
     }
 
-    private void show() {
-        // TODO: No idea what this shit does.
+    public String show() {
+        if (this.event != null) {
+            return String.format("%s", this.event);
+        }
+        else {
+            return "";
+        }
+    }
+
+    public void execute_action(EnvironmentAction action) {
+        if (action != null) {
+            action.execute();
+        }
     }
 }

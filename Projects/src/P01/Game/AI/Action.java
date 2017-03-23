@@ -1,4 +1,4 @@
-package P01.Game.NPC;
+package P01.Game.AI;
 
 public interface Action {
 

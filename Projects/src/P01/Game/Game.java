@@ -17,15 +17,24 @@ public class Game {
 
     private void execute_game() {
 
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         EnvironmentEvent event;
 
-        do {
-            System.out.printf("[ Noise / Silence / Enemy @ Environment event]$ ");
-            String event_name = input.nextLine();
+        String event_name = "";
+        String behavior_name = "";
+        String input = "";
 
-            this.environment.evolve(event_name);
+        do {
+
+            this.environment.evolve(input);
+            event_name = this.environment.show();
+
             this.character.execute();
+            behavior_name = this.character.show();
+
+            System.out.printf("[ %7s @ %-10s ]$ ", event_name, behavior_name);
+            input = scanner.next();
+
             event = environment.get_event();
 
         } while(event == null ? true : event != EnvironmentEvent.EXIT);

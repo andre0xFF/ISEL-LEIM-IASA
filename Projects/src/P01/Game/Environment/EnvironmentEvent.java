@@ -1,8 +1,8 @@
 package P01.Game.Environment;
 
-import P01.Game.NPC.Stimulus;
+import P01.Game.AI.Stimulus;
 
 public enum EnvironmentEvent implements Stimulus {
-    EXIT, NOISE, SILENCE, ENEMY, FLIGHT, VICTORY, DEFEAT
+    EXIT, NOISE, SILENCE, ENEMY, FLEE, VICTORY, DEFEAT;
 }
 
