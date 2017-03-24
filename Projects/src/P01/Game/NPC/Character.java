@@ -21,11 +21,9 @@ public class Character {
         if (stimulus != null) {
             Action action = this.process(stimulus);
             this.behave(action);
-            // TODO: show ??
         }
     }
 
-    // Stimulus is an interface implemented in Action
     private Stimulus percept() {
         return this.environment.get_event();
     }
