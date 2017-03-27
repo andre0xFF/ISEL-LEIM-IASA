@@ -25,7 +25,6 @@ public class Game {
         String input = "";
 
         do {
-
             this.environment.evolve(input);
             event_name = this.environment.show();
 
