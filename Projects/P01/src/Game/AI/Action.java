@@ -1,4 +1,4 @@
-package P01.Game.AI;
+package Game.AI;
 
 public interface Action {
 

@@ -1,12 +1,12 @@
-package P01.Game.AI;
+package Game.AI;
 
-import P01.Game.Environment.EnvironmentEvent;
-import P01.Game.NPC.Behaviors.Attack;
-import P01.Game.NPC.Behaviors.Defend;
-import P01.Game.NPC.Behaviors.Inspection;
-import P01.Game.NPC.Behaviors.Patrol;
-import P01.StateMachine.State;
-import P01.StateMachine.StateMachine;
+import Game.Environment.EnvironmentEvent;
+import Game.NPC.Behaviors.Attack;
+import Game.NPC.Behaviors.Defend;
+import Game.NPC.Behaviors.Inspection;
+import Game.NPC.Behaviors.Patrol;
+import StateMachine.State;
+import StateMachine.StateMachine;
 
 public class CharacterBehavior extends StateMachineBehavior {
 

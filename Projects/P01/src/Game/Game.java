@@ -1,8 +1,8 @@
-package P01.Game;
+package Game;
 
-import P01.Game.Environment.Environment;
-import P01.Game.Environment.EnvironmentEvent;
-import P01.Game.NPC.Character;
+import Game.Environment.Environment;
+import Game.Environment.EnvironmentEvent;
+import Game.NPC.Character;
 
 import java.util.Scanner;
 

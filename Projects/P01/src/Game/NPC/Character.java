@@ -1,9 +1,9 @@
-package P01.Game.NPC;
+package Game.NPC;
 
-import P01.Game.AI.Action;
-import P01.Game.AI.CharacterBehavior;
-import P01.Game.AI.Stimulus;
-import P01.Game.Environment.Environment;
+import Game.AI.Action;
+import Game.AI.CharacterBehavior;
+import Game.AI.Stimulus;
+import Game.Environment.Environment;
 
 public class Character {
 

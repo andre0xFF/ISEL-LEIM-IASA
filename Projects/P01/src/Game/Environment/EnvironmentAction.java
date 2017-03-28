@@ -1,6 +1,6 @@
-package P01.Game.Environment;
+package Game.Environment;
 
-import P01.Game.AI.Action;
+import Game.AI.Action;
 
 public enum EnvironmentAction implements Action {
     PATROL, DEFEND, START, SEARCH, ATTACK, WARN, APPROACH;

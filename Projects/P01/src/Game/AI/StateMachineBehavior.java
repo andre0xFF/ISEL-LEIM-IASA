@@ -1,7 +1,7 @@
-package P01.Game.AI;
+package Game.AI;
 
-import P01.StateMachine.State;
-import P01.StateMachine.StateMachine;
+import StateMachine.State;
+import StateMachine.StateMachine;
 
 import java.util.HashMap;
 import java.util.Map;

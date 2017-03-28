@@ -1,7 +1,4 @@
-package P01.StateMachine;
-
-import java.util.HashMap;
-import java.util.Map;
+package StateMachine;
 
 public class StateMachine<T> {
 
