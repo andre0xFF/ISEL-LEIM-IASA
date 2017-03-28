@@ -1,5 +1,3 @@
-package Game;
-
 import Game.Environment.Environment;
 import Game.Environment.EnvironmentEvent;
 import Game.NPC.Character;
