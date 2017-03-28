@@ -1,11 +1,18 @@
-package P01.Game;
+package Game.NPC;
+
+import Game.AI.Action;
+import Game.AI.CharacterBehavior;
+import Game.AI.Stimulus;
+import Game.Environment.Environment;
 
 public class Character {
 
     private final Environment environment;
+    private CharacterBehavior behavior;
 
     public Character(Environment environment) {
         this.environment = environment;
+        this.behavior = new CharacterBehavior();
     }
 
     public void execute() {
@@ -14,25 +21,24 @@ public class Character {
         if (stimulus != null) {
             Action action = this.process(stimulus);
             this.behave(action);
-            // TODO: show ??
         }
     }
 
-    // Stimulus is an interface impleted in Action
     private Stimulus percept() {
         return this.environment.get_event();
     }
 
     private Action process(Stimulus stimulus) {
-        // TODO: Transform the Stimulus into some sort of action
-        return null;
+        return this.behavior.activate(stimulus);
     }
 
     private void behave(Action action) {
-        action.execute();
+        if(action != null) {
+            action.execute();
+        }
     }
-}
 
-interface Action {
-    public void execute();
+    public String show() {
+        return String.format("%s", this.behavior.get_state().get_name());
+    }
 }
