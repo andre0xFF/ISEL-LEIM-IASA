@@ -1,7 +1,7 @@
 public abstract class SearchMechanism <P extends Problem> {
 
     private SearchMemory search_memory;
-    private P problem;
+    protected P problem;
 
     public SearchMemory get_search_memory() {
         return this.search_memory;
@@ -13,8 +13,8 @@ public abstract class SearchMechanism <P extends Problem> {
 
     public SearchMechanism() {}
 
-    public Solution solve(Problem problem) {
-        return this.solve(problem);
+    public Solution solve(P problem) {
+        return this.solve(problem, -1);
     }
 
     public Solution solve(P problem, int max_depth) {
