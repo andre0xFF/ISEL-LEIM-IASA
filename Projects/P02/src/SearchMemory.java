@@ -4,7 +4,7 @@ import java.util.Queue;
 public class SearchMemory {
 
     protected Queue<Node> frontier;
-//    protected ArrayList<Node> explored;
+    protected ArrayList<Node> explored;
 
     public SearchMemory(Queue<Node> frontier) {
         this.frontier = frontier;

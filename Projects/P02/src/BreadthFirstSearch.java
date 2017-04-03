@@ -1,4 +1,4 @@
-public class DepthFirstSearch extends SearchMechanism implements Search {
+public class BreadthFirstSearch extends SearchMechanism implements Search {
 
     @Override
     protected SearchMemory start_memory() {
@@ -15,4 +15,3 @@ public class DepthFirstSearch extends SearchMechanism implements Search {
         return null;
     }
 }
-

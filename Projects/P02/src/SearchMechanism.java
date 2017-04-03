@@ -13,6 +13,8 @@ public abstract class SearchMechanism <P extends Problem> {
 
     public SearchMechanism() {}
 
+    protected abstract SearchMemory start_memory();
+
     public Solution solve(P problem) {
         return this.solve(problem, -1);
     }
