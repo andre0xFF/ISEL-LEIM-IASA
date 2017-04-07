@@ -5,6 +5,6 @@ public class HeuristicProblem {
     }
 
     public double heuristic(State state) {
-
+        return 0.2;
     }
 }

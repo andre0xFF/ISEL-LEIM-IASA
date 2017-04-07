@@ -11,7 +11,9 @@ public abstract class SearchMechanism <P extends Problem> {
         this.search_memory = search_memory;
     }
 
-    public SearchMechanism() {}
+    public SearchMechanism() {
+        this.search_memory = this.start_memory();
+    }
 
     protected abstract SearchMemory start_memory();
 

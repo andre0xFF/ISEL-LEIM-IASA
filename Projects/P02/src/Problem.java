@@ -13,6 +13,7 @@ public abstract class Problem {
 
     public Problem(State initial_state, Operator[] operators) {
         this.initial_state = initial_state;
+        this.operators = operators;
     }
 
     public abstract boolean objective(State state);
