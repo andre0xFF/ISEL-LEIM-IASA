@@ -1,4 +1,4 @@
-public class Node {
+public class Node implements SolutionStep {
 
     private int depth = 0;
     private double cost = 0;
@@ -10,12 +10,19 @@ public class Node {
         return this.depth;
     }
 
+    @Override
     public double get_cost() {
         return this.cost;
     }
 
+    @Override
     public State get_state() {
         return this.state;
+    }
+
+    @Override
+    public Operator get_operator() {
+        return this.operator;
     }
 
     public Node get_ancestor() {

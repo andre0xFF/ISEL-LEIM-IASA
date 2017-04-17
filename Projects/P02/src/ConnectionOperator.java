@@ -11,7 +11,7 @@ public class ConnectionOperator implements Operator {
 
     @Override
     public State apply(State state) {
-        if (this.origin_state.equals(this.destination_state)) {
+        if (state.equals(this.origin_state)) {
             return this.destination_state;
         }
 

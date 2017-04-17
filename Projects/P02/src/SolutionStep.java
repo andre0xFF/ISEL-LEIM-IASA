@@ -1,6 +1,6 @@
 public interface SolutionStep {
 
     public State get_state();
-    public State get_dimension();
+    public Operator get_operator();
     public double get_cost();
 }

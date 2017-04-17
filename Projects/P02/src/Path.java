@@ -5,7 +5,7 @@ public class Path implements Solution {
 
     private int dimension;
     private double cost;
-    private LinkedList list;
+    private LinkedList list = new LinkedList();
 
     public int get_dimension() {
         return this.dimension;

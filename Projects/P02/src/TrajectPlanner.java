@@ -3,23 +3,23 @@ public class TrajectPlanner {
     public static void main(String[] args) {
         ConnectionOperator[] operators = get_operators();
 
-        TrajectProblemPlanner problem = new TrajectProblemPlanner("Loc-0", "Loc-4", operators);
+        TrajectProblemPlanner problem = new TrajectProblemPlanner("Loc-0", "Loc-6", operators);
         Search search;
         Solution solution;
 
-        System.out.println("$ Depth First Search");
+        System.out.printf("\n$ Depth First Search\n");
 
         search = new DepthFirstSearch();
         solution = search.solve(problem);
         show_traject(solution);
 
-        System.out.println("$ Breadth First Search");
+        System.out.printf("\n$ Breadth First Search\n");
 
         search = new BreadthFirstSearch();
         solution = search.solve(problem);
         show_traject(solution);
 
-        System.out.println("$ Iterative Search");
+        System.out.println("\n$ Iterative Search\n");
 
         search = new IterativeSearch();
         solution = search.solve(problem);
