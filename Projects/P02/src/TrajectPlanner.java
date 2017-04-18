@@ -43,6 +43,10 @@ public class TrajectPlanner {
     }
 
     private static void show_traject(Solution solution) {
+        if (solution == null) {
+            System.out.println("No solution");
+        }
+
         for (SolutionStep step : solution) {
             System.out.printf("%s (%s)\n", step.get_state().toString(), step.get_cost());
         }
