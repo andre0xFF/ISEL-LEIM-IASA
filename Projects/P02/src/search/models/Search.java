@@ -1,3 +1,5 @@
+package search.models;
+
 public interface Search {
 
     public Solution solve(Problem problem);

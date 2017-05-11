@@ -1,3 +1,7 @@
+package search.engine.memory;
+
+import search.engine.Node;
+
 import java.util.Collections;
 import java.util.LinkedList;
 

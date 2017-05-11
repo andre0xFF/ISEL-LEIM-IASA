@@ -1,3 +1,5 @@
+package search.models;
+
 public interface SolutionStep {
 
     public State get_state();

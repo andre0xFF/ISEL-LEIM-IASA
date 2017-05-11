@@ -1,3 +1,9 @@
+package search.engine;
+
+import search.models.Operator;
+import search.models.SolutionStep;
+import search.models.State;
+
 public class Node implements SolutionStep {
 
     private int depth = 0;
@@ -38,11 +44,14 @@ public class Node implements SolutionStep {
     }
 
     public Node(State state, Operator operator, Node ancestor) {
-        this.state = state;
+        this(state);
         this.operator = operator;
         this.ancestor = ancestor;
-        this.depth = this.ancestor.get_depth() + 1;
-        this.cost = operator.cost(this.ancestor.get_state(), this.get_state());
+
+        if (this.ancestor != null) {
+            this.depth = this.ancestor.get_depth() + 1;
+            this.cost = this.ancestor.get_cost() + operator.get_cost(this.ancestor.get_state(), this.get_state());
+        }
     }
 
     public Node(State state) {

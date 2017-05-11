@@ -1,3 +1,9 @@
+package search.depth_first;
+
+import search.models.Problem;
+import search.models.Search;
+import search.models.Solution;
+
 public class IterativeSearch extends DepthFirstSearch implements Search {
 
     private int depth_increment = 1;
@@ -24,5 +30,10 @@ public class IterativeSearch extends DepthFirstSearch implements Search {
 
     public Solution solve(Problem problem, int max_depth) {
         return this.solve(problem, max_depth, this.depth_increment);
+    }
+
+    @Override
+    public String get_title() {
+        return "Iterative Search";
     }
 }

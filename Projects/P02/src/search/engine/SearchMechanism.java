@@ -1,3 +1,8 @@
+package search.engine;
+
+import search.engine.memory.SearchMemory;
+import search.models.*;
+
 public abstract class SearchMechanism <P extends Problem> {
 
     private SearchMemory search_memory;
@@ -5,10 +10,6 @@ public abstract class SearchMechanism <P extends Problem> {
 
     public SearchMemory get_search_memory() {
         return this.search_memory;
-    }
-
-    public void set_search_memory() {
-        this.search_memory = search_memory;
     }
 
     public SearchMechanism() {
@@ -61,14 +62,14 @@ public abstract class SearchMechanism <P extends Problem> {
 
     private Solution generate_solution(Node final_node) {
         Path path = new Path();
-        Node node = final_node;
 
-        while(node != null) {
-           path.join_start(node);
-           Node ancestor = node.get_ancestor();
-           node = ancestor;
+        while(final_node != null) {
+           path.join_start(final_node);
+           final_node = final_node.get_ancestor();
         }
 
         return path;
     }
+
+    public abstract String get_title();
 }

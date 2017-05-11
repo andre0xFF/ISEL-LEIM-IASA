@@ -1,3 +1,9 @@
+package traject.models;
+
+import search.models.Problem;
+import search.models.State;
+import traject.models.ConnectionOperator;
+
 public class TrajectProblemPlanner extends Problem {
 
     private StateLocation final_state;

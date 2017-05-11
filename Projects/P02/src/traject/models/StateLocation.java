@@ -1,3 +1,7 @@
+package traject.models;
+
+import search.models.State;
+
 public class StateLocation extends State {
 
     private String location;

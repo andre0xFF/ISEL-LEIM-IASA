@@ -1,3 +1,8 @@
+package traject.models;
+
+import search.models.Operator;
+import search.models.State;
+
 public class ConnectionOperator implements Operator {
     private StateLocation origin_state;
     private StateLocation destination_state;
@@ -19,7 +24,7 @@ public class ConnectionOperator implements Operator {
     }
 
     @Override
-    public Float cost(State state, State successor) {
+    public float get_cost(State state, State successor) {
         return this.connection_cost;
     }
 }

@@ -1,3 +1,5 @@
+package search.models;
+
 public abstract class State {
 
     public abstract int hashCode();
@@ -5,7 +7,7 @@ public abstract class State {
     public boolean equals(Object object) {
         return (
                 object instanceof State &&
-                ((State) object).hashCode() == this.hashCode()
+                object.hashCode() == this.hashCode()
         );
     }
 

@@ -1,3 +1,5 @@
+package search.models;
+
 public abstract class Problem {
 
     private State initial_state;

@@ -1,3 +1,14 @@
+package traject;
+
+import search.breadth_first.BreadthFirstSearch;
+import search.depth_first.DepthFirstSearch;
+import search.depth_first.IterativeSearch;
+import search.models.Search;
+import search.models.Solution;
+import search.models.SolutionStep;
+import traject.models.ConnectionOperator;
+import traject.models.TrajectProblemPlanner;
+
 public class TrajectPlanner {
 
     public static void main(String[] args) {
