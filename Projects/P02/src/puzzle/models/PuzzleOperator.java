@@ -18,14 +18,9 @@ public class PuzzleOperator implements Operator {
     @Override
     public State apply(State state) {
         PuzzleState puzzle_state = (PuzzleState) state;
-
         Puzzle puzzle = puzzle_state.get_puzzle().movimentar(this.movement);
 
-        if (puzzle == null) {
-            return null;
-        }
-
-        return new PuzzleState(puzzle);
+        return puzzle == null ? null : new PuzzleState(puzzle);
     }
 
     @Override

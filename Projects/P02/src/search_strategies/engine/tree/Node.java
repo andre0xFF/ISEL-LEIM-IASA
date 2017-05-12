@@ -37,7 +37,7 @@ public class Node implements SolutionStep {
         this.cost = cost;
     }
 
-    public void set_dept(int depth) {
+    public void set_depth(int depth) {
         this.depth = depth;
     }
 
@@ -48,7 +48,7 @@ public class Node implements SolutionStep {
 
         if (this.ancestor != null) {
             this.depth = this.ancestor.get_depth() + 1;
-            this.cost = this.ancestor.get_cost() + operator.get_cost(this.ancestor.get_state(), this.get_state());
+            this.cost = operator.get_cost(this.ancestor.get_state(), this.get_state());
         }
     }
 
