@@ -1,10 +1,10 @@
-package search.best_first;
+package search_strategies.informed;
 
-import search.engine.Node;
-import search.engine.SearchMechanism;
-import search.engine.memory.PriorityMemory;
-import search.engine.memory.SearchMemory;
-import search.models.Problem;
+import search_strategies.engine.tree.Node;
+import search_strategies.engine.SearchMechanism;
+import search_strategies.engine.memory.PriorityMemory;
+import search_strategies.engine.memory.SearchMemory;
+import search_strategies.problem.Problem;
 
 import java.util.Comparator;
 

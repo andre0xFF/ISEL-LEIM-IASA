@@ -1,7 +1,11 @@
-package search.engine;
+package search_strategies.engine;
 
-import search.engine.memory.SearchMemory;
-import search.models.*;
+import search_strategies.engine.memory.SearchMemory;
+import search_strategies.engine.tree.Node;
+import search_strategies.engine.tree.Operator;
+import search_strategies.engine.tree.Path;
+import search_strategies.engine.tree.State;
+import search_strategies.problem.*;
 
 public abstract class SearchMechanism <P extends Problem> {
 

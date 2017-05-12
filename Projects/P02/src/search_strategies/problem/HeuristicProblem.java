@@ -1,4 +1,7 @@
-package search.models;
+package search_strategies.problem;
+
+import search_strategies.engine.tree.Operator;
+import search_strategies.engine.tree.State;
 
 public abstract class HeuristicProblem extends Problem {
 

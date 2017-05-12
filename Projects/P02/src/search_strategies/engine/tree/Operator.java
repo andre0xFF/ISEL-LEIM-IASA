@@ -1,4 +1,4 @@
-package search.models;
+package search_strategies.engine.tree;
 
 public interface Operator {
     public State apply(State state);

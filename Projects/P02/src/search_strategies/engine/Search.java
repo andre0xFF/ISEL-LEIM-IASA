@@ -1,4 +1,7 @@
-package search.models;
+package search_strategies.engine;
+
+import search_strategies.problem.Problem;
+import search_strategies.problem.Solution;
 
 public interface Search {
 

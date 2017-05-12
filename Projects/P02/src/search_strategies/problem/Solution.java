@@ -1,4 +1,4 @@
-package search.models;
+package search_strategies.problem;
 
 import java.util.Iterator;
 

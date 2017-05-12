@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IASA-P02</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<style>
+body {
+    background-color: white;
+    margin-top: 100px;
+}
+.container {
+    max-width: 900px;
+    text-align: justify;
+}
+</style>
+</head>
+<body><div class="container"><p align="center">
+    <img width="30%" height="30%" src="https://lh5.googleusercontent.com/-vYrwAHpi3Rw/AAAAAAAAAAI/AAAAAAAAAC8/wM0Oxu8ZzDk/photo.jpg">
+</p>
+
+
+
+<h1 id="isel"><p align="center">ISEL</p></h1>
+
+
+
+<h1 id="artificial-intelligence-for-autonomous-systems"><p align="center">ARTIFICIAL INTELLIGENCE FOR AUTONOMOUS SYSTEMS</p></h1>
+
+
+
+<h2 id="project-ii"><p align="center">PROJECT II</p></h2>
+
+<p align="center">André Fonseca 39758</p>
+
+<p align="center">afbfonseca@gmail.com</p>
+
+<p><br></p>
+
+<p align="center">May 2017</p>
+
+<hr>
+
+<h1 id="table-of-contents">Table of contents</h1>
+
+<p><div class="toc">
+<ul>
+<li><a href="#search-strategies">Search Strategies</a></li>
+<li><a href="#models">Models</a></li>
+<li><a href="#analysis">Analysis</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>This projects aims to implement an autonomous resolution system of the 8 puzzle problem. The initial problem presents two puzzle configurations to be solved, but the main objective is to develop a solution that is able to solve any kind of puzzle configuration or, even further, any kind of problem that fits the developed problem model.</p>
+
+<p>The 8 puzzle problem is a smaller version of the slightly better known 15 puzzle game. The puzzle consists of an area divided into a grid of 3 by 3. On each grid square is a tile, except for one square which remains empty. Thus, there are eight tiles. A tile that is next to the empty grid square can be moved into the empty space, leaving the previous position empty in turn. Tiles are numbered, 1 to 8, so that each tile can be uniquely identified.</p>
+
+<p>The two initial puzzle configurations:</p>
+
+<p align="center">
+    <img src="https://image.ibb.co/jkybd5/image.png">
+</p>
+
+<p>To solve the problem all the tiles must be ordered by their number:</p>
+
+<p align="center">
+    <img src="https://image.ibb.co/k0WyQk/image.png">
+</p>
+
+<p>Search algorithms may be used in order to reach the goal state. The solution to this problem will be implemented using different search strategies.</p>
+
+<p>In the end small benchmark will be made to compare each algorithm, in terms of performance, cost and memory allocation.</p>
+
+<h1 id="search-strategies">Search Strategies</h1>
+
+<p>The possible action sequences starting at the initial state form a search tree with the initial state at the root, the branches are actions and the nodes correspond to states in the state space of the problem.</p>
+
+<p>The search tree can be traversed using multiple search algorithms. To solve the 8 puzzle problem we used two types of search strategies: Uninformed and Informed.</p>
+
+
+
+<h2 id="uninformed-search-strategies">Uninformed Search Strategies</h2>
+
+<p>Also known as blind search, uninformed search strategies have no information about the states, all they can do is to explore or expand nodes and look for the goal state in a certain order. These type of strategies are only distinguished by the order in which nodes are expanded.</p>
+
+<h3 id="breadth-first-search">Breadth-first search</h3>
+
+<p>The breadth-first search expands the shallowest nodes first; it is complete, optimal for unit step costs, but has exponential space complexity.</p>
+
+<p align="center">
+    <img src="https://image.ibb.co/gLD1BQ/image.png">
+</p>
+
+<h3 id="depth-first-search">Depth-first search</h3>
+
+<p>The depth-first search expands the deepest unexpande node first, It is either complete nor optiomal, but has a linear space complexity.</p>
+
+<p align="center">
+    <img src="https://image.ibb.co/jPF9y5/image.png">
+</p>
+
+<h3 id="uniform-cost-search">Uniform-cost search</h3>
+
+<p>The uniform-cost expands the node with lowest path cost, and is optimal for general step costs.</p>
+
+<h3 id="iterative-deepening-search">Iterative deepening search</h3>
+
+<p>The iterative deepening search search calls depth-first search with increasing depth limits until a goal is found. It is complete, optimal for unit step costs, has time complexity comparable to breadth-first search, and has linear space complexity.</p>
+
+<p align="center">
+    <img src="https://image.ibb.co/fPpDQk/image.png">
+</p>
+
+<h2 id="informed-search-strategies">Informed Search Strategies</h2>
+
+<p>Problem specific data and meta-data can be used to find solutions more efficiently than an uninformed search strategy.</p>
+
+<p>The performance of these types of search strategies depends on the quality of the heuristic - strategies derived from previous experiences with similar problems that can be used to speed up the process of finding a satisfactory solution.</p>
+
+<h3 id="best-first-search">Best-first search</h3>
+
+<p>The best-first search is a generic type of informed search strategy that expands nodes based on an evaluation function, an heuristic.</p>
+
+<h3 id="greedy-best-first-search">Greedy best-first search</h3>
+
+<p>The greedy best-first search expands nodes with with minimal heuristic value. It is not optimal but is often efficient.</p>
+
+<h3 id="a-search">A* search</h3>
+
+<p>The A* search expands nodes based on the heuristic value and the cost to reach the next node in line.</p>
+
+<h1 id="models">Models</h1>
+
+<p>From Artificial Intelligence: A Modern Approach</p>
+
+<blockquote>
+  <p><strong>States</strong>: A state description specifies the location of each of the eight tiles and the blank <br>
+  in one of the nine squares;</p>
+
+  <p><strong>Initial state</strong>: Any state can be designated as the initial state. Note that any given goal can be reached from exactly half of the possible initial states;</p>
+
+  <p><strong>Actions</strong>: The simplest formulation defines the actions as movements of the blank space Left, Right, Up, or Down. Different subsets of these are possible depending on where the blank is;</p>
+
+  <p><strong>Transition model</strong>: Given a state and action, this returns the resulting state;</p>
+
+  <p><strong>Goal test</strong>: This checks whether the state matches the goal configuration;</p>
+
+  <p><strong>Path cost</strong>: Each step costs 1, so the path cost is the number of steps in the path.</p>
+</blockquote>
+
+
+
+<h1 id="implementation">Implementation</h1>
+
+<p>To solve the 8 puzzle problem the puzzle needs to be formulated as a searchable problem. Using the initial two puzzles, the goal puzzle and the puzzle operators:</p>
+
+
+
+<pre class="prettyprint"><code class="language-java hljs ">Puzzle puzzle_A = <span class="hljs-keyword">new</span> Puzzle(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[][] { {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}, {<span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>}, {<span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">0</span>} });
+Puzzle puzzle_B = <span class="hljs-keyword">new</span> Puzzle(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[][] { {<span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>}, {<span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>}, {<span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">0</span>} });
+Puzzle puzzle_C = <span class="hljs-keyword">new</span> Puzzle(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[][] { {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}, {<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>}, {<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">0</span>} });
+
+PuzzleOperator[] operators = <span class="hljs-keyword">new</span> PuzzleOperator[] {
+        <span class="hljs-keyword">new</span> PuzzleOperator(Puzzle.Movimento.CIMA, <span class="hljs-number">1</span>),
+        <span class="hljs-keyword">new</span> PuzzleOperator(Puzzle.Movimento.BAIXO, <span class="hljs-number">1</span>),
+        <span class="hljs-keyword">new</span> PuzzleOperator(Puzzle.Movimento.ESQ, <span class="hljs-number">1</span>),
+        <span class="hljs-keyword">new</span> PuzzleOperator(Puzzle.Movimento.DIR, <span class="hljs-number">1</span>)
+};
+
+PuzzleProblem p1 = <span class="hljs-keyword">new</span> PuzzleProblem(puzzle_A, puzzle_C, operators);
+PuzzleProblem p2 = <span class="hljs-keyword">new</span> PuzzleProblem(puzzle_B, puzzle_C, operators);</code></pre>
+
+<p>Next any type of search strategy may be used to automatically resolve the problem:</p>
+
+
+
+<pre class="prettyprint"><code class="language-java hljs ">Solution s1 = <span class="hljs-keyword">new</span> IterativeSearch().solve(p1);
+Solution s2 = <span class="hljs-keyword">new</span> IterativeSearch().solve(p2);</code></pre>
+
+<h1 id="analysis">Analysis</h1>
+
+<p align="center">
+    <img src="https://preview.ibb.co/g9qjy5/image.png">
+</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+<li><a href="http://www.aiai.ed.ac.uk/~gwickler/eightpuzzle-inf.html">http://www.aiai.ed.ac.uk/~gwickler/eightpuzzle-inf.html</a></li>
+<li>S. Russell and P. Norvig. Artificial Intelligence: A Modern Approach</li>
+</ul></div></body>
+</html>

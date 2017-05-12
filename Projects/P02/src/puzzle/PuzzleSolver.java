@@ -3,15 +3,15 @@ package puzzle;
 import org.apache.commons.lang.StringUtils;
 import puzzle.models.PuzzleOperator;
 import puzzle.models.PuzzleProblem;
-import search.best_first.AStarSearch;
-import search.best_first.GreedyBestFirstSearch;
-import search.best_first.UniformCostSearch;
-import search.breadth_first.BreadthFirstSearch;
-import search.depth_first.DepthFirstSearch;
-import search.depth_first.IterativeSearch;
-import search.engine.SearchMechanism;
-import search.models.Solution;
-import search.models.SolutionStep;
+import search_strategies.informed.AStarSearch;
+import search_strategies.informed.GreedyBestFirstSearch;
+import search_strategies.uninformed.UniformCostSearch;
+import search_strategies.uninformed.BreadthFirstSearch;
+import search_strategies.uninformed.DepthFirstSearch;
+import search_strategies.uninformed.IterativeSearch;
+import search_strategies.engine.SearchMechanism;
+import search_strategies.problem.Solution;
+import search_strategies.problem.SolutionStep;
 
 public class PuzzleSolver {
 

@@ -1,8 +1,8 @@
 package puzzle.models;
 
 import puzzle.Puzzle;
-import search.models.Operator;
-import search.models.State;
+import search_strategies.engine.tree.Operator;
+import search_strategies.engine.tree.State;
 import puzzle.Puzzle.Movimento;
 
 public class PuzzleOperator implements Operator {
@@ -18,14 +18,9 @@ public class PuzzleOperator implements Operator {
     @Override
     public State apply(State state) {
         PuzzleState puzzle_state = (PuzzleState) state;
-
         Puzzle puzzle = puzzle_state.get_puzzle().movimentar(this.movement);
 
-        if (puzzle == null) {
-            return null;
-        }
-
-        return new PuzzleState(puzzle);
+        return puzzle == null ? null : new PuzzleState(puzzle);
     }
 
     @Override

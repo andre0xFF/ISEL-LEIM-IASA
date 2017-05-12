@@ -1,8 +1,7 @@
-package search.best_first;
+package search_strategies.informed;
 
-import search.best_first.BestFirstSearch;
-import search.engine.Node;
-import search.models.HeuristicProblem;
+import search_strategies.engine.tree.Node;
+import search_strategies.problem.HeuristicProblem;
 
 public class AStarSearch extends BestFirstSearch<HeuristicProblem> {
 
