@@ -1,7 +1,7 @@
-package search.best_first;
+package search_strategies.informed;
 
-import search.engine.Node;
-import search.models.HeuristicProblem;
+import search_strategies.engine.tree.Node;
+import search_strategies.problem.HeuristicProblem;
 
 public class GreedyBestFirstSearch extends BestFirstSearch<HeuristicProblem> {
 

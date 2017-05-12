@@ -1,9 +1,8 @@
-package search.engine.memory;
+package search_strategies.engine.memory;
 
-import search.engine.Node;
+import search_strategies.engine.tree.Node;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class FIFOMemory extends SearchMemory {
 

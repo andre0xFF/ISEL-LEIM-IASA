@@ -1,8 +1,8 @@
 package puzzle.models;
 
 import puzzle.Puzzle;
-import search.models.HeuristicProblem;
-import search.models.State;
+import search_strategies.problem.HeuristicProblem;
+import search_strategies.engine.tree.State;
 
 public class PuzzleProblem extends HeuristicProblem {
 

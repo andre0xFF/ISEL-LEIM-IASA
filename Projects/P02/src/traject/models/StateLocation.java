@@ -1,6 +1,6 @@
 package traject.models;
 
-import search.models.State;
+import search_strategies.engine.tree.State;
 
 public class StateLocation extends State {
 

@@ -1,8 +1,6 @@
-package search.engine;
+package search_strategies.engine.tree;
 
-import search.models.Operator;
-import search.models.SolutionStep;
-import search.models.State;
+import search_strategies.problem.SolutionStep;
 
 public class Node implements SolutionStep {
 

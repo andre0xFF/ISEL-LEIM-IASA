@@ -1,7 +1,7 @@
-package search.engine.memory;
+package search_strategies.engine.memory;
 
-import search.engine.Node;
-import search.models.State;
+import search_strategies.engine.tree.Node;
+import search_strategies.engine.tree.State;
 
 import java.util.HashMap;
 import java.util.Queue;

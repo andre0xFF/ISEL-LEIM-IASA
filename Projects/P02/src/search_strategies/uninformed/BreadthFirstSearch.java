@@ -1,10 +1,10 @@
-package search.breadth_first;
+package search_strategies.uninformed;
 
-import search.engine.SearchMechanism;
-import search.engine.memory.FIFOMemory;
-import search.engine.memory.SearchMemory;
-import search.models.Problem;
-import search.models.Search;
+import search_strategies.engine.SearchMechanism;
+import search_strategies.engine.memory.FIFOMemory;
+import search_strategies.engine.memory.SearchMemory;
+import search_strategies.problem.Problem;
+import search_strategies.engine.Search;
 
 public class BreadthFirstSearch extends SearchMechanism<Problem> implements Search {
 
