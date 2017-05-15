@@ -79,10 +79,10 @@ public class PuzzleSolver {
             return;
         }
 
-        int cost = 0;
+        double cost = 0;
 
         for (SolutionStep step : solution) {
-            cost += step.get_cost();
+            cost = step.get_cost();
         }
 
         String s = String.format(

@@ -39,10 +39,9 @@ public abstract class SearchMechanism <P extends Problem> {
             if (this.problem.objective(node.get_state())) {
                 return this.generate_solution(node);
             }
-            else {
-                if (node.get_depth() < max_depth || max_depth == -1) {
-                    this.expand(node);
-                }
+
+            if (node.get_depth() < max_depth || max_depth == -1) {
+                this.expand(node);
             }
         }
 
