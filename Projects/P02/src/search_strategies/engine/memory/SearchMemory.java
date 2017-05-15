@@ -28,8 +28,6 @@ public class SearchMemory {
     public void clean() {
         this.frontier.clear();
         this.explored.clear();
-        this.explored_nodes = 0;
-        this.frontier_nodes = 0;
     }
 
     public void insert(Node node) {
@@ -44,8 +42,9 @@ public class SearchMemory {
                 this.frontier_nodes = this.frontier.size();
             }
 
-            this.explored_nodes++;
         }
+
+        this.explored_nodes++;
     }
 
     public Node remove() {
