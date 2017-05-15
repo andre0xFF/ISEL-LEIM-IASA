@@ -1,5 +1,6 @@
 from reactions.recall.recall import Recall
 
+
 class ReactiveControl():
 
     def __init__(self, behaviour):
