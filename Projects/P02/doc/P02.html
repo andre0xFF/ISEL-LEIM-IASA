@@ -47,8 +47,24 @@ body {
 
 <p><div class="toc">
 <ul>
-<li><a href="#search-strategies">Search Strategies</a></li>
+<li><a href="#search-strategies">Search Strategies</a><ul>
+<li><a href="#uninformed-search-strategies">Uninformed Search Strategies</a><ul>
+<li><a href="#breadth-first-search">Breadth-first search</a></li>
+<li><a href="#depth-first-search">Depth-first search</a></li>
+<li><a href="#uniform-cost-search">Uniform-cost search</a></li>
+<li><a href="#iterative-deepening-search">Iterative deepening search</a></li>
+</ul>
+</li>
+<li><a href="#informed-search-strategies">Informed Search Strategies</a><ul>
+<li><a href="#best-first-search">Best-first search</a></li>
+<li><a href="#greedy-best-first-search">Greedy best-first search</a></li>
+<li><a href="#a-search">A* search</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#models">Models</a></li>
+<li><a href="#implementation">Implementation</a></li>
 <li><a href="#analysis">Analysis</a></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -89,6 +105,8 @@ body {
 
 <p>Also known as blind search, uninformed search strategies have no information about the states, all they can do is to explore or expand nodes and look for the goal state in a certain order. These type of strategies are only distinguished by the order in which nodes are expanded.</p>
 
+
+
 <h3 id="breadth-first-search">Breadth-first search</h3>
 
 <p>The breadth-first search expands the shallowest nodes first; it is complete, optimal for unit step costs, but has exponential space complexity.</p>
@@ -96,6 +114,8 @@ body {
 <p align="center">
     <img src="https://image.ibb.co/gLD1BQ/image.png">
 </p>
+
+
 
 <h3 id="depth-first-search">Depth-first search</h3>
 
@@ -105,9 +125,13 @@ body {
     <img src="https://image.ibb.co/jPF9y5/image.png">
 </p>
 
+
+
 <h3 id="uniform-cost-search">Uniform-cost search</h3>
 
 <p>The uniform-cost expands the node with lowest path cost, and is optimal for general step costs.</p>
+
+
 
 <h3 id="iterative-deepening-search">Iterative deepening search</h3>
 
@@ -117,23 +141,33 @@ body {
     <img src="https://image.ibb.co/fPpDQk/image.png">
 </p>
 
+
+
 <h2 id="informed-search-strategies">Informed Search Strategies</h2>
 
 <p>Problem specific data and meta-data can be used to find solutions more efficiently than an uninformed search strategy.</p>
 
 <p>The performance of these types of search strategies depends on the quality of the heuristic - strategies derived from previous experiences with similar problems that can be used to speed up the process of finding a satisfactory solution.</p>
 
+
+
 <h3 id="best-first-search">Best-first search</h3>
 
 <p>The best-first search is a generic type of informed search strategy that expands nodes based on an evaluation function, an heuristic.</p>
+
+
 
 <h3 id="greedy-best-first-search">Greedy best-first search</h3>
 
 <p>The greedy best-first search expands nodes with with minimal heuristic value. It is not optimal but is often efficient.</p>
 
+
+
 <h3 id="a-search">A* search</h3>
 
 <p>The A* search expands nodes based on the heuristic value and the cost to reach the next node in line.</p>
+
+
 
 <h1 id="models">Models</h1>
 
@@ -176,17 +210,31 @@ PuzzleOperator[] operators = <span class="hljs-keyword">new</span> PuzzleOperato
 PuzzleProblem p1 = <span class="hljs-keyword">new</span> PuzzleProblem(puzzle_A, puzzle_C, operators);
 PuzzleProblem p2 = <span class="hljs-keyword">new</span> PuzzleProblem(puzzle_B, puzzle_C, operators);</code></pre>
 
-<p>Next any type of search strategy may be used to automatically resolve the problem:</p>
+
+Next any type of search strategy may be used to automatically resolve the problem:
+
+
+
+
 
 
 
 <pre class="prettyprint"><code class="language-java hljs ">Solution s1 = <span class="hljs-keyword">new</span> IterativeSearch().solve(p1);
 Solution s2 = <span class="hljs-keyword">new</span> IterativeSearch().solve(p2);</code></pre>
 
+
+
+
+
+
+
+
+
+
 <h1 id="analysis">Analysis</h1>
 
 <p align="center">
-    <img src="https://preview.ibb.co/g9qjy5/image.png">
+    <img src="http://preview.ibb.co/hMAaqk/image.png">
 </p>
 
 <h1 id="references">References</h1>
