@@ -45,11 +45,8 @@ public class Node implements SolutionStep {
         this(state);
         this.operator = operator;
         this.ancestor = ancestor;
-
-        if (this.ancestor != null) {
-            this.depth = this.ancestor.get_depth() + 1;
-            this.cost = operator.get_cost(this.ancestor.get_state(), this.get_state());
-        }
+        this.depth = this.ancestor.get_depth() + 1;
+        this.cost = this.ancestor.get_cost() + this.operator.get_cost(this.ancestor.get_state(), this.get_state());
     }
 
     public Node(State state) {
