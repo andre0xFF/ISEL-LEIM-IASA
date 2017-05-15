@@ -51,8 +51,8 @@ public class PuzzleSolver {
         Puzzle puzzle_C = new Puzzle(new int[][] { {1, 2, 3}, {4, 5, 6}, {7, 8, 0} });
 
         PuzzleOperator[] operators = new PuzzleOperator[] {
-                new PuzzleOperator(Puzzle.Movimento.CIMA, 1),
                 new PuzzleOperator(Puzzle.Movimento.BAIXO, 1),
+                new PuzzleOperator(Puzzle.Movimento.CIMA, 1),
                 new PuzzleOperator(Puzzle.Movimento.ESQ, 1),
                 new PuzzleOperator(Puzzle.Movimento.DIR, 1)
         };
@@ -61,10 +61,13 @@ public class PuzzleSolver {
         PuzzleProblem p2 = new PuzzleProblem(puzzle_B, puzzle_C, operators);
 
         Solution s1 = search.solve(p1);
-        Solution s2 = search.solve(p2);
-
         show_puzzle(search, s1, "A");
+        search.reset();
+
+
+        Solution s2 = search.solve(p2);
         show_puzzle(search, s2, "B");
+        search.reset();
     }
 
     private static void show_puzzle(SearchMechanism search, Solution solution, String puzzle_name) {
