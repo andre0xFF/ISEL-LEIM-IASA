@@ -40,16 +40,17 @@ public class PuzzleSolver {
                 new AStarSearch(),
         };
 
-        for (SearchMechanism search : search_list) {
-            run_search(search);
-        }
-    }
-
-    public static void run_search(SearchMechanism search) {
         Puzzle puzzle_A = new Puzzle(new int[][] { {1, 2, 3}, {8, 4, 5}, {6, 7, 0} });
         Puzzle puzzle_B = new Puzzle(new int[][] { {8, 4, 5}, {6, 1, 2}, {3, 7, 0} });
         Puzzle puzzle_C = new Puzzle(new int[][] { {1, 2, 3}, {4, 5, 6}, {7, 8, 0} });
 
+        for (SearchMechanism search : search_list) {
+            run_search(search, puzzle_A, puzzle_C, "A");
+            run_search(search, puzzle_B, puzzle_C, "B");
+        }
+    }
+
+    public static void run_search(SearchMechanism search, Puzzle puzzle, Puzzle goal_puzzle, String name) {
         PuzzleOperator[] operators = new PuzzleOperator[] {
                 new PuzzleOperator(Puzzle.Movimento.BAIXO, 1),
                 new PuzzleOperator(Puzzle.Movimento.CIMA, 1),
@@ -57,17 +58,10 @@ public class PuzzleSolver {
                 new PuzzleOperator(Puzzle.Movimento.DIR, 1)
         };
 
-        PuzzleProblem p1 = new PuzzleProblem(puzzle_A, puzzle_C, operators);
-        PuzzleProblem p2 = new PuzzleProblem(puzzle_B, puzzle_C, operators);
+        PuzzleProblem p = new PuzzleProblem(puzzle, goal_puzzle, operators);
 
-        Solution s1 = search.solve(p1);
-        show_puzzle(search, s1, "A");
-        search.reset();
-
-
-        Solution s2 = search.solve(p2);
-        show_puzzle(search, s2, "B");
-        search.reset();
+        Solution s = search.solve(p);
+        show_puzzle(search, s, name);
     }
 
     private static void show_puzzle(SearchMechanism search, Solution solution, String puzzle_name) {
