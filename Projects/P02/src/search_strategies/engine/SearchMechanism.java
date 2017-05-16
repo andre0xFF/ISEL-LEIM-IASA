@@ -75,8 +75,4 @@ public abstract class SearchMechanism <P extends Problem> {
     }
 
     public abstract String get_title();
-
-    public void reset() {
-        this.search_memory = this.start_memory();
-    }
 }
