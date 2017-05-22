@@ -1,7 +1,7 @@
-from reactions.recall.recall import Recall
+from prospector_agent.control import Control
 
 
-class ReactiveControl():
+class ReactiveControl(Control):
 
     def __init__(self, behaviour):
         self.behaviour = behaviour

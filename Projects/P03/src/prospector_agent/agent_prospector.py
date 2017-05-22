@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../lib/psa')
+# sys.path.append('../lib/psa')
 from psa.agente import Agente
 
 

@@ -32,7 +32,7 @@ psa.executar(AgenteTeste())
 PSA - Plataforma de Simulacao de Agentes
 PEE - Procura em Estados de Espacos
 ECR - Esquemas Comportamentais Reactivos
-
+PDM - Processos de Decisao de Markov
 
 psa.util.dirmov() - lista de angulos
 psa.util.mover() - psa.util.mover(estado, ang) - estado (x, y)

@@ -2,7 +2,7 @@
 
 import random
 import sys
-sys.path.append('../lib/psa')
+# sys.path.append('../lib/psa')
 from psa.actuador import ESQ, FRT, DIR
 from psa.accao import Mover
 

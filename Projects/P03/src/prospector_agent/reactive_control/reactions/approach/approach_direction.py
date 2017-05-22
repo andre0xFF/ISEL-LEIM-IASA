@@ -1,8 +1,9 @@
 # TODO: imports
 
 import sys
+
 sys.path.append('../lib/ecr')
-sys.path.append('../lib/psa')
+# sys.path.append('../lib/psa')
 
 
 class ApproachDirection(Reaction):

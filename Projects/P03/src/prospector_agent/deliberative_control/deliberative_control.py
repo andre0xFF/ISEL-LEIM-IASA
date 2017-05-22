@@ -1,16 +1,23 @@
-class DeliberativeControl():
+from prospector_agent.control import Control
+from prospector_agent.deliberative_control.world_model import WorldModel
 
-    def DeliberativeControl(self, planner):
+
+class DeliberativeControl(Control):
+
+    def __init__(self, planner):
         self._planner = planner
+        self._world_model = WorldModel()
 
     def reconsider(self):
-        # and -> or
-        # return self._world_model.changed or self._planner.pending_plan() or not self._objectives
+        return self._world_model or self._planner.pending_plan()
 
     def deliberate(self):
-        # self._objectives = [TODOS OS ALVOS]
+        # means
+        self._objectives = self._world_model.obtain_elements('alvo')
+        pass
 
     def plan(self):
+        # ends
         pass
 
     def execute(self):
@@ -26,6 +33,6 @@ class DeliberativeControl():
         action = self.execute()
         return action
 
-    # assimilar
+    # Translation: assimilar
     def take(self, perception):
-        pass
+        self._world_model.update(perception)
