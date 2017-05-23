@@ -1,6 +1,6 @@
-[submodule "Projects/PEE/src"]
-	path = Projects/PEE/src
+[submodule "Projects/pee/src"]
+	path = Projects/pee/src
 	url = git@github.com:andrewfonseca/IASA-PEE.git
-[submodule "Projects/PSA/src"]
-	path = Projects/PSA/src
+[submodule "Projects/psa/src"]
+	path = Projects/psa/src
 	url = git@github.com:andrewfonseca/IASA-PSA.git

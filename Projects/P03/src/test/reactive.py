@@ -1,10 +1,24 @@
-import sys
-sys.path.append('../lib')
-sys.path.append('../agent_prospector')
+# import sys
+# sys.path.append('../lib')
+# sys.path.append('../agent_prospector')
+import accao
+import agente
 import psa
-from prospector_agent import ProspectorAgent
-from reactive_control.reactive_control import ReactiveControl
-from reactive_control.reactions.recall import Recall as Behaviour
+from lib.ecr.behaviour import Behaviour
+from prospector_agent.agent_prospector import ProspectorAgent
+from prospector_agent.reactive_control.reactive_control import ReactiveControl
 
-psa.start('amb/amb1.das')
-psa.execute(ProspectorAgent(ReactiveControl(Behaviour())))
+
+class TestAgent(agente.Agente):
+
+    def executar(self):
+        super.actuador.actuar(accao.Avancar())
+
+def main():
+    psa.iniciar('env/amb1.das')
+    psa.executar(TestAgent())
+
+
+if __name__ == '__main__':
+    main()
+

@@ -1,3 +1,6 @@
+from lib.ecr.behaviour import Behaviour
+
+
 class ComplexBehaviour(Behaviour):
 
     def __init__(self, behaviours):
@@ -13,7 +16,7 @@ class ComplexBehaviour(Behaviour):
                 responses.append(response)
 
         if responses:
-            return select_response(responses)
+            return self.select_response(responses)
 
     def select_response(self, responses):
         abstract

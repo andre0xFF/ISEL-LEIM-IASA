@@ -14,14 +14,16 @@ class DeliberativeControl(Control):
     def deliberate(self):
         # means
         self._objectives = self._world_model.obtain_elements('alvo')
-        pass
 
     def plan(self):
+        # TODO: verify this
         # ends
-        pass
+        if self._objectives:
+            pass
 
     def execute(self):
-        pass
+        # TODO: verify this
+        return self._planner.obtain_action()
 
     def process(self, perception):
         self.take(perception)
@@ -33,6 +35,6 @@ class DeliberativeControl(Control):
         action = self.execute()
         return action
 
-    # Translation: assimilar
     def take(self, perception):
+        # Translation: assimilar
         self._world_model.update(perception)

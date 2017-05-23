@@ -1,16 +1,13 @@
-# TODO: imports
-
-import sys
-
-sys.path.append('../lib/ecr')
-# sys.path.append('../lib/psa')
+import util
+from lib.ecr.reaction import Reaction
+from lib.ecr.response import Response
 
 
 class ApproachDirection(Reaction):
 
     def __init__(self, direction):
         self._direction = direction
-        self._action = Mover(action)
+        self._action = util.Mover(self._direction)
 
     def detect_stimulus(self, perception):
         if perception[self._direction].alvo:

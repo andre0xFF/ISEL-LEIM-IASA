@@ -1,4 +1,4 @@
 class Behaviour(object):
 
-    def activate(self):
+    def activate(self, perception):
         abstract

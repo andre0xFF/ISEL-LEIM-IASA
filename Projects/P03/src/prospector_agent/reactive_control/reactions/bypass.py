@@ -1,17 +1,16 @@
-# TODO: Add imports
-
-import sys
-sys.path.append('../lib/ecr')
-# sys.path.append('../lib/psa')
-from behaviour import Behaviour
+import actuador
+import util
+from lib.ecr.reaction import Reaction
+from lib.ecr.response import Response
 
 
 class Bypass(Reaction):
+    # Translation: contornar
 
     def detect_stimulus(self, perception):
-        return perception[ESQ].contacto and perception[ESQ].obstaculo or \
-         perception[DIR].contacto and perception[DIR].obstaculo
+        return perception[actuador.ESQ].contacto and perception[actuador.ESQ].obstaculo or \
+               perception[actuador.DIR].contacto and perception[actuador.DIR].obstaculo
 
     def generate_response(self, stimulus):
-        action = Mover(FRT)
+        action = util.Mover(actuador.FRT)
         return Response(action)

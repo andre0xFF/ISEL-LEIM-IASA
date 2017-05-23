@@ -1,8 +1,7 @@
-# TODO: imports
+from lib.ecr.reaction import Reaction
+from lib.ecr.response import Response
 
-import sys
-sys.path.append('../lib/ecr')
-# sys.path.append('../lib/psa')
+import actuador
 
 
 class Avoid(Reaction):
@@ -11,8 +10,8 @@ class Avoid(Reaction):
         pass
 
     def detect_stimulus(self, perception):
-        return perception[FRT].contacto and perception[FRT].obstaculo
+        return perception[actuador.FRT].contacto and perception[actuador.FRT].obstaculo
 
     def generate_response(self, stimulus):
-        action = Rodar(ESQ)
+        action = actuador.Rodar(actuador.ESQ)
         return Response(action)

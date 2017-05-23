@@ -1,8 +1,7 @@
-class Hierarchy(ComplexBehaviour):
+from lib.ecr.complex_behaviour import ComplexBehaviour
 
-    #  Constructor is inherited
-    # def __init__(self, behaviours):
-    #     super(behaviours)
+
+class Hierarchy(ComplexBehaviour):
 
     def select_response(self, responses):
         if responses:
