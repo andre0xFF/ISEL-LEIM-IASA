@@ -5,7 +5,7 @@ import sys
 import pygame
 import site
 import pee
-import psa
+import test
 
 
 def main():

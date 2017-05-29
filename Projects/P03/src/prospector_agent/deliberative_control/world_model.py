@@ -6,7 +6,7 @@ from prospector_agent.deliberative_control.move_operator import MoveOperator
 
 class WorldModel(ModelPlanner):
 
-    def WorldModel(self):
+    def __init__(self):
         self._changed = False
         self._elements = {}
         self._state = ()
@@ -44,5 +44,3 @@ class WorldModel(ModelPlanner):
             self._changed = True
         else:
             self._changed = False
-        pass
-
