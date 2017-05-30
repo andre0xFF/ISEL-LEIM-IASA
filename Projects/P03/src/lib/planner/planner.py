@@ -11,6 +11,7 @@ class Planner():
         abstract
 
     def pending_plan(self):
+        # check if there's a pending plan
         abstract
 
     def finish_plan(self):

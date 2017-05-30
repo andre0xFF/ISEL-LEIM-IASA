@@ -14,9 +14,9 @@ class PlannerPEE(Planner):
 
         if solution:
             # root node has node operator so [1:]
-            # self._plan = [node.operator for node in solution[1:]]
-            for node in solution[1:]:
-                self._plan.append(node.operator)
+            # for node in solution[1:]:
+            #     self._plan.append(node.operator)
+            self._plan = [node.operator for node in solution[1:]]
 
     def obtain_action(self, state):
         # state is not used here
