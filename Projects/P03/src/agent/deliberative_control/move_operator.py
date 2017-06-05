@@ -15,7 +15,7 @@ class MoveOperator(Operador):
     def action(self):
         return self._action
 
-    def apply(self, state):
+    def aplicar(self, state):
         new_state = accao.Mover.mover(self._state, self._angle)
         element = self._world_model.obtain_elements(state)
 
@@ -24,5 +24,5 @@ class MoveOperator(Operador):
 
         return None
 
-    def cost(self, state, new_state):
+    def custo(self, state, new_state):
         return max(dist(state, new_state), 1)

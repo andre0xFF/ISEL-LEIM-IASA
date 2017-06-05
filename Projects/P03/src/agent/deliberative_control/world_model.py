@@ -1,7 +1,6 @@
 import util
 from lib.planner.model_planner import ModelPlanner
 from agent.deliberative_control.move_operator import MoveOperator
-# from psa.util import dirmov
 
 
 class WorldModel(ModelPlanner):
@@ -33,14 +32,14 @@ class WorldModel(ModelPlanner):
         return self._states
 
     def obtain_elements(self, state):
-        return self._elements[state]
+        return self._elements.get(state)
 
     def update(self, perception):
         self._state = perception.posicao
 
         if self._elements != perception.elementos:
-            self._states = perception.imagem
-            self._elements = perception.elementos
+            self._states = perception.imagem.keys()
+            self._elements = perception.imagem
             self._changed = True
         else:
             self._changed = False

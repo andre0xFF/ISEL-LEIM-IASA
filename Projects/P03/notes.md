@@ -38,3 +38,7 @@ psa.util.dirmov() - lista de angulos
 psa.util.mover() - psa.util.mover(estado, ang) - estado (x, y)
 psa.util.dist(estado, novoEstado) - distancia entre dois estados
 psa.accao.Mover(ang, ang_abs=True) - ang_abs em relacao ao eixo horizontal
+
+# Processos de Decisao Sequencial
+
+Accoes nao deterministas: Quando se acha que um estado com uma transicao vai para um estado 2 mas devido a certas condicoes vai para outro.

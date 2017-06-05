@@ -3,7 +3,7 @@ class Planner():
     def __init__(self):
         abstract
 
-    def plan(self, plan_model, initial_state, objectives):
+    def plan(self, model_planner, initial_state, objectives):
         # generate a plan based on the world model
         abstract
 
