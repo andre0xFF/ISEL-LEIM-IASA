@@ -28,7 +28,9 @@ class DeliberativeControl(Control):
     def _plan(self):
         # means
         if self._objectives:
-            return self._planner.plan()
+            return self._planner.plan(self._world_model, self._world_model.state, self._objectives)
+        else:
+            self._planner.finish_plan()
 
     def execute(self):
         return self._planner.obtain_action('')

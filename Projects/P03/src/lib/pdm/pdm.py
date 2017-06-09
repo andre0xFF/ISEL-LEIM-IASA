@@ -1,4 +1,4 @@
-from planner.pdm.model_pdm import ModelPDM
+from pdm.model_pdm import ModelPDM
 
 
 class PDM(ModelPDM):

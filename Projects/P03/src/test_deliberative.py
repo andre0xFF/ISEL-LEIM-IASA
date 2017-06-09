@@ -1,5 +1,3 @@
-import agente
-
 # psa.vis(1)
 # limpar()
 # elementos(dicionario_elementos)

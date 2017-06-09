@@ -9,8 +9,8 @@ class PlannerPEE(Planner):
         self._plan = None
 
     def plan(self, model_planner, initial_state, objectives):
-        problem = ProblemPlanner(initial_state, objectives[0], model_planner.objectives())
-        solution = self._search_mechanism.solve(problem)
+        problem = ProblemPlanner(initial_state, objectives[0], model_planner.operators)
+        solution = self._search_mechanism.resolver(problem)
 
         if solution:
             # root node does not have a node operator [1:]
