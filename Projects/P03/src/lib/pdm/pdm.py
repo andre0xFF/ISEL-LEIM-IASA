@@ -29,8 +29,8 @@ class PDM(ModelPDM):
     def utility_action(self, state, operator, U, model):
         R = model.R
         T = model.T
-        pass
-        # return sum(p * R(state, operator, sn) + self._gamma * U[sn]) for (p, sn) in T(s, a))
+
+        return sum(p * (R(state, operator, sn) + self._gamma * U[sn]) for (p, sn) in T(s, a))
 
     def policy(self, U, model):
         S = model.S

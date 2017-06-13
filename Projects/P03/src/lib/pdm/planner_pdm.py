@@ -4,6 +4,7 @@ from planner.planner import Planner
 class PlannerPDM(Planner):
 
     def __init__(self):
+        # TODO
         pass
 
     def plan(self, model_planner, initial_state, objectives):
@@ -19,8 +20,7 @@ class PlannerPDM(Planner):
         pass
 
     def pending_plan(self):
-        # check if there's a pending plan
-        # existe politica definida?
+        # check if there's a pending policy
         pass
 
     def finish_plan(self):
