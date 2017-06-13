@@ -13,7 +13,7 @@ class WorldModel(ModelPlanner):
         self._operators = []
 
         for angle in util.dirmov():
-            self._operators.append([MoveOperator(self, angle)])
+            self._operators.append(MoveOperator(self, angle))
 
     @property
     def changed(self):
@@ -43,3 +43,8 @@ class WorldModel(ModelPlanner):
             self._changed = True
         else:
             self._changed = False
+
+    def show(self, vismod):
+        pass
+        # targets = {k: v for (k, v) in self._elements.items(if v in ['alvo', 'obst'])}
+

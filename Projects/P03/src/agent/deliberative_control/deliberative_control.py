@@ -23,7 +23,7 @@ class DeliberativeControl(Control):
         #     if element == 'alvo':
         #         self._objectives.append(state)
 
-        self._objectives = [ state for state in self._world_model.states if self._world_model.obtain_elements(state) == 'alvo' ]
+        self._objectives = [state for state in self._world_model.states if self._world_model.obtain_elements(state) == 'alvo' ]
 
     def _plan(self):
         # means
@@ -33,7 +33,12 @@ class DeliberativeControl(Control):
             self._planner.finish_plan()
 
     def execute(self):
-        return self._planner.obtain_action('')
+        action = self._planner.obtain_action('')
+
+        if action is not None:
+            return action.action
+        else:
+            return None
 
     def process(self, perception):
         self._take(perception)
@@ -48,3 +53,8 @@ class DeliberativeControl(Control):
     def _take(self, perception):
         # Translation: assimilar
         self._world_model.update(perception)
+
+    def show(self):
+        psa.vismod.limpar()
+        self._planner.show(psa.vismod, self._world_model.state)
+        self._world_model.show(psa.vismod)

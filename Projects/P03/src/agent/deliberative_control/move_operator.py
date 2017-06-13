@@ -1,6 +1,7 @@
-from accao import Mover
+from psa.util import mover
 from psa5 import dist
 from pee.modprob.operador import Operador
+from psa5.accao import Mover
 
 
 class MoveOperator(Operador):
@@ -15,10 +16,10 @@ class MoveOperator(Operador):
         return self._action
 
     def aplicar(self, state):
-        new_state = Mover.mover(self._state, self._angle)
+        new_state = mover(state, self._angle)
         element = self._world_model.obtain_elements(state)
 
-        if element is not 'obs':
+        if element is not 'obst':
             return new_state
 
         return None

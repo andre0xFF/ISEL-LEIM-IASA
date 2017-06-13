@@ -1,7 +1,9 @@
-# psa.vis(1)
-# limpar()
-# elementos(dicionario_elementos)
-# plano(posicicao_inicial, plano)
+import sys
+
+sys.path.append('./lib')
+sys.path.append('./lib/psa')
+sys.path.append('./lib/pee')
+sys.path.append('./agent')
 
 import psa
 from lib.planner.pee.planner_pee import PlannerPEE
