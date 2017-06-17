@@ -23,7 +23,7 @@ class DeliberativeControl(Control):
         #     if element == 'alvo':
         #         self._objectives.append(state)
 
-        self._objectives = [state for state in self._world_model.states if self._world_model.obtain_elements(state) == 'alvo' ]
+        self._objectives = [state for state in self._world_model.states if self._world_model.obtain_elements(state) == 'alvo']
 
     def _plan(self):
         # means

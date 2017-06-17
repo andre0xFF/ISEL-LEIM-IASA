@@ -24,4 +24,4 @@ class GreedyActionSelection(ActionSelection):
         return max(self._actions, key=lambda action: self._learning_memory.acquire((state, action)))
 
     def explore(self, state):
-        choice(self._actions)
+        return choice(self._actions)

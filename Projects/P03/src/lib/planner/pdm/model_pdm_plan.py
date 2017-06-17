@@ -8,6 +8,10 @@ class ModelPDMPlan(ModelPDM, ModelPlanner):
         self._model_planner = model_planner
         self._objectives = objectives
         self._rmax = 1
+        self._S = None
+        self._A = None
+        self._T = []
+        self._R = None
 
     def start_model(self, model_planner):
         self._S = model_planner.states()
@@ -19,7 +23,7 @@ class ModelPDMPlan(ModelPDM, ModelPlanner):
 
     def _generate_model(self, s, a):
         # simulate the transition
-        sn = a.aplicar(a)
+        sn = a.aplicar(s)
 
         if sn is None:
             self._T[(s, a)] = []
@@ -28,7 +32,7 @@ class ModelPDMPlan(ModelPDM, ModelPlanner):
             self._R[(s, a, sn)] = self._generate_reward(s, a, sn)
 
     def _generate_reward(self, s, a, sn):
-        r = -1 * a.custo()
+        r = -1 * a.custo(s, sn)
 
         if sn in self._objectives:
             r += self._rmax
@@ -36,10 +40,12 @@ class ModelPDMPlan(ModelPDM, ModelPlanner):
         return r
 
     def S(self):
-        return self._S
+        if self._S is not None:
+            return self._S
 
     def A(self, state):
-        return self._A
+        if self._A is not None:
+            return self._A
 
     def T(self, state, operator):
         return self._T.get((state, operator))

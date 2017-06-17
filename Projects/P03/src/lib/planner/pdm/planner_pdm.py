@@ -7,7 +7,7 @@ class PlannerPDM(Planner):
         # TODO
         pass
 
-    def plan(self, model_planner, initial_state, objectives):
+    def plan(self, model_planner, state, objectives):
         # generate a plan based on the world model
         # iniciar ModeloPDMPlan
         # utilidade, politica = plan.resolver(ModeloPDMPlan)
@@ -16,7 +16,7 @@ class PlannerPDM(Planner):
         # pi(s) = a
         pass
 
-    def obtain_action(self, state):
+    def obtain_action(self, s):
         pass
 
     def pending_plan(self):

@@ -1,8 +1,5 @@
 class Planner():
 
-    def __init__(self):
-        abstract
-
     def plan(self, model_planner, initial_state, objectives):
         # generate a plan based on the world model
         abstract

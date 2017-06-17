@@ -26,16 +26,16 @@ class PDM(ModelPDM):
 
         return U
 
-    def utility_action(self, state, operator, U, model):
+    def utility_action(self, s, a, U, model):
         R = model.R
         T = model.T
 
-        return sum(p * (R(state, operator, sn) + self._gamma * U[sn]) for (p, sn) in T(s, a))
+        return sum(p * (R(s, a, sn) + self._gamma * U[sn]) for (p, sn) in T(s, a))
 
     def policy(self, U, model):
         S = model.S
         A = model.A
-        policy = []
+        policy = {}
 
         for state in S():
             policy[state] = max(A(state), key=lambda action: self.utility_action(state, action, U, model))

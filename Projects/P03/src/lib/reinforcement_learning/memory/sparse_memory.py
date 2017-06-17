@@ -4,7 +4,7 @@ from reinforcement_learning.memory.learning_memory import LearningMemory
 class SparseMemory(LearningMemory):
     # Desorganized memory
 
-    def __init__(self, value_omission=0):
+    def __init__(self, value_omission=0.0):
         self._value_omission = value_omission
         self._memory = {}
 

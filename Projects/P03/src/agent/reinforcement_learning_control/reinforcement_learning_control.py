@@ -15,9 +15,9 @@ class ReinforcementLearningControl(Control):
         sn = perception.posicao
 
         if self._state is not None:
-            a = perception.orientacao
+            action = perception.orientacao
             reward = self._generate_reward(perception)
-            self._learning_mechanism.learn(self._state, a, reward, sn)
+            self._learning_mechanism.learn(self._state, action, reward, sn)
 
         an = self._learning_mechanism.select_action(sn)
         self._state = sn
