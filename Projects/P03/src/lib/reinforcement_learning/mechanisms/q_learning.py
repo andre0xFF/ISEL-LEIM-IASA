@@ -11,7 +11,6 @@ class QLearning(ReinforcementLearning):
     def learn(self, state, action, r, next_state):
         next_action = self._action_selection.max_action(next_state)
         qsa = self._learning_memory.acquire(state, action)
-        qsnan = self._learning_memory(next_state, next_action)
-        # before: q = qsa + self._alpha * (r + self._gamma * qsnan - qsa)
-        q = self._learning_memory.update(state, action, qsnan)
+        qsnan = self._learning_memory.acquire(next_state, next_action)
+        q = qsa + self._alpha * (r + self._gamma * (qsnan - qsa))
         self._learning_memory.update(state, action, q)

@@ -1,3 +1,4 @@
+import psa
 from agent.control import Control
 from agent.deliberative_control.world_model import WorldModel
 
@@ -7,6 +8,7 @@ class DeliberativeControl(Control):
     def __init__(self, planner):
         self._planner = planner
         self._world_model = WorldModel()
+        self._objectives = []
 
     def _reconsider(self):
         return self._world_model or self._planner.pending_plan()
@@ -33,7 +35,7 @@ class DeliberativeControl(Control):
             self._planner.finish_plan()
 
     def execute(self):
-        action = self._planner.obtain_action('')
+        action = self._planner.obtain_action(self._world_model.state)
 
         if action is not None:
             return action.action
@@ -48,6 +50,8 @@ class DeliberativeControl(Control):
             self._plan()
 
         action = self.execute()
+        self.show()
+
         return action
 
     def _take(self, perception):
@@ -55,6 +59,7 @@ class DeliberativeControl(Control):
         self._world_model.update(perception)
 
     def show(self):
-        psa.vismod.limpar()
-        self._planner.show(psa.vismod, self._world_model.state)
-        self._world_model.show(psa.vismod)
+        vismod = psa.vis(1)
+        vismod.limpar()
+        self._planner.show(vismod, self._world_model.state)
+        self._world_model.show(vismod)

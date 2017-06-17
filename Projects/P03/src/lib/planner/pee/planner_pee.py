@@ -28,3 +28,9 @@ class PlannerPEE(Planner):
 
     def finish_plan(self):
         self._plan = None
+
+    def show(self, vismod, state):
+        if self._plan:
+            vismod.campo(self._search_mechanism.obter_explorados())
+            # vismod.plano(state, self._plan)
+            # vismod.marcar([state], linha=1)

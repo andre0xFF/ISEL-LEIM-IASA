@@ -1,7 +1,6 @@
 from reinforcement_learning.action_selection.greedy_action_selection import GreedyActionSelection as ActionSelection
 from reinforcement_learning.mechanisms.q_learning import QLearning as ReinforcementLearning
 from reinforcement_learning.memory.sparse_memory import SparseMemory as LearningMemory
-from reinforcement_learning.reinforcement_learning import ReinforcementLearning
 
 
 class LearningMechanism():
@@ -22,4 +21,4 @@ class LearningMechanism():
     def show(self, s):
         psa.vismod.limpar()
         psa.vismod.aprendref(self._reinforcement_learning)
-        psa.visvec.accoesestado(s, self._actions, self._learning_memory)
+        psa.visvec.accoesestado(s, self._actions, self._learning_memory.memory)

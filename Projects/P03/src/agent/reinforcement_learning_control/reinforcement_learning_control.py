@@ -1,13 +1,14 @@
+from psa5.util import dirmov
 from agent.control import Control
 from psa5.actuador import Mover
-from reinforcement_learning_control.learning_mechanism import LearningMechanism
+from agent.reinforcement_learning_control.learning_mechanism import LearningMechanism
 
 
 class ReinforcementLearningControl(Control):
 
     def __init__(self):
         self._rmax = 100
-        actions = psa.util.dirmov()
+        actions = dirmov()
         self._learning_mechanism = LearningMechanism(actions)
         self._state = None
 

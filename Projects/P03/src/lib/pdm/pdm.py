@@ -1,4 +1,4 @@
-from pdm.model_pdm import ModelPDM
+from lib.pdm.model_pdm import ModelPDM
 
 
 class PDM(ModelPDM):
@@ -17,25 +17,31 @@ class PDM(ModelPDM):
             U_previous = U.copy()
             delta = 0
 
-            for s in S():
-                U[s] = max(self.utility_action(s, a, U_previous, model) for a in A(s))
-                delta = max(delta, abs(U[s] - U_previous[s]))
+            for state in S():
+                U[state] = max(self.utility_action(state, action, U_previous, model) for action in A(state))
+                delta = max(delta, abs(U[state] - U_previous[state]))
 
             if delta < self._delta_max:
                 break
 
         return U
 
-    def utility_action(self, s, a, U, model):
+    def utility_action(self, state, action, U, model):
         R = model.R
         T = model.T
 
-        return sum(p * (R(s, a, sn) + self._gamma * U[sn]) for (p, sn) in T(s, a))
+        total = 0
+        for (p, sn) in T(state, action):
+            total += p * R(state, action, sn) + self._gamma * U[sn]
+
+        return total
+
+        # return sum(p * (R(state, action, sn) + self._gamma * U[sn]) for p, sn in T(state, action))
 
     def policy(self, U, model):
         S = model.S
         A = model.A
-        policy = {}
+        policy = {s: 0 for s in S()}
 
         for state in S():
             policy[state] = max(A(state), key=lambda action: self.utility_action(state, action, U, model))

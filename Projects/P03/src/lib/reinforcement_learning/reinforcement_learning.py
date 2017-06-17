@@ -1,4 +1,4 @@
-class ReinforcementLearning():
+class ReinforcementLearning(object):
 
     def __init__(self, learning_memory, action_selection):
         self._learning_memory = learning_memory

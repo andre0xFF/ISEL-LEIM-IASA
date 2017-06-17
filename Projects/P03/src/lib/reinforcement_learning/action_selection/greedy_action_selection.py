@@ -13,15 +13,17 @@ class GreedyActionSelection(ActionSelection):
 
     def select_action(self, state):
         if random() > self._epsilon:
+            # Greed
             action = self.max_action(state)
         else:
+            # Explore
             action = self.explore(state)
 
         return action
 
     def max_action(self, state):
         shuffle(self._actions)
-        return max(self._actions, key=lambda action: self._learning_memory.acquire((state, action)))
+        return max(self._actions, key=lambda action: self._learning_memory.acquire(state, action))
 
     def explore(self, state):
         return choice(self._actions)

@@ -7,15 +7,16 @@ class ModelPDMPlan(ModelPDM, ModelPlanner):
     def __init__(self, model_planner, objectives):
         self._model_planner = model_planner
         self._objectives = objectives
-        self._rmax = 1
-        self._S = None
-        self._A = None
-        self._T = []
-        self._R = None
+        self._rmax = 50
+        self._S = []
+        self._A = []
+        self._T = {}
+        self._R = {}
+        self.start_model(self._model_planner)
 
     def start_model(self, model_planner):
-        self._S = model_planner.states()
-        self._A = model_planner.operators()
+        self._S = model_planner.states
+        self._A = model_planner.operators
 
         for s in self._S:
             for a in self._A:

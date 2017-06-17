@@ -18,3 +18,7 @@ class SparseMemory(LearningMemory):
             return q
         else:
             return self._value_omission
+
+    @property
+    def memory(self):
+        return self._memory

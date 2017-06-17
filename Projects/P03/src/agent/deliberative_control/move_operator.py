@@ -1,7 +1,7 @@
-from psa.util import mover
-from psa5 import dist
-from pee.modprob.operador import Operador
+from psa5.util import mover
+from psa5.util import dist
 from psa5.accao import Mover
+from pee.modprob.operador import Operador
 
 
 class MoveOperator(Operador):
@@ -17,12 +17,17 @@ class MoveOperator(Operador):
 
     def aplicar(self, state):
         new_state = mover(state, self._angle)
-        element = self._world_model.obtain_elements(state)
+        # TODO state / new_state ?
+        element = self._world_model.obtain_elements(new_state)
 
-        if element is not 'obst':
+        # if element is not 'obst':
+        #     return new_state
+        if element in ['vazio', 'alvo']:
             return new_state
+        else:
+            return None
 
-        return None
+        # return None
 
     def custo(self, state, new_state):
         return max(dist(state, new_state), 1)
