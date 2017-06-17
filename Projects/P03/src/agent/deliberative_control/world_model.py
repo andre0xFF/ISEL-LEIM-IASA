@@ -47,4 +47,3 @@ class WorldModel(ModelPlanner):
     def show(self, vismod):
         pass
         # targets = {k: v for (k, v) in self._elements.items(if v in ['alvo', 'obst'])}
-
