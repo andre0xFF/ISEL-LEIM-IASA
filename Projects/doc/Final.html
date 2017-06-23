@@ -8,11 +8,16 @@
   <link rel="stylesheet" href="http://app.classeur.io/base-min.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <style>
+    img[src*='#right']{ float: right; margin: auto; border: 10px; display: block; }
+    img[src*='#left']{ float: left; margin: auto; border: 10px; display: block; }
+    img[src*='#center']{ float: center; margin: auto; border: 10px; display: block; }
+  </style>
 </head>
 
 <body style="font-family: 'Open Sans', sans-serif;">
-  <div class="export-container"><div align="center">
-	<img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1465765206/j2ocvfzcvgk8dxjkilvv.png">
+  <div class="export-container"><p><img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1465765206/j2ocvfzcvgk8dxjkilvv.png#center" alt="ISEL"></p>
+<div align="center">
 	<h1>
 		<p>Instituto Superior de Engenharia de Lisboa</p>
 		<p>Artificial Intelligence for Autonomous Systems</p>
@@ -38,9 +43,7 @@
 <li><a href="#conclusions">Conclusions</a></li>
 </ol>
 <hr>
-<div align="center">
-	<img src="https://readwrite.com/wp-content/uploads/iStock-586712790-e1496714940902.jpg">
-</div>
+<p><img src="https://readwrite.com/wp-content/uploads/iStock-586712790-e1496714940902.jpg#center" alt=""></p>
 <blockquote>
 <p><em>“We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.”</em> - Roy Amara<br>
 <br></p>
@@ -79,23 +82,45 @@
 <li>Autonomous vehicles: Vehicles that can drive autonomously without the intervention of a human.</li>
 </ul>
 <h1 id="intelligent-agents">Intelligent agents</h1>
-<ul>
-<li>What is an agent</li>
-<li>Agent vs objects</li>
-<li><sup class="footnote-ref"><a href="#fn3" id="fnref3:1">3</a></sup></li>
-</ul>
-<p>An agent perceives its own environment and act upon that environment to achieve a certain task. An agent could be seen as a function <code>f</code> that goes from something that he perceives <code>P</code> to a set of actions <code>A</code>.</p>
-<div align="center">
-	<img src="https://latex.codecogs.com/gif.latex?f:&amp;space;P&amp;space;\rightarrow&amp;space;A" title="f: P \rightarrow A">
-</div>
-<p>Rational agents can be defined as agents that do the right thing and rationality is relative to how to act in order to maximize a performance measure - factor that describes how well the agent is doing when performing a certain task to reach a certain goal.</p>
-<h2 id="agent-and-environments">Agent and environments</h2>
+<p>An <strong>agent</strong> perceives its own environment and act upon that environment to achieve a certain task. It can be seen as a function <code>f</code> that goes from something that he perceives <code>P</code> to a set of actions <code>A</code>.</p>
+<p><img src="https://latex.codecogs.com/gif.latex?f%3AP%5Crightarrow%20A#center" alt="Agent function"></p>
+<p>In general intelligent agents are composed by sensors that sense the environment and get percepts from it and actuators that act upon that environment. These generated actions are a byproduct of thinking and deliberating given on what its observed or sensed from the environment — the cycle or the loop of an agent.</p>
+<p><img src="https://i.imgur.com/E3dXwhU.png#center" alt="Agent initial design"></p>
+<p>A human agent has eyes and ears as sensors and hands, legs, mouth and other body parts as actuators while a robotic agent would have cameras and motion sensors and multiple motors as actuators. Examples of robotic agents: thermostats, smartphones, self-driving cars, vacuum cleaners.</p>
 <h2 id="rationality">Rationality</h2>
+<p>An agent should do its best given what it is observing and given whatever background knowledge the agent has, more specifically rationality is relative to a <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>.</p>
+<p>Rational agents can be defined as agents that do the right thing and rationality is relative to how to act in order to maximize a <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr> — factor that describes how well the agent is doing when performing a certain task to reach a certain goal. An agent must then figure out the actions or a set of actions that lead to the goal while considering the impact of its actions on future states.</p>
+<blockquote>
+<p>“For each possible percept sequence, a rational agent should select an action that is expected to maximize its <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>, given the evidence provided by the percept sequence and whatever built-in knowledge the agent has.”<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">3</a></sup></p>
+</blockquote>
+<h2 id="agent-properties">Agent properties</h2>
+<p>The properties of a rational agent can be grouped under the acronym PEAS (Performance, Environment, Actuators, Sensor). These definitions are actually the problem specifications, for the task environment that the rational agent is meant to solve.</p>
+<p>Considering the PEAS for a self-driving car: The performance could be the safety of the passengers, obedience of driving rules (stopping at red lights or driving under speed limit for example); the environment is all the roads, other cars, pedestrians, road signs; the actuators are everything that makes the car move, steering, brakes; the sensors include a camera, a sonar, a GPS, a speedometer.</p>
+<h2 id="environment-properties">Environment properties</h2>
+<p>Agents can operate in a multitude of environments. These environments need to be categorized in order to assess the agent’s sensors and actuators.</p>
 <ul>
-<li>Notions of intelligence, cognition and rationality</li>
-<li>Different types of rationality</li>
+<li>
+<p><strong>Fully observable</strong> (vs <strong>partially observable</strong>): An agent’s sensors give it access to the complete state of the environment at each point in time;</p>
+</li>
+<li>
+<p><strong>Deterministic</strong> (vs <strong>stochastic</strong>): The next state of the environment is completely determined by the current state and the action executed by the agent. On the opposite there is a non-deterministic environment, or stochastic, in which uncertainty about outcomes is modeled or quantified in terms of probabilities;</p>
+</li>
+<li>
+<p><strong>Episodic</strong> (vs <strong>sequential</strong>): The agent’s experience is divided into atomic “episodes” (each episode consists of the agent perceiving and then performing a single action), and the choice of action in each episode depends only on the episode itself;</p>
+</li>
+<li>
+<p><strong>Static</strong> (vs <strong>dynamic</strong>): The environment is unchanged while an agent is deliberating. It can also be called semi-dynamic if the environment does not change with the passage of time but the agent’s performance score does;</p>
+</li>
+<li>
+<p><strong>Discrete</strong> (vs <strong>continuos</strong>): A limited number of distinct, clearly and well defined percepts and actions;</p>
+</li>
+<li>
+<p><strong>Single agent</strong> (vs <strong>multiagent</strong>): An agent operating by itself in an environment;</p>
+</li>
+<li>
+<p><strong>Known</strong> (vs <strong>unknown</strong>): The designer of the agent may have knowledge about the environment.</p>
+</li>
 </ul>
-<h2 id="environments">Environments</h2>
 <h2 id="agent-architecture">Agent architecture</h2>
 <ul>
 <li>BDI architecture</li>
@@ -103,10 +128,11 @@
 <li><a href="http://www.pucrs.br/facin-prov/wp-content/uploads/sites/19/2016/03/tr008.pdf">http://www.pucrs.br/facin-prov/wp-content/uploads/sites/19/2016/03/tr008.pdf</a></li>
 <li><a href="http://www.dca.fee.unicamp.br/~gudwin/courses/IA889/2014/IA889-05.pdf">http://www.dca.fee.unicamp.br/~gudwin/courses/IA889/2014/IA889-05.pdf</a></li>
 </ul>
-<h2 id="types-of-agents">Types of agents</h2>
+<h2 id="types-of-intelligent-agents">Types of intelligent agents</h2>
 <ul>
 <li>Main types of agent architectures and how they they use the notions of intelligence, cognition and rationality.</li>
 <li>Internal representation of reactive and deliberation architectures.</li>
+<li>edx week 2 types of intelligent agents</li>
 </ul>
 <h3 id="simple-reflex-agents">Simple reflex agents</h3>
 <h3 id="model-based-reflex-agents">Model-based reflex agents</h3>
@@ -119,6 +145,12 @@
 <li><sup class="footnote-ref"><a href="#fn3" id="fnref3:2">3</a></sup></li>
 <li><sup class="footnote-ref"><a href="#fn4" id="fnref4">4</a></sup></li>
 </ul>
+<p>An <strong>action</strong> or set of actions can be called a <strong>path</strong>, that will lead to a certain goal and paths may come in different costs or depths. Paths are explored using <a href="#uninformed-search-strategies">uninformed search strategies</a> or <a href="#informed-search-strategies">informed search strategies</a>.</p>
+<p>The 8 queen problem is a typical problem where search strategies are used to reach the goal of placing 8 queens, on a chess board, so that no queen is attacking any other horizontally, vertically or diagonally. The algorithm will search for possible configurations where no queen attacks another one.</p>
+<p><img src="http://mathworld.wolfram.com/images/eps-gif/QueensMin_700.gif#center" alt="8 queen problem"></p>
+<p>Another practical use is route finding between two cities. For example to go from Lisbon to Madrid there are several routes that can be chosen, but which one is the optimal route? This problem can be analysed considering a map represented by a <strong>graph</strong> in which the nodes represent cities and the edges represent the roads.</p>
+<p><img src="https://i.imgur.com/5E0mHkZ.png#center" alt="Graph of cities"></p>
+<p>There are multiple ways on how to perform a search to find the optimal route; once the optimal solution is found then the agent can execute the path: The optimal route is Lisbon → Coimbra → Madrid.</p>
 <h2 id="uninformed-search-strategies">Uninformed search strategies</h2>
 <h3 id="breadth-first-search">Breadth-first search</h3>
 <h3 id="uniform-cost-search">Uniform-cost search</h3>
@@ -134,6 +166,9 @@
 <h1 id="markov-decision-process">Markov decision process</h1>
 <h2 id="finding-optimal-policy">Finding optimal policy</h2>
 <h1 id="reinforcement-learning">Reinforcement learning</h1>
+<p>In reinforcement learning agents learn from reinforcement or delayed reward.<br>
+Learning approaches for decision making in situation where outcome are stochastic, involves an agent that continued to plan and learn to effect its environment.<br>
+RL agents are driven by maximizing the reward on the long run.</p>
 <ul>
 <li>Definition of RL</li>
 </ul>
@@ -155,7 +190,10 @@
 <h2 id="implementation-2">Implementation</h2>
 <h2 id="verification-and-validation-2">Verification and validation</h2>
 <h1 id="conclusions">Conclusions</h1>
-<p>One of the great promises of <abbr title="Artificial Intelligence">AI</abbr> is its potential to help us unearth new knowledge in complex domains. We’ve already seen exciting glimpses of this, when our algorithms found ways to dramatically improve energy use in data centres - as well as of course with our program AlphaGo.</p>
+<p><abbr title="Artificial Intelligence">AI</abbr> is a complex topic because it involves major components like languages, reasoning, knowledge, learning and understanding<sup class="footnote-ref"><a href="#fn5" id="fnref5">5</a></sup>. It’s also a broad topic with high impact on humanity and society.</p>
+<p><abbr title="Artificial Intelligence">AI</abbr> systems, do not have to model human or nature but may be inspired by human or nature, similar to an airplane and a bird.</p>
+<p>The public opinion is whether <abbr title="Artificial Intelligence">AI</abbr> is a threat to humankind. Indeed <abbr title="Artificial Intelligence">AI</abbr> may raise some uncertainty about the future and whether people’s jobs will be replaced by <abbr title="Artificial Intelligence">AI</abbr> systems or whether <abbr title="Artificial Intelligence">AI</abbr> would take over the world just like in the movies. This comes from all kinds of people, even people with bright minds like Stephen Hawkins. This kind of concern tell us one thing, that <abbr title="Artificial Intelligence">AI</abbr> is a very powerful tool that is still in the beginning.</p>
+<p>One of the great promises of <abbr title="Artificial Intelligence">AI</abbr> is its potential to help us unearth new knowledge in complex domains. We’ve already seen exciting glimpses of this, when our algorithms found ways to dramatically improve energy use in data centers - as well as of course with our program AlphaGo.</p>
 <p>UML:<br>
 <a href="https://softwareengineering.stackexchange.com/questions/305031/why-is-uml-not-used-in-most-free-software-e-g-on-linux">https://softwareengineering.stackexchange.com/questions/305031/why-is-uml-not-used-in-most-free-software-e-g-on-linux</a><br>
 <a href="https://www.quora.com/Why-should-I-use-or-not-use-UML">https://www.quora.com/Why-should-I-use-or-not-use-UML</a></p>
@@ -172,6 +210,8 @@ The term artificial intelligence is thrown around a lot these days, but usually,
 <li id="fn3" class="footnote-item"><p>S. Russell and P. Norvig. Artificial Intelligence: A Modern Approach, chapter 4. Prentice Hall, 2nd edition, 2003. <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a> <a href="#fnref3:2" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p>Preparing for the future of artificial intelligence - Executive Office of the President National Science and Technology Council  Committee on Technology <a href="https://obamawhitehouse.archives.gov/sites/default/files/whitehouse_files/microsites/ostp/NSTC/preparing_for_the_future_of_ai.pdf">↗</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>“Computing machinery and intelligence” (1950) - Alan Turing <a href="#fnref5" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section></div>
