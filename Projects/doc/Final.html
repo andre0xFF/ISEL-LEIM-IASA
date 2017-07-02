@@ -46,18 +46,26 @@
 <p><img src="https://readwrite.com/wp-content/uploads/iStock-586712790-e1496714940902.jpg#center" alt=""></p>
 <blockquote>
 <p><em>“We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.”</em> - Roy Amara<br>
+<br><br>
 <br></p>
 </blockquote>
-<br>
 <h1 id="introduction">Introduction</h1>
 <p>This final report aims to describe and explain all the subjects studied in the Artificial Intelligence for Autonomous Systems class. During the semester three projects were developed with the provided architectural system models.</p>
 <p>The first project simulates the interactions between an agent and an environment which the agent belongs to. When the simulation starts the gatekeeper goes into patrol mode. In case of hearing a noise the gatekeeper inspects the area, searching for the noise’s origin. If there is no longer any noise, then he continues to patrol. At any time the gatekeeper may encounter an enemy and in that case he must protect the area and warn the foe to retreat. In this situation, if the enemy backs off, he will remain inspecting the area for any source of noise. In case the enemy persists, the gatekeeper will have to defend himself and fight the threat. In combat situation two actions may occur. The gatekeeper can be victorious and defeat the enemy and, then, he goes back to patrol; or in case of defeat the simulation is restarted. The interaction, at any level, is made by text inputs and outputs.</p>
-<p>The second project implement an autonomous resolution system of the 8 puzzle problem. The initial problem presents two puzzle configurations to be solved, but the main objective is to develop a solution that is able to solve any kind of puzzle configuration or, even further, any kind of problem that fits the developed problem model. The 8 puzzle problem is a smaller version of the slightly better known 15 puzzle game. The puzzle consists of an area divided into a grid of 3 by 3. On each grid square is a tile, except for one square which remains empty. Thus, there are eight tiles. A tile that is next to the empty grid square can be moved into the empty space, leaving the previous position empty in turn. Tiles are numbered, 1 to 8, so that each tile can be uniquely identified. The puzzle is solved using multiple search algorithms such as bread-first search, depth-first search and other variants.</p>
-<p>The last project (…)</p>
+<p>The second project implement an autonomous resolution system of the 8 puzzle problem. The initial problem presents two puzzle configurations to be solved, but the main objective is to develop a solution that is able to solve any kind of puzzle configuration or, even further, any kind of problem that fits the developed problem model. The puzzle consists of an area divided into a grid of 3 by 3. On each grid square is a tile, except for one square which remains empty. Thus, there are eight tiles. A tile that is next to the empty grid square can be moved into the empty space, leaving the previous position empty in turn. Tiles are numbered, 1 to 8, so that each tile can be uniquely identified. The puzzle is solved using multiple search algorithms such as bread-first search, depth-first search and other variants.</p>
+<p>The third and last project (…)</p>
 <p>Before going into the projects analysis and resolutions (…)</p>
+<p><a href="https://github.com/andrewfonseca/IASA">https://github.com/andrewfonseca/<abbr title="Artificial Intelligence for Autonomous Systems">IASA</abbr></a></p>
 <h1 id="artificial-intelligence-overview">Artificial intelligence overview</h1>
 <p><abbr title="Artificial Intelligence">AI</abbr> has always intrigued people, from TV shows, movies and marketing using robots with pseudo-intelligence. It is the perfect topic to craft thrillers, adventures and dramas, just like the well known Terminator movie or the brilliant Westworld TV show.</p>
-<p>The most basic definition of intelligence is: <em>the ability to learn and solve problems.</em><sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> This is regardless of being human intelligence or machine intelligence. So artificial intelligence could be described as the <em>intelligence exhibited by machines or software.</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup> To be more specific it’s the study and design of intelligent agents - a system that perceives it’s environment and takes actions that maximizes its chances of success.<sup class="footnote-ref"><a href="#fn3" id="fnref3">3</a></sup></p>
+<p>The most basic definition of intelligence is: <em>the ability to learn and solve problems.</em><sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> This is regardless of being human intelligence or machine intelligence. So artificial intelligence could be described as the <em>intelligence exhibited by machines or software.</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup> To be more specific it’s the study and design of intelligent agents - a system that perceives it’s environment and takes actions that maximizes its chances of success.<sup class="footnote-ref"><a href="#fn3" id="fnref3">3</a></sup> In general an intelligent agent should be able to calculate, reason, perceive relationships and analogies, learn from experience, sore and retrieve information from memory, solve problems, comprehend complex ideas, use natural language fluently, classify, generalize and adapt to new situations.<sup class="footnote-ref"><a href="#fn4" id="fnref4">4</a></sup></p>
+<h2 id="difference-between-human-and-machine-intelligence">Difference between Human and Machine intelligence</h2>
+<p>What are the differences between Human and Machine Intelligence? - The answer to this question may be vast and may change in the future, when new technologies or biological processes are discovered. Right now the main differences are:</p>
+<ul>
+<li>Humans perceive by patterns whereas a machine perceive by a set of rules and data;</li>
+<li>Humans store and recall information by patterns, machines do it by searching algorithms;</li>
+<li>Humans can figure out the complete object even if some part of it is missing or distorted; whereas the machines can only do it by searching through out all possible solutions.</li>
+</ul>
 <h2 id="definition-throughout-history">Definition throughout history</h2>
 <p>As history goes on the definition of <abbr title="Artificial Intelligence">AI</abbr> has changed and four approaches mastered their own definition.</p>
 <h3 id="thinking-humanly">Thinking humanly</h3>
@@ -72,31 +80,52 @@
 <h2 id="applications">Applications</h2>
 <p><abbr title="Artificial Intelligence">AI</abbr> is present in people’s daily lives without their awareness. Some applications:</p>
 <ul>
-<li>Speech recognition:  Used by virtual assistants like Google Now, Siri and Amazon Echo;</li>
-<li>Hand writing recognition: Used by banks to recognize checks information;</li>
-<li>Machine translation: To translate sentences from one language to another;</li>
-<li>Robotics: Robots can be used in many fields such as robotics surgery, navigation etc;</li>
-<li>Spam filters: Used by email clients to filter out spam emails. These filters can learn over time based on user actions and classification techniques;</li>
-<li>Face recognition: Used to identify faces and people’s emotions in photographs and videos;</li>
-<li>Medical imaging: Used to analyze patient’s exams and detect diseases;</li>
-<li>Autonomous vehicles: Vehicles that can drive autonomously without the intervention of a human.</li>
+<li>
+<p>Speech recognition:  Used by virtual assistants like Google Now, Siri and Amazon Echo;</p>
+</li>
+<li>
+<p>Hand writing recognition: Used by banks to recognize checks information;</p>
+</li>
+<li>
+<p>Machine translation: To translate sentences from one language to another;</p>
+</li>
+<li>
+<p>Robotics: Robots can be used in many fields such as robotics surgery, navigation etc;</p>
+</li>
+<li>
+<p>Spam filters: Used by email clients to filter out spam emails. These filters can learn over time based on user actions and classification techniques;</p>
+</li>
+<li>
+<p>Face recognition: Used to identify faces and people’s emotions in photographs and videos;</p>
+</li>
+<li>
+<p>Medical imaging: Used to analyze patient’s exams and detect diseases;</p>
+</li>
+<li>
+<p>Autonomous vehicles: Vehicles that can drive autonomously without the intervention of a human.</p>
+</li>
 </ul>
 <h1 id="intelligent-agents">Intelligent agents</h1>
-<p>An <strong>agent</strong> perceives its own environment and act upon that environment to achieve a certain task. It can be seen as a function <code>f</code> that goes from something that he perceives <code>P</code> to a set of actions <code>A</code>.</p>
+<p>An <strong>agent</strong> is anything that can perceive its environment through sensors and act upon that environment through actuators. It can be seen as a function <code>f</code> that goes from something that he perceives <code>P</code> to a set of actions <code>A</code>.</p>
 <p><img src="https://latex.codecogs.com/gif.latex?f%3AP%5Crightarrow%20A#center" alt="Agent function"></p>
-<p>In general intelligent agents are composed by sensors that sense the environment and get percepts from it and actuators that act upon that environment. These generated actions are a byproduct of thinking and deliberating given on what its observed or sensed from the environment — the cycle or the loop of an agent.</p>
-<p><img src="https://i.imgur.com/E3dXwhU.png#center" alt="Agent initial design"></p>
+<p>These generated actions are a byproduct of thinking and deliberating given on what its observed or sensed from the environment — the cycle or the loop of an agent.</p>
 <p>A human agent has eyes and ears as sensors and hands, legs, mouth and other body parts as actuators while a robotic agent would have cameras and motion sensors and multiple motors as actuators. Examples of robotic agents: thermostats, smartphones, self-driving cars, vacuum cleaners.</p>
+<p><img src="https://i.imgur.com/r0yfFVo.png#center" alt="Agent-Environment"></p>
+<h2 id="agent-properties">Agent properties</h2>
+<p>The properties of a rational agent can be grouped under the acronym PEAS (Performance, Environment, Actuators, Sensor). These definitions are actually the problem specifications, for the task environment that the rational agent is meant to solve:</p>
+<ul>
+<li>Performance: Which qualities it should have?</li>
+<li>Environment: Where it should act?</li>
+<li>Actuators: How will it perform actions?</li>
+<li>Sensors: How will it perceive environment?</li>
+</ul>
+<p>Considering the PEAS for a self-driving car: The performance could be the safety of the passengers, obedience of driving rules (stopping at red lights or driving under speed limit for example); the environment is all the roads, other cars, pedestrians, road signs; the actuators are everything that makes the car move, steering, brakes; the sensors include a camera, a sonar, a GPS, a speedometer.</p>
 <h2 id="rationality">Rationality</h2>
-<p>An agent should do its best given what it is observing and given whatever background knowledge the agent has, more specifically rationality is relative to a <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>.</p>
-<p>Rational agents can be defined as agents that do the right thing and rationality is relative to how to act in order to maximize a <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr> — factor that describes how well the agent is doing when performing a certain task to reach a certain goal. An agent must then figure out the actions or a set of actions that lead to the goal while considering the impact of its actions on future states.</p>
+<p>An agent should do its best given what it is observing and past experience and knowledge the agent has. A rational agents is an agent that does the right thing and rationality is relative to how to act in order to maximize a <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr> — factor that describes how well the agent is doing when performing a certain task to reach a certain goal. An agent must then figure out the actions or a set of actions that lead to the goal while considering the impact of its actions on future states.</p>
 <blockquote>
 <p>“For each possible percept sequence, a rational agent should select an action that is expected to maximize its <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>, given the evidence provided by the percept sequence and whatever built-in knowledge the agent has.”<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">3</a></sup></p>
 </blockquote>
-<h2 id="agent-properties">Agent properties</h2>
-<p>The properties of a rational agent can be grouped under the acronym PEAS (Performance, Environment, Actuators, Sensor). These definitions are actually the problem specifications, for the task environment that the rational agent is meant to solve.</p>
-<p>Considering the PEAS for a self-driving car: The performance could be the safety of the passengers, obedience of driving rules (stopping at red lights or driving under speed limit for example); the environment is all the roads, other cars, pedestrians, road signs; the actuators are everything that makes the car move, steering, brakes; the sensors include a camera, a sonar, a GPS, a speedometer.</p>
-<h2 id="environment-properties">Environment properties</h2>
+<h2 id="nature-of-environments">Nature of environments</h2>
 <p>Agents can operate in a multitude of environments. These environments need to be categorized in order to assess the agent’s sensors and actuators.</p>
 <ul>
 <li>
@@ -121,48 +150,165 @@
 <p><strong>Known</strong> (vs <strong>unknown</strong>): The designer of the agent may have knowledge about the environment.</p>
 </li>
 </ul>
+<h2 id="types-of-intelligent-agents">Types of intelligent agents</h2>
+<p>There are four basic types of agents in order of increasing generality: simple reflex agents, mobile-based reflex agents, goal-based agents and utility-based agents. All of which can actually be generalized to learning agents that can improve their performance and generate better actions.</p>
+<h3 id="simple-reflex-agents">Simple reflex agents</h3>
+<p>Simple reflex agents choose their actions only based on the current percept. These type of agent lack rationality because the input percept is directly connected to an output action with a condition-action rules map. Their main disadvantages is that the environment must be completely observable and if they are deprived from one condition the agent might not know what to do unless it selects a default action.</p>
+<h3 id="model-based-reflex-agents">Model based reflex agents</h3>
+<p>Model-based agents use a model of the world to choose their actions, keeping an internal state. This model is based on how the world evolves and how the agent’s actions affect the world.</p>
+<h3 id="goal-based-agents">Goal-based agents</h3>
+<p>Goal-based agents choose their actions in order to achieve goals. This approach is more flexible than reflex agent since the knowledge supporting a decision is explicitly modeled, thereby allowing for modifications.</p>
+<h3 id="utility-based-agents">Utility-based agents</h3>
+<p>Utility-based agents choose actions based on a preference (utility) for each state with regard to the production of a good outcome. Sometimes achieving the desired goal is not enough, so things like probability of success, the resources needed to execute the scenario, the importance of the goal to be achieved, the time it will take, might all be factored in to the utility function calculations.</p>
+<h3 id="learning-agents">Learning agents</h3>
+<p>This type of agent was purposed by Alan Turing<sup class="footnote-ref"><a href="#fn5" id="fnref5">5</a></sup> where an agent is assembled with learning capabilities so that it can learn on his own or with assistance. This method allows the agent to operate in initially unknown environments and to become more competent than its initial knowledge alone might allow.</p>
+<p>A learning agent can be divided into four conceptual components:</p>
+<ul>
+<li>
+<p>Learning element: responsible for making improvements - learning with past experience;</p>
+</li>
+<li>
+<p>Performance element: responsible for selecting external actions;</p>
+</li>
+<li>
+<p>Critic: how well is the agent doing in comparison to a fixed performance standard;</p>
+</li>
+<li>
+<p>Problem generator: allows the agent to explore different possibilities and keep on learning.</p>
+</li>
+</ul>
 <h2 id="agent-architecture">Agent architecture</h2>
 <ul>
+<li>Internal representation of reactive and deliberation architectures.</li>
 <li>BDI architecture</li>
 <li><a href="http://transectscience.org/pdfs/vol1n1/1118_35.pdf">http://transectscience.org/pdfs/vol1n1/1118_35.pdf</a></li>
 <li><a href="http://www.pucrs.br/facin-prov/wp-content/uploads/sites/19/2016/03/tr008.pdf">http://www.pucrs.br/facin-prov/wp-content/uploads/sites/19/2016/03/tr008.pdf</a></li>
 <li><a href="http://www.dca.fee.unicamp.br/~gudwin/courses/IA889/2014/IA889-05.pdf">http://www.dca.fee.unicamp.br/~gudwin/courses/IA889/2014/IA889-05.pdf</a></li>
 </ul>
-<h2 id="types-of-intelligent-agents">Types of intelligent agents</h2>
-<ul>
-<li>Main types of agent architectures and how they they use the notions of intelligence, cognition and rationality.</li>
-<li>Internal representation of reactive and deliberation architectures.</li>
-<li>edx week 2 types of intelligent agents</li>
-</ul>
-<h3 id="simple-reflex-agents">Simple reflex agents</h3>
-<h3 id="model-based-reflex-agents">Model-based reflex agents</h3>
-<h3 id="goal-based-agents">Goal-based agents</h3>
-<h3 id="utility-based-agents">Utility-based agents</h3>
-<h3 id="learning-agents">Learning agents</h3>
 <h1 id="search-strategies">Search strategies</h1>
 <ul>
 <li><a href="https://github.com/shiffman/NOC-S17-2-Intelligence-Learning/tree/master/week1-graphs">https://github.com/shiffman/NOC-S17-2-Intelligence-Learning/tree/master/week1-graphs</a></li>
 <li><sup class="footnote-ref"><a href="#fn3" id="fnref3:2">3</a></sup></li>
-<li><sup class="footnote-ref"><a href="#fn4" id="fnref4">4</a></sup></li>
+<li><sup class="footnote-ref"><a href="#fn6" id="fnref6">6</a></sup></li>
 </ul>
 <p>An <strong>action</strong> or set of actions can be called a <strong>path</strong>, that will lead to a certain goal and paths may come in different costs or depths. Paths are explored using <a href="#uninformed-search-strategies">uninformed search strategies</a> or <a href="#informed-search-strategies">informed search strategies</a>.</p>
-<p>The 8 queen problem is a typical problem where search strategies are used to reach the goal of placing 8 queens, on a chess board, so that no queen is attacking any other horizontally, vertically or diagonally. The algorithm will search for possible configurations where no queen attacks another one.</p>
-<p><img src="http://mathworld.wolfram.com/images/eps-gif/QueensMin_700.gif#center" alt="8 queen problem"></p>
-<p>Another practical use is route finding between two cities. For example to go from Lisbon to Madrid there are several routes that can be chosen, but which one is the optimal route? This problem can be analysed considering a map represented by a <strong>graph</strong> in which the nodes represent cities and the edges represent the roads.</p>
-<p><img src="https://i.imgur.com/5E0mHkZ.png#center" alt="Graph of cities"></p>
-<p>There are multiple ways on how to perform a search to find the optimal route; once the optimal solution is found then the agent can execute the path: The optimal route is Lisbon → Coimbra → Madrid.</p>
-<h2 id="uninformed-search-strategies">Uninformed search strategies</h2>
-<h3 id="breadth-first-search">Breadth-first search</h3>
-<h3 id="uniform-cost-search">Uniform-cost search</h3>
-<h3 id="depth-first-search">Depth-first search</h3>
-<h3 id="iterative-deepening-search">Iterative deepening search</h3>
-<h3 id="comparing-uninformed-search-strategies">Comparing uninformed search strategies</h3>
-<h2 id="informed-search-strategies">Informed search strategies</h2>
+<p><img src="http://blogs.mathworks.com/images/steve/cody/eight-queens-sample-solution.png#center" alt="8 queen problem"></p>
+<p>The 8 queen problem is a typical problem where search strategies are used to reach the goal of placing 8 queens, on a chess board, so that no queen is attacking any other horizontally, vertically or diagonally. The algorithm will search for possible configurations where no queen attacks another one. The number of possible sequences is:</p>
+<p><img src="https://latex.codecogs.com/gif.latex?64%5Ctimes%2063%5Ctimes%2062%5Ctimes%20...%20%5Ctimes%2057%20=%201.8%5Ctimes10%5E%7B14%7D#center" alt="Number of possible sequences of the 8 queen problem"></p>
+<p>Another practical use is route finding between two cities. For example to go from Lisbon to Valencia there are several routes that can be chosen, but which one is the optimal route? This problem can be analysed considering a map represented by a <strong>graph</strong> in which the nodes represent cities and the edges represent the roads.</p>
+<p><img src="https://i.imgur.com/g79aWlU.png#center" alt="Graph of cities"></p>
+<p>There are multiple ways on how to perform a search to find the optimal route; once the optimal solution is found then the agent can execute the path: The optimal route is Lisbon → Coimbra → Madrid → Valencia.</p>
+<p>Problem solving as search can be defined through:</p>
+<ol>
+<li>What is the goal to achieve</li>
+<li>Problem formulation</li>
+</ol>
+<p>Problem solving is a two stage process:</p>
+<ol>
+<li>Search: “mental” exploration of several possibilities</li>
+<li>Execution of the solution found</li>
+</ol>
+<h2 id="problem-formulation">Problem formulation</h2>
+<ul>
+<li>
+<p>Initial state: the state in which the agent starts;</p>
+</li>
+<li>
+<p>States: all states reachable from the initial state by any sequence of actions (state space);</p>
+</li>
+<li>
+<p>Actions: possible actions available to the agent. At a state <code>s</code>, <code>Actions(s)</code> returns the set of actions that can be executed in state <code>s</code>;</p>
+</li>
+<li>
+<p>Transition model: a description of what each action does <code>Results(s, a)</code>;</p>
+</li>
+<li>
+<p>Goal test: determines if a given state is a goal state;</p>
+</li>
+<li>
+<p>Path cost: function that assigns a numeric cost to a path regarding some <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>.</p>
+</li>
+</ul>
+<h2 id="state-space-vs-search-space">State space vs search space</h2>
+<p>The state space is typically the physical configuration where the different state in which problem is evolving. In the 8 queen problem this would represent all possible boards. In contrast, a search space is an abstract configuration of the problem usually represented by a search tree or a graph.</p>
+<p>Search tree composition:</p>
+<ul>
+<li>Root: initial state;</li>
+<li>Branches: actions;</li>
+<li>Nodes: results from actions.</li>
+</ul>
+<p>Node composition:</p>
+<ul>
+<li>Parent;</li>
+<li>Children;</li>
+<li>Depth;</li>
+<li>Path cost;</li>
+<li>Associated state in the state space;</li>
+</ul>
+<p>Finally, a function called <code>expand</code> is defined. This function is responsible for creating all children nodes given a certain node.</p>
+<p><img src="https://i.imgur.com/olc3riM.png#center" alt="Search tree"></p>
+<h2 id="search-space-regions">Search space regions</h2>
+<p>The search space is divided into three regions:</p>
+<ol>
+<li>
+<p>Explored: Represent all the nodes that have already been visited in the search tree;</p>
+</li>
+<li>
+<p>Frontier: nodes that are about to be explored;</p>
+</li>
+<li>
+<p>Unexplored: the remaining nodes yet to be explored.</p>
+</li>
+</ol>
+<p>The essence of search strategies is to decide in which order the nodes will move from Unexplored → Frontier → Explored.</p>
+<h2 id="search-algorithm">Search algorithm</h2>
+<p><img src="https://i.imgur.com/vFS1ysV.png#center" alt="Search algorithm flow"></p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">search</span><span class="token punctuation">(</span>initial_state<span class="token punctuation">,</span> goal_test<span class="token punctuation">)</span>
+	returns SUCCESS or FAILURE<span class="token punctuation">:</span>
+
+	frontier <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	frontier<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>initial_state<span class="token punctuation">)</span>
+	explored <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">while</span> not frontier<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		state <span class="token operator">=</span> frontier<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		explored<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+
+		<span class="token keyword">if</span> <span class="token function">goal_test</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			<span class="token keyword">return</span> <span class="token function">SUCCESS</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+		
+		<span class="token keyword">for</span> neighbor <span class="token keyword">in</span> state<span class="token punctuation">.</span><span class="token function">neighbors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+			frontier<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>neighbor<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="search-strategies-1">Search strategies</h2>
+<p>Different search strategies are defined by how states are removed from the frontier data structure. These search strategies are called <a href="#uninformed-search-strategies">uninformed search strategies</a>.</p>
+<p>Search strategies are evaluated along the following dimensions:</p>
+<ul>
+<li>
+<p>Completeness: does it always find a solution if one exists?</p>
+</li>
+<li>
+<p>Time complexity: number of expanded nodes</p>
+</li>
+<li>
+<p>Space complexity: maximum number of nodes in memory</p>
+</li>
+<li>
+<p>Optimality: does it always find a least-cost solution?</p>
+</li>
+</ul>
+<h3 id="uninformed-search-strategies">Uninformed search strategies</h3>
+<h4 id="breadth-first-search">Breadth-first search</h4>
+<h4 id="uniform-cost-search">Uniform-cost search</h4>
+<h4 id="depth-first-search">Depth-first search</h4>
+<h4 id="iterative-deepening-search">Iterative deepening search</h4>
+<h4 id="comparing-uninformed-search-strategies">Comparing uninformed search strategies</h4>
+<h3 id="informed-search-strategies">Informed search strategies</h3>
 <ul>
 <li>Describe the heuristic function and define and use heuristic functions</li>
 </ul>
-<h3 id="greedy-best-first-search">Greedy best-first search</h3>
-<h3 id="a-search">A* search</h3>
+<h4 id="greedy-best-first-search">Greedy best-first search</h4>
+<h4 id="a-search">A* search</h4>
 <h1 id="markov-decision-process">Markov decision process</h1>
 <h2 id="finding-optimal-policy">Finding optimal policy</h2>
 <h1 id="reinforcement-learning">Reinforcement learning</h1>
@@ -176,24 +322,66 @@ RL agents are driven by maximizing the reward on the long run.</p>
 <h2 id="q-learning-algorithm">Q-Learning algorithm</h2>
 <h1 id="first-project">First project</h1>
 <h2 id="requirements-engineering">Requirements engineering</h2>
+<p>Simple reflex agent</p>
+<p>Environment properties:</p>
+<ul>
+<li>
+<p>Fully observable: Because it’s possible to visualize the whole game all the time;</p>
+</li>
+<li>
+<p>Single agent: Only one player is used;</p>
+</li>
+<li>
+<p>Deterministic: The next state can be predicted based on the current state and the player action;</p>
+</li>
+<li>
+<p>Static: There are no changes going on;</p>
+</li>
+<li>
+<p>Discrete: Because there is a finite number of things a player can do.</p>
+</li>
+</ul>
+<h3 id="problem-formulation-1">Problem formulation</h3>
 <h2 id="design">Design</h2>
+<h3 id="structural-view">Structural view</h3>
+<h3 id="interaction-view">Interaction view</h3>
+<h3 id="behavioral-view">Behavioral view</h3>
 <h2 id="implementation">Implementation</h2>
 <h2 id="verification-and-validation">Verification and validation</h2>
 <h1 id="second-project">Second project</h1>
+<p>Goal-based agent</p>
 <h2 id="requirements-engineering-1">Requirements engineering</h2>
+<h3 id="problem-formulation-2">Problem formulation</h3>
+<ul>
+<li>Initial state: any state;</li>
+<li>States: location of each of the 8 titles in the 3x3 grid;</li>
+<li>Actions: move the empty square left, right, up or down;</li>
+<li>Transition model: given a state and an action, returns the resulting state;</li>
+<li>Goal test: current state is equal to goal state;</li>
+<li>Path cost: total moves, each move costs 1.</li>
+</ul>
 <h2 id="design-1">Design</h2>
+<h3 id="structural-view-1">Structural view</h3>
+<h3 id="interaction-view-1">Interaction view</h3>
+<h3 id="behavioral-view-1">Behavioral view</h3>
 <h2 id="implementation-1">Implementation</h2>
 <h2 id="verification-and-validation-1">Verification and validation</h2>
 <h1 id="third-project">Third project</h1>
+<p>Utility-based agent</p>
 <h2 id="requirements-engineering-2">Requirements engineering</h2>
+<h3 id="problem-formulation-3">Problem formulation</h3>
 <h2 id="design-2">Design</h2>
+<h3 id="structural-view-2">Structural view</h3>
+<h3 id="interaction-view-2">Interaction view</h3>
+<h3 id="behavioral-view-2">Behavioral view</h3>
 <h2 id="implementation-2">Implementation</h2>
 <h2 id="verification-and-validation-2">Verification and validation</h2>
 <h1 id="conclusions">Conclusions</h1>
-<p><abbr title="Artificial Intelligence">AI</abbr> is a complex topic because it involves major components like languages, reasoning, knowledge, learning and understanding<sup class="footnote-ref"><a href="#fn5" id="fnref5">5</a></sup>. It’s also a broad topic with high impact on humanity and society.</p>
+<p><abbr title="Artificial Intelligence">AI</abbr> is a complex topic because it involves major components like languages, reasoning, knowledge, learning and understanding<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">5</a></sup>. It’s also a broad topic with high impact on humanity and society.</p>
 <p><abbr title="Artificial Intelligence">AI</abbr> systems, do not have to model human or nature but may be inspired by human or nature, similar to an airplane and a bird.</p>
 <p>The public opinion is whether <abbr title="Artificial Intelligence">AI</abbr> is a threat to humankind. Indeed <abbr title="Artificial Intelligence">AI</abbr> may raise some uncertainty about the future and whether people’s jobs will be replaced by <abbr title="Artificial Intelligence">AI</abbr> systems or whether <abbr title="Artificial Intelligence">AI</abbr> would take over the world just like in the movies. This comes from all kinds of people, even people with bright minds like Stephen Hawkins. This kind of concern tell us one thing, that <abbr title="Artificial Intelligence">AI</abbr> is a very powerful tool that is still in the beginning.</p>
 <p>One of the great promises of <abbr title="Artificial Intelligence">AI</abbr> is its potential to help us unearth new knowledge in complex domains. We’ve already seen exciting glimpses of this, when our algorithms found ways to dramatically improve energy use in data centers - as well as of course with our program AlphaGo.</p>
+<p>Introduction to <abbr title="Artificial Intelligence">AI</abbr> Robotics p26 Space robotics and the <abbr title="Artificial Intelligence">AI</abbr> approach</p>
 <p>UML:<br>
 <a href="https://softwareengineering.stackexchange.com/questions/305031/why-is-uml-not-used-in-most-free-software-e-g-on-linux">https://softwareengineering.stackexchange.com/questions/305031/why-is-uml-not-used-in-most-free-software-e-g-on-linux</a><br>
 <a href="https://www.quora.com/Why-should-I-use-or-not-use-UML">https://www.quora.com/Why-should-I-use-or-not-use-UML</a></p>
@@ -209,9 +397,11 @@ The term artificial intelligence is thrown around a lot these days, but usually,
 </li>
 <li id="fn3" class="footnote-item"><p>S. Russell and P. Norvig. Artificial Intelligence: A Modern Approach, chapter 4. Prentice Hall, 2nd edition, 2003. <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a> <a href="#fnref3:2" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>Preparing for the future of artificial intelligence - Executive Office of the President National Science and Technology Council  Committee on Technology <a href="https://obamawhitehouse.archives.gov/sites/default/files/whitehouse_files/microsites/ostp/NSTC/preparing_for_the_future_of_ai.pdf">↗</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p>Tutorialspoint Artificial Intelligence <a href="http://www.tutorialspoint.com/artificial_intelligence/">↗</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>“Computing machinery and intelligence” (1950) - Alan Turing <a href="#fnref5" class="footnote-backref">↩</a></p>
+<li id="fn5" class="footnote-item"><p>Computing machinery and intelligence (1950) - Alan Turing <a href="http://www.loebner.net/Prizef/TuringArticle.html">↗</a> <a href="#fnref5" class="footnote-backref">↩</a> <a href="#fnref5:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Preparing for the future of artificial intelligence - Executive Office of the President National Science and Technology Council  Committee on Technology <a href="https://obamawhitehouse.archives.gov/sites/default/files/whitehouse_files/microsites/ostp/NSTC/preparing_for_the_future_of_ai.pdf">↗</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section></div>
