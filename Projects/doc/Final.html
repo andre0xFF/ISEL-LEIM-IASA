@@ -16,39 +16,12 @@
 </head>
 
 <body style="font-family: 'Open Sans', sans-serif;">
-  <div class="export-container"><p><img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1465765206/j2ocvfzcvgk8dxjkilvv.png#center" alt="ISEL"></p>
-<div align="center">
-	<h1>
-		<p>Instituto Superior de Engenharia de Lisboa</p>
-		<p>Artificial Intelligence for Autonomous Systems</p>
-	</h1>
-	<p>André Fonseca</p>
-	<p>A39758@alunos.isel.pt</p><br>
-	<p>Professor Paulo Vieira</p>
-	<p>pjvieira@deetc.isel.pt</p><p><br>
-	</p><p>June 2017</p><p>
-</p></div>
-<p><br><br></p>
-<h1 id="table-of-contents">Table of contents</h1>
-<ol>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#artificial-intelligence-overview">Artificial intelligence overview</a></li>
-<li><a href="#intelligent-agents">Intelligent agents</a></li>
-<li><a href="#search-strategies">Search strategies</a></li>
-<li><a href="">Markov decision process</a></li>
-<li><a href="">Reinforcement learning</a></li>
-<li><a href="#first-project">Project #1</a></li>
-<li><a href="#second-project">Project #2</a></li>
-<li><a href="#third-project">Project #3</a></li>
-<li><a href="#conclusions">Conclusions</a></li>
-</ol>
+  <div class="export-container"><p>Instituto Superior de Engenharia de Lisboa<br>
+Artificial Intelligence for Autonomous Systems</p>
+<p>André Fonseca [a39758@alunos.isel.pt]<br>
+Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
+<p>July 2017</p>
 <hr>
-<p><img src="https://readwrite.com/wp-content/uploads/iStock-586712790-e1496714940902.jpg#center" alt=""></p>
-<blockquote>
-<p><em>“We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.”</em> - Roy Amara<br>
-<br><br>
-<br></p>
-</blockquote>
 <h1 id="introduction">Introduction</h1>
 <p>This final report aims to describe and explain all the subjects studied in the Artificial Intelligence for Autonomous Systems class. During the semester three projects were developed with the provided architectural system models.</p>
 <p>The first project simulates the interactions between an agent and an environment which the agent belongs to. When the simulation starts the gatekeeper goes into patrol mode. In case of hearing a noise the gatekeeper inspects the area, searching for the noise’s origin. If there is no longer any noise, then he continues to patrol. At any time the gatekeeper may encounter an enemy and in that case he must protect the area and warn the foe to retreat. In this situation, if the enemy backs off, he will remain inspecting the area for any source of noise. In case the enemy persists, the gatekeeper will have to defend himself and fight the threat. In combat situation two actions may occur. The gatekeeper can be victorious and defeat the enemy and, then, he goes back to patrol; or in case of defeat the simulation is restarted. The interaction, at any level, is made by text inputs and outputs.</p>
@@ -56,6 +29,10 @@
 <p>The third and last project (…)</p>
 <p>Before going into the projects analysis and resolutions (…)</p>
 <p><a href="https://github.com/andrewfonseca/IASA">https://github.com/andrewfonseca/<abbr title="Artificial Intelligence for Autonomous Systems">IASA</abbr></a></p>
+<p><img src="https://readwrite.com/wp-content/uploads/iStock-586712790-e1496714940902.jpg#center" alt=""></p>
+<blockquote>
+<p><em>“We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.”</em> - Roy Amara</p>
+</blockquote>
 <h1 id="artificial-intelligence-overview">Artificial intelligence overview</h1>
 <p><abbr title="Artificial Intelligence">AI</abbr> has always intrigued people, from TV shows, movies and marketing using robots with pseudo-intelligence. It is the perfect topic to craft thrillers, adventures and dramas, just like the well known Terminator movie or the brilliant Westworld TV show.</p>
 <p>The most basic definition of intelligence is: <em>the ability to learn and solve problems.</em><sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> This is regardless of being human intelligence or machine intelligence. So artificial intelligence could be described as the <em>intelligence exhibited by machines or software.</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup> To be more specific it’s the study and design of intelligent agents - a system that perceives it’s environment and takes actions that maximizes its chances of success.<sup class="footnote-ref"><a href="#fn3" id="fnref3">3</a></sup> In general an intelligent agent should be able to calculate, reason, perceive relationships and analogies, learn from experience, sore and retrieve information from memory, solve problems, comprehend complex ideas, use natural language fluently, classify, generalize and adapt to new situations.<sup class="footnote-ref"><a href="#fn4" id="fnref4">4</a></sup></p>
@@ -78,33 +55,8 @@
 <p>Intelligent systems are designed to act and to maximize their goal. The intelligent agents are expected to maximize the goal achievement giving the available information about the environment, the background knowledge, past experiences and other useful information.</p>
 <p>This last approach is the one adopted in the study objectives of <abbr title="Artificial Intelligence for Autonomous Systems">IASA</abbr> class.</p>
 <h2 id="applications">Applications</h2>
-<p><abbr title="Artificial Intelligence">AI</abbr> is present in people’s daily lives without their awareness. Some applications:</p>
-<ul>
-<li>
-<p>Speech recognition:  Used by virtual assistants like Google Now, Siri and Amazon Echo;</p>
-</li>
-<li>
-<p>Hand writing recognition: Used by banks to recognize checks information;</p>
-</li>
-<li>
-<p>Machine translation: To translate sentences from one language to another;</p>
-</li>
-<li>
-<p>Robotics: Robots can be used in many fields such as robotics surgery, navigation etc;</p>
-</li>
-<li>
-<p>Spam filters: Used by email clients to filter out spam emails. These filters can learn over time based on user actions and classification techniques;</p>
-</li>
-<li>
-<p>Face recognition: Used to identify faces and people’s emotions in photographs and videos;</p>
-</li>
-<li>
-<p>Medical imaging: Used to analyze patient’s exams and detect diseases;</p>
-</li>
-<li>
-<p>Autonomous vehicles: Vehicles that can drive autonomously without the intervention of a human.</p>
-</li>
-</ul>
+<p><abbr title="Artificial Intelligence">AI</abbr> is a very hyped-up topic for a reason, it has the ability to revolutionize all industries and in the edge, the world. <abbr title="Artificial Intelligence">AI</abbr> is being used by virtual assistance’s, like Google Now, Siri and Amazon Echo, in speech recognition; To translate sentences or entire documents from one languages to another; In all types of robots, such as robotic surgery and navigation; Enhancement of medical imaging to analyze patient’s exams and detect diseases; Autonomous vehicles are already in use, these type of vehicles can drive autonomously without the intervention of a human. The possibilities are endless.</p>
+<hr>
 <h1 id="intelligent-agents">Intelligent agents</h1>
 <p>An <strong>agent</strong> is anything that can perceive its environment through sensors and act upon that environment through actuators. It can be seen as a function <code>f</code> that goes from something that he perceives <code>P</code> to a set of actions <code>A</code>.</p>
 <p><img src="https://latex.codecogs.com/gif.latex?f%3AP%5Crightarrow%20A#center" alt="Agent function"></p>
@@ -309,8 +261,10 @@
 </ul>
 <h4 id="greedy-best-first-search">Greedy best-first search</h4>
 <h4 id="a-search">A* search</h4>
+<hr>
 <h1 id="markov-decision-process">Markov decision process</h1>
 <h2 id="finding-optimal-policy">Finding optimal policy</h2>
+<hr>
 <h1 id="reinforcement-learning">Reinforcement learning</h1>
 <p>In reinforcement learning agents learn from reinforcement or delayed reward.<br>
 Learning approaches for decision making in situation where outcome are stochastic, involves an agent that continued to plan and learn to effect its environment.<br>
@@ -320,6 +274,7 @@ RL agents are driven by maximizing the reward on the long run.</p>
 </ul>
 <h2 id="sarsa-algorithm">SARSA algorithm</h2>
 <h2 id="q-learning-algorithm">Q-Learning algorithm</h2>
+<hr>
 <h1 id="first-project">First project</h1>
 <h2 id="requirements-engineering">Requirements engineering</h2>
 <p>Simple reflex agent</p>
@@ -348,6 +303,7 @@ RL agents are driven by maximizing the reward on the long run.</p>
 <h3 id="behavioral-view">Behavioral view</h3>
 <h2 id="implementation">Implementation</h2>
 <h2 id="verification-and-validation">Verification and validation</h2>
+<hr>
 <h1 id="second-project">Second project</h1>
 <p>Goal-based agent</p>
 <h2 id="requirements-engineering-1">Requirements engineering</h2>
@@ -366,6 +322,7 @@ RL agents are driven by maximizing the reward on the long run.</p>
 <h3 id="behavioral-view-1">Behavioral view</h3>
 <h2 id="implementation-1">Implementation</h2>
 <h2 id="verification-and-validation-1">Verification and validation</h2>
+<hr>
 <h1 id="third-project">Third project</h1>
 <p>Utility-based agent</p>
 <h2 id="requirements-engineering-2">Requirements engineering</h2>
@@ -376,6 +333,7 @@ RL agents are driven by maximizing the reward on the long run.</p>
 <h3 id="behavioral-view-2">Behavioral view</h3>
 <h2 id="implementation-2">Implementation</h2>
 <h2 id="verification-and-validation-2">Verification and validation</h2>
+<hr>
 <h1 id="conclusions">Conclusions</h1>
 <p><abbr title="Artificial Intelligence">AI</abbr> is a complex topic because it involves major components like languages, reasoning, knowledge, learning and understanding<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">5</a></sup>. It’s also a broad topic with high impact on humanity and society.</p>
 <p><abbr title="Artificial Intelligence">AI</abbr> systems, do not have to model human or nature but may be inspired by human or nature, similar to an airplane and a bird.</p>
