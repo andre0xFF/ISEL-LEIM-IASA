@@ -39,9 +39,15 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 <h2 id="difference-between-human-and-machine-intelligence">Difference between Human and Machine intelligence</h2>
 <p>What are the differences between Human and Machine Intelligence? - The answer to this question may be vast and may change in the future, when new technologies or biological processes are discovered. Right now the main differences are:</p>
 <ul>
-<li>Humans perceive by patterns whereas a machine perceive by a set of rules and data;</li>
-<li>Humans store and recall information by patterns, machines do it by searching algorithms;</li>
-<li>Humans can figure out the complete object even if some part of it is missing or distorted; whereas the machines can only do it by searching through out all possible solutions.</li>
+<li>
+<p>Humans perceive by patterns whereas a machine perceive by a set of rules and data;</p>
+</li>
+<li>
+<p>Humans store and recall information by patterns, machines do it by searching algorithms;</p>
+</li>
+<li>
+<p>Humans can figure out the complete object even if some part of it is missing or distorted; whereas the machines can only do it by searching through out all possible solutions.</p>
+</li>
 </ul>
 <h2 id="definition-throughout-history">Definition throughout history</h2>
 <p>As history goes on the definition of <abbr title="Artificial Intelligence">AI</abbr> has changed and four approaches mastered their own definition.</p>
@@ -66,10 +72,18 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 <h2 id="agent-properties">Agent properties</h2>
 <p>The properties of a rational agent can be grouped under the acronym PEAS (Performance, Environment, Actuators, Sensor). These definitions are actually the problem specifications, for the task environment that the rational agent is meant to solve:</p>
 <ul>
-<li>Performance: Which qualities it should have?</li>
-<li>Environment: Where it should act?</li>
-<li>Actuators: How will it perform actions?</li>
-<li>Sensors: How will it perceive environment?</li>
+<li>
+<p>Performance: Which qualities it should have?</p>
+</li>
+<li>
+<p>Environment: Where it should act?</p>
+</li>
+<li>
+<p>Actuators: How will it perform actions?</p>
+</li>
+<li>
+<p>Sensors: How will it perceive environment?</p>
+</li>
 </ul>
 <p>Considering the PEAS for a self-driving car: The performance could be the safety of the passengers, obedience of driving rules (stopping at red lights or driving under speed limit for example); the environment is all the roads, other cars, pedestrians, road signs; the actuators are everything that makes the car move, steering, brakes; the sensors include a camera, a sonar, a GPS, a speedometer.</p>
 <h2 id="rationality">Rationality</h2>
@@ -102,7 +116,7 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 <p><strong>Known</strong> (vs <strong>unknown</strong>): The designer of the agent may have knowledge about the environment.</p>
 </li>
 </ul>
-<h2 id="types-of-intelligent-agents">Types of intelligent agents</h2>
+<h2 id="search-agents">Search agents</h2>
 <p>There are four basic types of agents in order of increasing generality: simple reflex agents, mobile-based reflex agents, goal-based agents and utility-based agents. All of which can actually be generalized to learning agents that can improve their performance and generate better actions.</p>
 <h3 id="simple-reflex-agents">Simple reflex agents</h3>
 <p>Simple reflex agents choose their actions only based on the current percept. These type of agent lack rationality because the input percept is directly connected to an output action with a condition-action rules map. Their main disadvantages is that the environment must be completely observable and if they are deprived from one condition the agent might not know what to do unless it selects a default action.</p>
@@ -116,18 +130,10 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 <p>This type of agent was purposed by Alan Turing<sup class="footnote-ref"><a href="#fn5" id="fnref5">5</a></sup> where an agent is assembled with learning capabilities so that it can learn on his own or with assistance. This method allows the agent to operate in initially unknown environments and to become more competent than its initial knowledge alone might allow.</p>
 <p>A learning agent can be divided into four conceptual components:</p>
 <ul>
-<li>
-<p>Learning element: responsible for making improvements - learning with past experience;</p>
-</li>
-<li>
-<p>Performance element: responsible for selecting external actions;</p>
-</li>
-<li>
-<p>Critic: how well is the agent doing in comparison to a fixed performance standard;</p>
-</li>
-<li>
-<p>Problem generator: allows the agent to explore different possibilities and keep on learning.</p>
-</li>
+<li>Learning element: responsible for making improvements - learning with past experience;</li>
+<li>Performance element: responsible for selecting external actions;</li>
+<li>Critic: how well is the agent doing in comparison to a fixed performance standard;</li>
+<li>Problem generator: allows the agent to explore different possibilities and keep on learning.</li>
 </ul>
 <h2 id="agent-architecture">Agent architecture</h2>
 <ul>
@@ -161,24 +167,25 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 <li>Execution of the solution found</li>
 </ol>
 <h2 id="problem-formulation">Problem formulation</h2>
+<p>A problem can be broken down to multiple components:</p>
 <ul>
 <li>
 <p>Initial state: the state in which the agent starts;</p>
 </li>
 <li>
-<p>States: all states reachable from the initial state by any sequence of actions (state space);</p>
+<p>States: all the states reachable from the initial state by any sequence of actions;</p>
 </li>
 <li>
-<p>Actions: possible actions available to the agent. At a state <code>s</code>, <code>Actions(s)</code> returns the set of actions that can be executed in state <code>s</code>;</p>
+<p>Actions: possible actions available to the agent. At a state <code>s</code>, <code>actions(s)</code> returns the set of actions that can be executed in state <code>s</code>;</p>
 </li>
 <li>
-<p>Transition model: a description of what each action does <code>Results(s, a)</code>;</p>
+<p>Transition model: a description of what each action does <code>results(s, a)</code>;</p>
 </li>
 <li>
 <p>Goal test: determines if a given state is a goal state;</p>
 </li>
 <li>
-<p>Path cost: function that assigns a numeric cost to a path regarding some <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>.</p>
+<p>Path cost: function that assigns a numeric cost to a path with respect to some <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr>. It doesn’t always have to be used but whenever there is a <abbr title="factor that describes how well the agent is doing when performing a certain task to reach a certain goal">performance measure</abbr> associated with the agent this function can be applied to know how much a sequence of actions costs. This is useful to evaluate the cost of multiple solutions to the same problem.</p>
 </li>
 </ul>
 <h2 id="state-space-vs-search-space">State space vs search space</h2>
@@ -199,45 +206,39 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 </ul>
 <p>Finally, a function called <code>expand</code> is defined. This function is responsible for creating all children nodes given a certain node.</p>
 <p><img src="https://i.imgur.com/olc3riM.png#center" alt="Search tree"></p>
-<h2 id="search-space-regions">Search space regions</h2>
+<h2 id="search-algorithm">Search algorithm</h2>
 <p>The search space is divided into three regions:</p>
 <ol>
-<li>
-<p>Explored: Represent all the nodes that have already been visited in the search tree;</p>
-</li>
-<li>
-<p>Frontier: nodes that are about to be explored;</p>
-</li>
-<li>
-<p>Unexplored: the remaining nodes yet to be explored.</p>
-</li>
+<li>Explored: Represent all the nodes that have already been visited in the search tree;</li>
+<li>Frontier: nodes that are about to be explored;</li>
+<li>Unexplored: the remaining nodes yet to be explored.</li>
 </ol>
 <p>The essence of search strategies is to decide in which order the nodes will move from Unexplored → Frontier → Explored.</p>
-<h2 id="search-algorithm">Search algorithm</h2>
-<p><img src="https://i.imgur.com/vFS1ysV.png#center" alt="Search algorithm flow"></p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">search</span><span class="token punctuation">(</span>initial_state<span class="token punctuation">,</span> goal_test<span class="token punctuation">)</span>
-	returns SUCCESS or FAILURE<span class="token punctuation">:</span>
+<pre><code>function graph_search(initial_node, goal_test)
 
-	frontier <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	frontier<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>initial_state<span class="token punctuation">)</span>
-	explored <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	frontier = Set(initial_node)
+	explored = Set()
 	
-	<span class="token keyword">while</span> not frontier<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-		state <span class="token operator">=</span> frontier<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		explored<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+	while frontier is not empty:
+		node = frontier.remove()
+		explored.add(node)
+		state = node.state()
 
-		<span class="token keyword">if</span> <span class="token function">goal_test</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">:</span>
-			<span class="token keyword">return</span> <span class="token function">SUCCESS</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+		if goal_test(state):
+			return Success(state)
 		
-		<span class="token keyword">for</span> neighbor <span class="token keyword">in</span> state<span class="token punctuation">.</span><span class="token function">neighbors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-			frontier<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>neighbor<span class="token punctuation">)</span>
+		for children in node.childrens():
+			if children not in frontier or explored:
+				frontier.add(children)
+	
+	return Failure()
 </code></pre>
-<h2 id="search-strategies-1">Search strategies</h2>
-<p>Different search strategies are defined by how states are removed from the frontier data structure. These search strategies are called <a href="#uninformed-search-strategies">uninformed search strategies</a>.</p>
+<p><img src="https://i.imgur.com/kIePRKs.png#center" alt="Search algorithm flow"></p>
+<h2 id="dimensions">Dimensions</h2>
 <p>Search strategies are evaluated along the following dimensions:</p>
 <ul>
 <li>
-<p>Completeness: does it always find a solution if one exists?</p>
+<p>Complete: does it always find a solution if one exists?</p>
 </li>
 <li>
 <p>Time complexity: number of expanded nodes</p>
@@ -246,21 +247,119 @@ Professor Paulo Vieira [pjvieira@deetc.isel.pt]</p>
 <p>Space complexity: maximum number of nodes in memory</p>
 </li>
 <li>
-<p>Optimality: does it always find a least-cost solution?</p>
+<p>Optimal: does it always find a least-cost (optimal) solution?</p>
 </li>
 </ul>
-<h3 id="uninformed-search-strategies">Uninformed search strategies</h3>
-<h4 id="breadth-first-search">Breadth-first search</h4>
-<h4 id="uniform-cost-search">Uniform-cost search</h4>
-<h4 id="depth-first-search">Depth-first search</h4>
-<h4 id="iterative-deepening-search">Iterative deepening search</h4>
+<p>Time and space complexity will be measured in terms of:</p>
+<ul>
+<li>
+<p><code>b</code>: maximum branching factor of the search tree (actions per state);</p>
+</li>
+<li>
+<p><code>d</code>: depth of the solution;</p>
+</li>
+<li>
+<p><code>m</code>: maximum depth of the state space (can be infinite).</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/X4Ctkqg.png#center" alt="Tree branching factor and depth example"></p>
+<p>There are two kinds of search. An <a href="#uninformed-search">uninformed search</a> is when there is no information about the problem’s domain. In <a href="#informed-search">informed search</a> there is information about the goal and the problem’s domain in general.</p>
+<h2 id="uninformed-search">Uninformed search</h2>
+<p>A uninformed search are applied by agents that do not require domain knowledge to search through the search space.</p>
+<h3 id="breadth-first-search">Breadth-first search</h3>
+<p>In bread-first search the shallowest node is expanded first. The shallowest node is the one on the top level-wise. The search goes level by level only when the current level is all done.</p>
+<p>The <abbr title="Breadth-first search">BFS</abbr> algorithm is similar to the graph search algorithm except that the frontier’s data structure will be a <a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">queue</a> or a <abbr title="First In First Out">FIFO</abbr>.</p>
+<h4 id="algorithm">Algorithm</h4>
+<pre><code>function breadth_first_search(initial_node, goal_test)
+	frontier = Queue(initial_node)
+	explored = Set()
+
+	while frontier is not empty:
+		node = frontier.dequeue()
+		explored.add(state)
+		state = node.state()
+
+		if goal_state(state):
+			return Success(state)
+		
+		for children in node.neighbors():
+			if children not in frontier or explored:
+				frontier.enqueue(children)
+
+	return Failure()
+</code></pre>
+<h4 id="visualization">Visualization</h4>
+<p><img src="https://i.imgur.com/5vTnfza.png#center" alt="Queue / FIFO"><br>
+<img src="https://i.imgur.com/U997wo3.png" alt="Breadth-first search"></p>
+<h4 id="dimensions-1">Dimensions</h4>
+<ul>
+<li>Complete: Yes (if <code>b</code> is finite)</li>
+<li>Time: <img src="https://latex.codecogs.com/gif.latex?1+b+b%5E%7B2%7D+b%5E%7B3%7D+...+b%5E%7Bn%7D=O%28b%5E%7Bd%7D%29" alt=""></li>
+<li>Space: <img src="https://latex.codecogs.com/gif.latex?O%28b%5E%7Bd%7D%29" alt=""></li>
+<li>Optimal: Yes (if cost is 1 per step)</li>
+</ul>
+<h4 id="when-to-use">When to use</h4>
+<p>If time and space complexities are <strong>exponential</strong>, so why even use <abbr title="Breadth-first search">BFS</abbr>? The answer to this question depends on the problem. For problems with domain knowledge and where the solution is shallow it is much better to use <abbr title="Breadth-first search">BFS</abbr>, it will be found sooner and the exponential complexity will be much shorter. For other kind of problems <abbr title="Breadth-first search">BFS</abbr> is not suitable.</p>
+<p>Memory requirement and exponential time complexity are the biggest handicaps.</p>
+<hr>
+<h3 id="depth-first-search">Depth-first search</h3>
+<h4 id="algorithm-1">Algorithm</h4>
+<h4 id="visualization-1">Visualization</h4>
+<h4 id="dimensions-2">Dimensions</h4>
+<h4 id="when-to-use-1">When to use</h4>
+<hr>
+<h3 id="uniform-cost-search">Uniform-cost search</h3>
+<h4 id="algorithm-2">Algorithm</h4>
+<h4 id="visualization-2">Visualization</h4>
+<h4 id="dimensions-3">Dimensions</h4>
+<h4 id="when-to-use-2">When to use</h4>
+<p>The uniform-cost search is guided by the path rather than the depth of the search</p>
+<ul>
+<li>Completeness: yes, if solution has finite cost</li>
+<li>Time complexity:</li>
+<li>Space complexity:</li>
+<li>Optimal: yes.</li>
+</ul>
+<hr>
+<h3 id="iterative-deepening-search">Iterative deepening search</h3>
+<h4 id="algorithm-3">Algorithm</h4>
+<h4 id="visualization-3">Visualization</h4>
+<h4 id="dimensions-4">Dimensions</h4>
+<h4 id="when-to-use-3">When to use</h4>
+<hr>
 <h4 id="comparing-uninformed-search-strategies">Comparing uninformed search strategies</h4>
+<ul>
+<li>
+<p><a href="#breadth-first-search">Breadth-first search</a> expands the shallowest nodes first; it is complete, optimal for unit step costs, but has exponential complexity;</p>
+</li>
+<li>
+<p><a href="#uniform-cost-search">Uniform-cost search</a> expands the node with lowest path cost, <code>g(n)</code>, and is optimal for general step costs;</p>
+</li>
+<li>
+<p><a href="#depth-first-search">Depth-first search</a> expands the deepest node first. It is neither complete nor optimal, but has linear space complexity;</p>
+</li>
+<li>
+<p><a href="#iterative-deepening-search">Iterative deepening search</a> calls <abbr title="Depth-first search">DFS</abbr> with increasing depth limits until a goal is found. It is complete, optimal for unit step costs, has time complexity comparable to <abbr title="Breadth-first search">BFS</abbr>, and has linear complexity.</p>
+</li>
+</ul>
 <h3 id="informed-search-strategies">Informed search strategies</h3>
 <ul>
 <li>Describe the heuristic function and define and use heuristic functions</li>
 </ul>
 <h4 id="greedy-best-first-search">Greedy best-first search</h4>
-<h4 id="a-search">A* search</h4>
+<h4 id="a-star-search">A star search</h4>
+<h4 id="comparing-informed-search-strategies">Comparing informed search strategies</h4>
+<ul>
+<li>
+<p>The generic best-first search algorithm selects a node for expansion according to an evaluation function;</p>
+</li>
+<li>
+<p><a href="#greedy-best-first-search">Greedy best-first search</a> expands node with minimal <code>h(n)</code>. It is optimal but is often efficient;</p>
+</li>
+<li>
+<p><a href="#a-star-search">A* search</a> expands nodes with minimal <img src="https://latex.codecogs.com/gif.latex?f%28n%29=g%28n%29+h%28n%29" alt="">. It is complete and optimal, provided that <code>h(n)</code> is admissible or consistent.</p>
+</li>
+</ul>
 <hr>
 <h1 id="markov-decision-process">Markov decision process</h1>
 <h2 id="finding-optimal-policy">Finding optimal policy</h2>
