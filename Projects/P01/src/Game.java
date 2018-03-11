@@ -10,6 +10,7 @@ public class Game {
     private Character character = new Character(environment);
 
     public static void main(String[] args) {
+        // TODO: remove new Game(), make it static
         new Game().execute_game();
     }
 
@@ -22,18 +23,21 @@ public class Game {
         String behavior_name = "";
         String input = "";
 
+        String output_format = "[ %11s @ %-10s ]$ ";
+        System.out.printf(output_format + "\n", "ENVIRONMENT", "CHARACTER");
+
         do {
             this.environment.evolve(input);
-            event_name = this.environment.show();
-
             this.character.execute();
+
+            event_name = this.environment.show();
             behavior_name = this.character.show();
 
-            System.out.printf("[ %7s @ %-10s ]$ ", event_name, behavior_name);
-            input = scanner.next();
+            System.out.printf(output_format, event_name, behavior_name);
 
             event = environment.get_event();
 
+            input = scanner.next();
         } while(event == null ? true : event != EnvironmentEvent.EXIT);
     }
 }

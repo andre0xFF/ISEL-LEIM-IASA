@@ -1,14 +1,14 @@
 package Game.NPC;
 
 import Game.AI.Action;
-import Game.AI.CharacterBehavior;
-import Game.AI.Stimulus;
+import Game.Environment.Stimulus;
 import Game.Environment.Environment;
+import Game.NPC.Behaviors.CharacterBehavior;
 
 public class Character {
 
     private final Environment environment;
-    private CharacterBehavior behavior;
+    private final CharacterBehavior behavior;
 
     public Character(Environment environment) {
         this.environment = environment;

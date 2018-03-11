@@ -6,9 +6,9 @@ import Game.AI.Reaction;
 import Game.Environment.EnvironmentAction;
 import Game.Environment.EnvironmentEvent;
 
-public class Attack extends HierarchicalBehavior {
+public class Combat extends HierarchicalBehavior {
 
-    public Attack() {
+    public Combat() {
         super(new Behavior[] {
                 new Reaction(EnvironmentEvent.ENEMY, EnvironmentAction.ATTACK),
                 new Reaction(EnvironmentEvent.DEFEAT, EnvironmentAction.START)

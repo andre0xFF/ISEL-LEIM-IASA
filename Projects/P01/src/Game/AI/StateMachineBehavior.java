@@ -1,5 +1,6 @@
 package Game.AI;
 
+import Game.Environment.Stimulus;
 import StateMachine.State;
 import StateMachine.StateMachine;
 

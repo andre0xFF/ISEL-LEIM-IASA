@@ -5,11 +5,10 @@ import java.util.Map;
 
 public class Environment {
 
-    private Map<String, EnvironmentEvent> events = new HashMap<>();;
+    private Map<String, EnvironmentEvent> events = new HashMap<>();
     private EnvironmentEvent event;
 
     public Environment() {
-        // Populate environment events
         this.events.put("EXIT", EnvironmentEvent.EXIT);
         this.events.put("NOISE", EnvironmentEvent.NOISE);
         this.events.put("SILENCE", EnvironmentEvent.SILENCE);
@@ -20,7 +19,11 @@ public class Environment {
     }
 
     public void evolve(String input) {
-        this.event = this.events.get(input.toUpperCase());
+        this.event = this.generate_event(input);
+    }
+
+    private EnvironmentEvent generate_event(String input) {
+        return this.events.get(input.toUpperCase());
     }
 
     public EnvironmentEvent get_event() {
@@ -31,9 +34,4 @@ public class Environment {
         return this.event != null ? String.format("%s", this.event) : "";
     }
 
-    public void execute_action(EnvironmentAction action) {
-        if (action != null) {
-            action.execute();
-        }
-    }
 }

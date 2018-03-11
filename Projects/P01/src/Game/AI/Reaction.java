@@ -1,5 +1,7 @@
 package Game.AI;
 
+import Game.Environment.Stimulus;
+
 public class Reaction implements Behavior {
 
     private Stimulus stimulus;
