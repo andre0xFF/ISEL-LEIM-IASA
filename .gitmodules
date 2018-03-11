@@ -1,8 +1,8 @@
 [submodule "Projects/P03/src/lib/psa"]
 	path = Projects/P03/src/lib/psa
-	url = git@github.com:andrewfonseca/IASA-PSA.git
+	url = git@github.com:andrewfonseca/ISEL-LEIM-IASA-PSA.git
     ignore = dirty
 [submodule "Projects/P03/src/lib/pee"]
 	path = Projects/P03/src/lib/pee
-	url = git@github.com:andrewfonseca/IASA-PEE.git
+	url = git@github.com:andrewfonseca/ISEL-LEIM-IASA-PEE.git
     ignore = dirty
