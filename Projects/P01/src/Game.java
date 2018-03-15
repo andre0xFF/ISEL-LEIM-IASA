@@ -6,38 +6,30 @@ import java.util.Scanner;
 
 public class Game {
 
-    private Environment environment = new Environment();
-    private Character character = new Character(environment);
+    private static Environment environment = new Environment();
+    private static Character character = new Character(environment);
 
     public static void main(String[] args) {
-        // TODO: remove new Game(), make it static
-        new Game().execute_game();
+        execute_game();
     }
 
-    private void execute_game() {
+    private static void execute_game() {
 
         Scanner scanner = new Scanner(System.in);
         EnvironmentEvent event;
 
-        String event_name = "";
-        String behavior_name = "";
-        String input = "";
-
-        String output_format = "[ %11s @ %-10s ]$ ";
-        System.out.printf(output_format + "\n", "ENVIRONMENT", "CHARACTER");
-
         do {
-            this.environment.evolve(input);
-            this.character.execute();
+            System.out.print("\nEvent: ");
+            String input = scanner.next();
 
-            event_name = this.environment.show();
-            behavior_name = this.character.show();
+            environment.evolve(input);
+            character.execute();
 
-            System.out.printf(output_format, event_name, behavior_name);
+            String state = character.show();
+            System.out.print(String.format("State: %s\n", state));
 
             event = environment.get_event();
 
-            input = scanner.next();
-        } while(event == null ? true : event != EnvironmentEvent.EXIT);
+        } while(event == null || event != EnvironmentEvent.EXIT);
     }
 }

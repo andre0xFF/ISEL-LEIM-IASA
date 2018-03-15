@@ -7,6 +7,6 @@ public enum EnvironmentAction implements Action {
 
     @Override
     public void execute() {
-        // TODO
+        System.out.print(String.format("Action: %s\n", this));
     }
 }
