@@ -25,9 +25,6 @@ public class Game {
             environment.evolve(input);
             character.execute();
 
-            String state = character.show();
-            System.out.print(String.format("State: %s\n", state));
-
             event = environment.get_event();
 
         } while(event == null || event != EnvironmentEvent.EXIT);

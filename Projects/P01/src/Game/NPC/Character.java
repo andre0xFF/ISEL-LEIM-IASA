@@ -3,7 +3,6 @@ package Game.NPC;
 import Game.AI.Action;
 import Game.Environment.Stimulus;
 import Game.Environment.Environment;
-import Game.NPC.Behaviors.CharacterBehavior;
 
 public class Character {
 
@@ -21,6 +20,7 @@ public class Character {
         if (stimulus != null) {
             Action action = this.process(stimulus);
             this.behave(action);
+            this.show();
         }
     }
 
@@ -38,7 +38,7 @@ public class Character {
         }
     }
 
-    public String show() {
-        return String.format("%s", this.behavior.get_state().get_name());
+    private void show() {
+        System.out.printf("State: %s\n", this.behavior.get_state().get_name());
     }
 }

@@ -1,8 +1,12 @@
-package Game.NPC.Behaviors;
+package Game.NPC;
 
 import Game.AI.StateMachineBehavior;
 import Game.Environment.EnvironmentEvent;
 import Game.Environment.Stimulus;
+import Game.NPC.Behaviors.Combat;
+import Game.NPC.Behaviors.Defend;
+import Game.NPC.Behaviors.Inspection;
+import Game.NPC.Behaviors.Patrol;
 import StateMachine.State;
 import StateMachine.StateMachine;
 

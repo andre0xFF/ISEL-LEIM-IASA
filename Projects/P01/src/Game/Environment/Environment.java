@@ -30,8 +30,4 @@ public class Environment {
         return this.event;
     }
 
-    public String show() {
-        return this.event != null ? String.format("%s", this.event) : "";
-    }
-
 }
