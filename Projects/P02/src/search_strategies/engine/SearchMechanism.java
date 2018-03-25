@@ -60,7 +60,6 @@ public abstract class SearchMechanism <P extends Problem> {
                 this.search_memory.insert(successor_node);
             }
         }
-
     }
 
     private Solution generate_solution(Node final_node) {

@@ -1,6 +1,5 @@
 package puzzle;
 
-import org.apache.commons.lang.StringUtils;
 import puzzle.models.PuzzleOperator;
 import puzzle.models.PuzzleProblem;
 import search_strategies.informed.AStarSearch;
@@ -29,7 +28,10 @@ public class PuzzleSolver {
         );
 
         System.out.printf(s);
-        System.out.printf("%s\n", StringUtils.center("-", 102, "-"));
+
+        Puzzle puzzle_a = new Puzzle(new int[][] { {1, 2, 3}, {8, 4, 5}, {6, 7, 0} });
+        Puzzle puzzle_b = new Puzzle(new int[][] { {8, 4, 5}, {6, 1, 2}, {3, 7, 0} });
+        Puzzle puzzle_solution = new Puzzle(new int[][] { {1, 2, 3}, {4, 5, 6}, {7, 8, 0} });
 
         SearchMechanism[] search_list = {
                 new BreadthFirstSearch(),
@@ -40,13 +42,9 @@ public class PuzzleSolver {
                 new AStarSearch(),
         };
 
-        Puzzle puzzle_A = new Puzzle(new int[][] { {1, 2, 3}, {8, 4, 5}, {6, 7, 0} });
-        Puzzle puzzle_B = new Puzzle(new int[][] { {8, 4, 5}, {6, 1, 2}, {3, 7, 0} });
-        Puzzle puzzle_C = new Puzzle(new int[][] { {1, 2, 3}, {4, 5, 6}, {7, 8, 0} });
-
         for (SearchMechanism search : search_list) {
-            run_search(search, puzzle_A, puzzle_C, "A");
-            run_search(search, puzzle_B, puzzle_C, "B");
+            run_search(search, puzzle_a, puzzle_solution, "A");
+            run_search(search, puzzle_b, puzzle_solution, "B");
         }
     }
 

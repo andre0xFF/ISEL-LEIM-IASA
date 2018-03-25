@@ -34,14 +34,13 @@ public class SearchMemory {
         State state = node.get_state();
         Node explored_node = this.explored.get(state);
 
-        if (explored_node == null ? true : explored_node.get_cost() > node.get_cost()) {
+        if (explored_node == null || explored_node.get_cost() > node.get_cost()) {
             this.explored.put(node.get_state(), node);
             this.frontier.add(node);
 
             if (this.frontier.size() > this.frontier_nodes) {
                 this.frontier_nodes = this.frontier.size();
             }
-
         }
 
         this.explored_nodes++;
