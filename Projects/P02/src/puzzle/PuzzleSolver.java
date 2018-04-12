@@ -17,7 +17,6 @@ public class PuzzleSolver {
     public final static String LINE_FORMAT = "| %-25s | %6s | %15s | %21s | %19s |\n";
 
     public static void main(String[] args) {
-
         String s = String.format(
                 LINE_FORMAT,
                 "Search type",
