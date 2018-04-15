@@ -31,6 +31,8 @@ public class SearchMemory {
     }
 
     public void insert(Node node) {
+        // Check if the new node's state was previously explored and if the
+        // previously explored node's cost is higher than new node's cost
         State state = node.get_state();
         Node explored_node = this.explored.get(state);
 
@@ -38,11 +40,13 @@ public class SearchMemory {
             this.explored.put(node.get_state(), node);
             this.frontier.add(node);
 
+            // Space complexity: The max number of nodes in the frontier
             if (this.frontier.size() > this.frontier_nodes) {
                 this.frontier_nodes = this.frontier.size();
             }
         }
 
+        // Time complexity: Total number of explored nodes
         this.explored_nodes++;
     }
 

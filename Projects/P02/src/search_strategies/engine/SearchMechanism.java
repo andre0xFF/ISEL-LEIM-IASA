@@ -7,7 +7,7 @@ import search_strategies.engine.tree.Path;
 import search_strategies.engine.tree.State;
 import search_strategies.problem.*;
 
-public abstract class SearchMechanism <P extends Problem> {
+public abstract class SearchMechanism<P extends Problem> {
 
     private SearchMemory search_memory;
     protected P problem;
@@ -53,10 +53,10 @@ public abstract class SearchMechanism <P extends Problem> {
         Operator[] operators = this.problem.get_operators();
 
         for (Operator operator : operators) {
-            State operator_state = operator.apply(state);
+            State new_state = operator.apply(state);
 
-            if (operator_state != null) {
-                Node successor_node = new Node(operator_state, operator, node);
+            if (new_state != null) {
+                Node successor_node = new Node(new_state, operator, node);
                 this.search_memory.insert(successor_node);
             }
         }
