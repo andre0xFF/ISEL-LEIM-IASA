@@ -62,12 +62,12 @@ public abstract class SearchMechanism<P extends Problem> {
         }
     }
 
-    private Solution generate_solution(Node final_node) {
+    private Solution generate_solution(Node node) {
         Path path = new Path();
 
-        while(final_node != null) {
-           path.join_start(final_node);
-           final_node = final_node.get_ancestor();
+        while(node != null) {
+           path.join_start(node);
+           node = node.get_ancestor();
         }
 
         return path;
