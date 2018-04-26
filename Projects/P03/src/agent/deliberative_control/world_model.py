@@ -45,6 +45,6 @@ class WorldModel(ModelPlanner):
             self._changed = False
 
     def show(self, vismod):
-        objects = ['alvo', 'obstaculo']
+        objects = ["alvo", "obstaculo"]
         targets = {key: value for (key, value) in self._elements.items() if value in objects}
         vismod.elementos(targets)

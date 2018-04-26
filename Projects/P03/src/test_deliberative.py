@@ -1,9 +1,7 @@
 import sys
 
-sys.path.append('./lib')
-sys.path.append('./lib/psa')
-sys.path.append('./lib/pee')
-sys.path.append('./agent')
+sys.path.append("./lib")
+sys.path.append("./lib/psa")
 
 import psa
 from lib.planner.pee.planner_pee import PlannerPEE
@@ -13,7 +11,7 @@ from pee.melhorprim.procura_aa import ProcuraAA
 
 
 def main():
-    psa.iniciar('env/amb1.das')
+    psa.iniciar("env/amb1.das")
 
     psa.executar(
         ProspectorAgent(
@@ -22,5 +20,6 @@ def main():
                     ProcuraAA()
                 ))))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

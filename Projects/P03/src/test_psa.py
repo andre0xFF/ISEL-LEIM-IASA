@@ -1,10 +1,8 @@
 import site
 import sys
 
-sys.path.append('../lib')
-sys.path.append('../lib/psa')
-sys.path.append('../lib/pee')
-sys.path.append('../agent')
+sys.path.append("./lib")
+sys.path.append("./lib/psa")
 
 from agent.prospector_agent import ProspectorAgent
 from agent.reactive_control.reactions.catch import Catch
@@ -18,9 +16,9 @@ def main():
     print(sys.version)
     print(sys.path)
     print(site.getsitepackages())
-    psa.iniciar('env/amb1.das')
+    psa.iniciar("env/amb1.das")
     psa.executar(ProspectorAgent(ReactiveControl(Catch())))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
