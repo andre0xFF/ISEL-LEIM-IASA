@@ -8,4 +8,6 @@ class ReactiveControl(Control):
 
     def process(self, perception):
         response = self._behaviour.activate(perception)
-        return response.action
+
+        if response is not None:
+            return response.action

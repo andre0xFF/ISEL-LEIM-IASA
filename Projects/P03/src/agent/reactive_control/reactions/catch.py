@@ -13,5 +13,5 @@ class Catch(Hierarchy):
             Approach(),
             Avoid(),
             Bypass(),
-            Explore()
+            Explore(),
         ])

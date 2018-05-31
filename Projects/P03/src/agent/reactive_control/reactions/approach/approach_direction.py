@@ -9,10 +9,10 @@ class ApproachDirection(Reaction):
         self._direction = direction
         self._action = accao.Mover(self._direction)
 
-    def detect_stimulus(self, perception):
+    def _detect_stimulus(self, perception):
         if perception[self._direction].alvo:
             return perception[self._direction].distancia
 
-    def generate_response(self, stimulus):
+    def _generate_response(self, stimulus):
         priority = 1 / (1 + stimulus)
         return Response(self._action, priority)
