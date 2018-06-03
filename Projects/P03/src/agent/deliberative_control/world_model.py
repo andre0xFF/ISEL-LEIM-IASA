@@ -37,7 +37,7 @@ class WorldModel(ModelPlanner):
     def update(self, perception):
         self._state = perception.posicao
 
-        if self._elements != perception.elementos:
+        if self._elements != perception.imagem:
             self._states = perception.imagem.keys()
             self._elements = perception.imagem
             self._changed = True

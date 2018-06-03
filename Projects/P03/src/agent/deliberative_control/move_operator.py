@@ -15,19 +15,16 @@ class MoveOperator(Operador):
     def action(self):
         return self._action
 
+    # Overwrite
     def aplicar(self, state):
         new_state = mover(state, self._angle)
-        # TODO state / new_state ?
         element = self._world_model.obtain_elements(new_state)
 
-        # if element is not 'obst':
-        #     return new_state
         if element in ['vazio', 'alvo']:
             return new_state
-        else:
-            return None
 
-        # return None
+        return None
 
+    # Overwrite
     def custo(self, state, new_state):
         return max(dist(state, new_state), 1)

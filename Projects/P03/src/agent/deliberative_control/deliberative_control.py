@@ -13,24 +13,21 @@ class DeliberativeControl(Control):
     def _reconsider(self):
         return self._world_model or self._planner.pending_plan()
 
+    # ends
     def _deliberate(self):
-        # ends
-        # loop every states from .obtain_elements() looking for targets ('alvo')
+        # loop every states from .obtain_elements() looking for targets ("alvo")
+        objectives = []
 
-        # states = self._world_model.states
-        #
-        # for state in states:
-        #     element = self._world_model.obtain_elements(state)
-        #
-        #     if element == 'alvo':
-        #         self._objectives.append(state)
+        for state in self._world_model.states:
+            if self._world_model.obtain_elements(state) == "alvo":
+                objectives.append(state)
 
-        self._objectives = [state for state in self._world_model.states if self._world_model.obtain_elements(state) == 'alvo']
+        self._objectives = objectives
 
+    # means
     def _plan(self):
-        # means
         if self._objectives:
-            return self._planner.plan(self._world_model, self._world_model.state, self._objectives)
+            self._planner.plan(self._world_model, self._world_model.state, self._objectives)
         else:
             self._planner.finish_plan()
 
@@ -39,8 +36,8 @@ class DeliberativeControl(Control):
 
         if action is not None:
             return action.action
-        else:
-            return None
+
+        return None
 
     def process(self, perception):
         self._take(perception)

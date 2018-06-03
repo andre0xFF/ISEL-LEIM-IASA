@@ -6,11 +6,11 @@ from planner.planner import Planner
 class PlannerPDM(Planner):
 
     def __init__(self):
-        self._gamma = 0.9
-        self._delta_max = 1
+        gamma = 0.9
+        delta_max = 1
         self.utility = {}
         self.policy = {}
-        self._pdm = PDM(self._gamma, self._delta_max)
+        self._pdm = PDM(gamma, delta_max)
 
     def plan(self, model_planner, state, objectives):
         if objectives:
