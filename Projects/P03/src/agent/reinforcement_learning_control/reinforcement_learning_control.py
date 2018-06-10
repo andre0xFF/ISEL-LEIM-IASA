@@ -13,25 +13,25 @@ class ReinforcementLearningControl(Control):
         self._state = None
 
     def process(self, perception):
-        sn = perception.posicao
+        next_state = perception.posicao
 
         if self._state is not None:
             action = perception.orientacao
             reward = self._generate_reward(perception)
-            self._learning_mechanism.learn(self._state, action, reward, sn)
+            self._learning_mechanism.learn(self._state, action, reward, next_state)
 
-        an = self._learning_mechanism.select_action(sn)
-        self._state = sn
+        angle = self._learning_mechanism.select_action(next_state)
+        self._state = next_state
 
-        if an is not None:
-            return Mover(an, ang_abs=True)
+        if angle is not None:
+            return Mover(angle, ang_abs=True)
 
     def _generate_reward(self, perception):
-        r = -1 * perception.custo_mov
+        reward = -1 * perception.custo_mov
 
         if perception.carga:
-            r += self._rmax
+            reward += self._rmax
         elif perception.colisao:
-            r += -1 * self._rmax
+            reward += -1 * self._rmax
 
-        return r
+        return reward
