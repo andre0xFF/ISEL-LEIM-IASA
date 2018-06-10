@@ -2,7 +2,7 @@ from lib.planner.pee.problem_planner import ProblemPlanner
 from lib.planner.planner import Planner
 
 
-class PlannerPEE(Planner):
+class PEEPlanner(Planner):
 
     def __init__(self, search_mechanism):
         self._search_mechanism = search_mechanism
