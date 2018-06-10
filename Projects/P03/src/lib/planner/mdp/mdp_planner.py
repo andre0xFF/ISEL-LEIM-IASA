@@ -7,7 +7,7 @@ class MDPPlanner(Planner):
 
     def __init__(self):
         gamma = 0.9
-        delta_max = 1
+        delta_max = 12
         self.utility = {}
         self.policy = {}
         self._mdp = MDP(gamma, delta_max)
@@ -33,5 +33,3 @@ class MDPPlanner(Planner):
     def show(self, vismod, state):
         if self._policy:
             vismod.limpar()
-            # vismod.campo(self._utility)
-            # vismod.politica(self._policy)

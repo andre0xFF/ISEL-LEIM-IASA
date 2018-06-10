@@ -22,14 +22,18 @@ class MDPModelPlan(MDPModel, ModelPlanner):
             for a in self._A:
                 self._generate_model(s, a)
 
+    # Simulate the transition in state (s) by applying action (a)
     def _generate_model(self, s, a):
-        # simulate the transition
+        # Apply state (s) to action (a), returns the next state (sn)
         sn = a.aplicar(s)
 
         if sn is None:
             self._T[(s, a)] = []
         else:
+            # There is a next state (sn), so the probability of transition is 1
             self._T[(s, a)] = [(1, sn)]
+
+            # Calculate the reward of being in state (s), apply action (a) and transition to the next state (sn)
             self._R[(s, a, sn)] = self._generate_reward(s, a, sn)
 
     def _generate_reward(self, s, a, sn):
