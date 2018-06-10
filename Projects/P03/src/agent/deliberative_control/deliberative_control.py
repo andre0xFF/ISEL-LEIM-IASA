@@ -11,9 +11,11 @@ class DeliberativeControl(Control):
         self._objectives = []
 
     def _reconsider(self):
-        return self._world_model or self._planner.pending_plan()
+        return self._world_model.changed or self._planner.pending_plan()
 
     # ends
+    # decide what to do
+    # results: objectives
     def _deliberate(self):
         # loop every states from .obtain_elements() looking for targets ("alvo")
         objectives = []
@@ -25,6 +27,8 @@ class DeliberativeControl(Control):
         self._objectives = objectives
 
     # means
+    # decide how to do
+    # results: plan
     def _plan(self):
         if self._objectives:
             self._planner.plan(self._world_model, self._world_model.state, self._objectives)
@@ -39,6 +43,8 @@ class DeliberativeControl(Control):
 
         return None
 
+    # practical reasoning: decision making
+    # the world might change while reasoning process is running
     def process(self, perception):
         self._take(perception)
 
