@@ -1,7 +1,7 @@
-from lib.pdm.model_pdm import ModelPDM
+from lib.mdp.mdp_model import MDPModel
 
 
-class PDM(ModelPDM):
+class MDP(MDPModel):
 
     def __init__(self, gamma, delta_max):
         self._gamma = gamma

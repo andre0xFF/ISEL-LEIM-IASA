@@ -1,4 +1,4 @@
-class ModelPDM():
+class MDPModel():
 
     def S(self):
         # set of states

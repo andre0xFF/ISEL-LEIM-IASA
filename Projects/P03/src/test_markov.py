@@ -4,7 +4,7 @@ sys.path.append("./lib")
 sys.path.append("./lib/psa")
 
 import psa
-from planner.pdm.planner_pdm import PlannerPDM
+from planner.mdp.mdp_planner import MDPPlanner
 from agent.prospector_agent import ProspectorAgent
 from agent.deliberative_control.deliberative_control import DeliberativeControl
 
@@ -15,7 +15,7 @@ def main():
     psa.executar(
         ProspectorAgent(
             DeliberativeControl(
-                PlannerPDM()
+                MDPPlanner()
             )))
 
 

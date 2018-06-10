@@ -1,20 +1,20 @@
-from pdm.pdm import PDM
-from planner.pdm.model_pdm_plan import ModelPDMPlan
+from mdp.mdp import MDP
+from planner.mdp.mdp_model_plan import MDPModelPlan
 from planner.planner import Planner
 
 
-class PlannerPDM(Planner):
+class MDPPlanner(Planner):
 
     def __init__(self):
         gamma = 0.9
         delta_max = 1
         self.utility = {}
         self.policy = {}
-        self._pdm = PDM(gamma, delta_max)
+        self._pdm = MDP(gamma, delta_max)
 
     def plan(self, model_planner, state, objectives):
         if objectives:
-            model_pdm_planner = ModelPDMPlan(model_planner, objectives)
+            model_pdm_planner = MDPModelPlan(model_planner, objectives)
             self._utility, self._policy = self._pdm.solve(model_pdm_planner)
         else:
             self.finish_plan()

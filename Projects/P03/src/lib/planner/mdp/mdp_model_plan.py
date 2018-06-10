@@ -1,8 +1,8 @@
-from pdm.model_pdm import ModelPDM
+from mdp.mdp_model import MDPModel
 from planner.model_planner import ModelPlanner
 
 
-class ModelPDMPlan(ModelPDM, ModelPlanner):
+class MDPModelPlan(MDPModel, ModelPlanner):
 
     def __init__(self, model_planner, objectives):
         self._model_planner = model_planner
