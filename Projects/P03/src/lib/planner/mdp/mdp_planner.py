@@ -10,12 +10,12 @@ class MDPPlanner(Planner):
         delta_max = 1
         self.utility = {}
         self.policy = {}
-        self._pdm = MDP(gamma, delta_max)
+        self._mdp = MDP(gamma, delta_max)
 
     def plan(self, model_planner, state, objectives):
         if objectives:
-            model_pdm_planner = MDPModelPlan(model_planner, objectives)
-            self._utility, self._policy = self._pdm.solve(model_pdm_planner)
+            mdp_model_planner = MDPModelPlan(model_planner, objectives)
+            self._utility, self._policy = self._mdp.solve(mdp_model_planner)
         else:
             self.finish_plan()
 
