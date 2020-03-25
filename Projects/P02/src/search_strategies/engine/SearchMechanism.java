@@ -9,24 +9,29 @@ import search_strategies.problem.*;
 
 public abstract class SearchMechanism<P extends Problem> {
 
+    public static final int INFINITE_DEPTH = -1;
     private SearchMemory search_memory;
     protected P problem;
 
     public SearchMemory get_search_memory() {
+
         return this.search_memory;
     }
 
     public SearchMechanism() {
+
         this.search_memory = this.start_memory();
     }
 
     protected abstract SearchMemory start_memory();
 
     public Solution solve(P problem) {
-        return this.solve(problem, -1);
+
+        return this.solve(problem, SearchMechanism.INFINITE_DEPTH);
     }
 
     public Solution solve(P problem, int max_depth) {
+
         this.problem = problem;
         this.search_memory.clean();
 
@@ -40,7 +45,7 @@ public abstract class SearchMechanism<P extends Problem> {
                 return this.generate_solution(node);
             }
 
-            if (node.get_depth() < max_depth || max_depth == -1) {
+            if (node.get_depth() < max_depth || max_depth == SearchMechanism.INFINITE_DEPTH) {
                 this.expand(node);
             }
         }
@@ -49,6 +54,7 @@ public abstract class SearchMechanism<P extends Problem> {
     }
 
     private void expand(Node node) {
+
         State state = node.get_state();
         Operator[] operators = this.problem.get_operators();
 
@@ -63,6 +69,7 @@ public abstract class SearchMechanism<P extends Problem> {
     }
 
     private Solution generate_solution(Node node) {
+
         Path path = new Path();
 
         while(node != null) {
