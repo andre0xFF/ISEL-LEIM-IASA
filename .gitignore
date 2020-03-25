@@ -1,11 +1,4 @@
-/Bibliografia
-/Guia*
-/Magic*
-/Textos*
-/Other
-/Relatorio*
-/Trabalhos*
-/*.pdf
+iasa-apoio/
 Exams/
 
 # Created by https://www.gitignore.io/api/java,python,pycharm+all,intellij+all,visualstudiocode
