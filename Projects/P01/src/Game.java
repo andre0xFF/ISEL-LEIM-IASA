@@ -14,7 +14,6 @@ public class Game {
     }
 
     private static void execute_game() {
-
         Scanner scanner = new Scanner(System.in);
         EnvironmentEvent event;
 
@@ -28,5 +27,7 @@ public class Game {
             event = environment.get_event();
 
         } while(event == null || event != EnvironmentEvent.EXIT);
+
+        scanner.close();
     }
 }
