@@ -1,24 +1,24 @@
-import sys
-
-sys.path.append("./lib")
-sys.path.append("./lib/psa")
-
-import psa
-from lib.planner.pee.pee_planner import PEEPlanner
-from agent.prospector_agent import ProspectorAgent
 from agent.deliberative_control.deliberative_control import DeliberativeControl
-from pee.melhorprim.procura_aa import ProcuraAA
+from agent.prospector_agent import ProspectorAgent
+from pee.melhorprim.procura_aa import ProcuraAA as AStarSearch
+from planner.pee.pee_planner import PEEPlanner
+from psa import executar as execute
+from psa import iniciar as init
 
 
 def main():
-    psa.iniciar("env/amb1.das")
 
-    psa.executar(
+    init("env/amb1.das")
+
+    execute(
         ProspectorAgent(
             DeliberativeControl(
                 PEEPlanner(
-                    ProcuraAA()
-                ))))
+                    AStarSearch()
+                )
+            )
+        )
+    )
 
 
 if __name__ == "__main__":

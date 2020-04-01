@@ -1,7 +1,7 @@
-from psa5.util import dirmov
 from agent.control import Control
-from psa5.actuador import Mover
 from agent.reinforcement_learning_control.learning_mechanism import LearningMechanism
+from psa.actuador import Mover
+from psa.util import dirmov
 
 
 class ReinforcementLearningControl(Control):

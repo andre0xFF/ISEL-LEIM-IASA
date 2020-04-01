@@ -1,6 +1,6 @@
-from psa5 import util
-from lib.planner.model_planner import ModelPlanner
 from agent.deliberative_control.move_operator import MoveOperator
+from planner.model_planner import ModelPlanner
+from psa import util
 
 
 class WorldModel(ModelPlanner):

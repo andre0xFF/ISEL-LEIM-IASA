@@ -1,16 +1,18 @@
-import accao
-import actuador
-from lib.ecr.reaction import Reaction
-from lib.ecr.response import Response
+from ecr import Reaction
+from ecr import Response
+from psa.accao import Mover as Move
+from psa.actuador import DIR as RIGHT
+from psa.actuador import ESQ as LEFT
+from psa.actuador import FRT as FRONT
 
 
 class Bypass(Reaction):
     # Translation: contornar
 
     def _detect_stimulus(self, perception):
-        return perception[actuador.ESQ].contacto and perception[actuador.ESQ].obstaculo or \
-               perception[actuador.DIR].contacto and perception[actuador.DIR].obstaculo
+        return perception[LEFT].contacto and perception[LEFT].obstaculo or \
+               perception[RIGHT].contacto and perception[RIGHT].obstaculo
 
     def _generate_response(self, stimulus):
-        action = accao.Mover(actuador.FRT)
+        action = Move(FRONT)
         return Response(action)

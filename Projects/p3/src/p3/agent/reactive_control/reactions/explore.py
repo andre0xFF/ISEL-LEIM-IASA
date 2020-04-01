@@ -1,18 +1,20 @@
 from random import choice
 
-import accao
-import actuador
-from lib.ecr.behaviour import Behaviour
-from lib.ecr.response import Response
+from ecr import Behaviour
+from ecr import Response
+from psa.accao import Mover as Move
+from psa.actuador import DIR as RIGHT
+from psa.actuador import ESQ as LEFT
+from psa.actuador import FRT as FRONT
 
 
 class Explore(Behaviour):
 
     def activate(self, perception):
         action = choice([
-            accao.Mover(actuador.ESQ),
-            accao.Mover(actuador.FRT),
-            accao.Mover(actuador.DIR)
+            Move(LEFT),
+            Move(FRONT),
+            Move(RIGHT)
         ])
 
         return Response(action)

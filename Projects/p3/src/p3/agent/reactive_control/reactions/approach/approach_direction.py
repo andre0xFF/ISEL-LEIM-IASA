@@ -1,13 +1,13 @@
-import accao
-from lib.ecr.reaction import Reaction
-from lib.ecr.response import Response
+from psa.accao import Mover as Move
+from ecr import Reaction
+from ecr import Response
 
 
 class ApproachDirection(Reaction):
 
     def __init__(self, direction):
         self._direction = direction
-        self._action = accao.Mover(self._direction)
+        self._action = Move(self._direction)
 
     def _detect_stimulus(self, perception):
         if perception[self._direction].alvo:

@@ -1,23 +1,23 @@
-import sys
-
-sys.path.append("./lib")
-sys.path.append("./lib/psa")
-
-import psa
-from planner.mdp.mdp_planner import MDPPlanner
-from agent.prospector_agent import ProspectorAgent
 from agent.deliberative_control.deliberative_control import DeliberativeControl
+from agent.prospector_agent import ProspectorAgent
+from planner.mdp.mdp_planner import MDPPlanner
+from psa import executar as execute
+from psa import iniciar as init
 
 
 def main():
-    psa.iniciar("env/amb1.das")
 
-    psa.executar(
+    init("env/amb1.das")
+
+    execute(
         ProspectorAgent(
             DeliberativeControl(
                 MDPPlanner()
-            )))
+            )
+        )
+    )
 
 
 if __name__ == "__main__":
+
     main()
