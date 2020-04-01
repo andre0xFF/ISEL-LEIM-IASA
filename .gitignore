@@ -1,8 +1,12 @@
 iasa-apoio/
 Exams/
+!Projects/p3/.venv/lib/python3.7/site-packages/pee
+!Projects/p3/.venv/lib/python3.7/site-packages/psa
 
-# Created by https://www.gitignore.io/api/java,python,pycharm+all,intellij+all,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=java,python,pycharm+all,intellij+all,visualstudiocode
+
+
+# Created by https://www.gitignore.io/api/java,python,virtualenv,pycharm+all,intellij+all,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=java,python,virtualenv,pycharm+all,intellij+all,visualstudiocode
 
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -272,6 +276,19 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+### VirtualEnv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+pyvenv.cfg
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-selfcheck.json
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -283,4 +300,4 @@ dmypy.json
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/java,python,pycharm+all,intellij+all,visualstudiocode
+# End of https://www.gitignore.io/api/java,python,virtualenv,pycharm+all,intellij+all,visualstudiocode
