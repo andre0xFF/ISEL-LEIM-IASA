@@ -1,9 +1,10 @@
-package path.models;
+package path_problem.models;
 
 import search.engine.tree.Operator;
 import search.engine.tree.State;
 
 public class ConnectionOperator implements Operator {
+
     private StateLocation origin_state;
     private StateLocation destination_state;
     private float connection_cost;

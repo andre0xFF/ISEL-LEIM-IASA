@@ -1,4 +1,4 @@
-package path.models;
+package path_problem.models;
 
 import search.engine.tree.State;
 

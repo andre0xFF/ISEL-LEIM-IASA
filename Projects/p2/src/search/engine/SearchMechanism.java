@@ -14,24 +14,20 @@ public abstract class SearchMechanism<P extends Problem> {
     protected P problem;
 
     public SearchMemory get_search_memory() {
-
         return this.search_memory;
     }
 
     public SearchMechanism() {
-
         this.search_memory = this.start_memory();
     }
 
     protected abstract SearchMemory start_memory();
 
     public Solution solve(P problem) {
-
         return this.solve(problem, SearchMechanism.INFINITE_DEPTH);
     }
 
     public Solution solve(P problem, int max_depth) {
-
         this.problem = problem;
         this.search_memory.clean();
 
@@ -39,16 +35,13 @@ public abstract class SearchMechanism<P extends Problem> {
         this.search_memory.insert(initial_node);
 
         while (!this.search_memory.is_empty()) {
-
             Node node = this.search_memory.remove();
 
             if (this.problem.objective(node.get_state())) {
-
                 return this.generate_solution(node);
             }
 
             if (node.get_depth() < max_depth || max_depth == SearchMechanism.INFINITE_DEPTH) {
-
                 this.expand(node);
             }
         }
@@ -57,16 +50,13 @@ public abstract class SearchMechanism<P extends Problem> {
     }
 
     private void expand(Node node) {
-
         State state = node.get_state();
         Operator[] operators = this.problem.get_operators();
 
         for (Operator operator : operators) {
-
             State new_state = operator.apply(state);
 
             if (new_state != null) {
-
                 Node successor_node = new Node(new_state, operator, node);
                 this.search_memory.insert(successor_node);
             }
@@ -78,7 +68,6 @@ public abstract class SearchMechanism<P extends Problem> {
         Path path = new Path();
 
         while(node != null) {
-
            path.join_start(node);
            node = node.get_ancestor();
         }
