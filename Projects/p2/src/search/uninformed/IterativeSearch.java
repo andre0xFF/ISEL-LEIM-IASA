@@ -1,8 +1,8 @@
-package search_strategies.uninformed;
+package search.uninformed;
 
-import search_strategies.problem.Problem;
-import search_strategies.engine.Search;
-import search_strategies.problem.Solution;
+import search.problem.Problem;
+import search.engine.Search;
+import search.problem.Solution;
 
 public class IterativeSearch extends DepthFirstSearch implements Search {
 

@@ -1,20 +1,26 @@
 package traject;
 
-import search_strategies.uninformed.BreadthFirstSearch;
-import search_strategies.uninformed.DepthFirstSearch;
-import search_strategies.uninformed.IterativeSearch;
-import search_strategies.engine.Search;
-import search_strategies.problem.Solution;
-import search_strategies.problem.SolutionStep;
+import search.uninformed.BreadthFirstSearch;
+import search.uninformed.DepthFirstSearch;
+import search.uninformed.IterativeSearch;
+import search.engine.Search;
+import search.problem.Solution;
+import search.problem.SolutionStep;
 import traject.models.ConnectionOperator;
 import traject.models.TrajectProblemPlanner;
 
 public class TrajectPlanner {
 
     public static void main(String[] args) {
+
         ConnectionOperator[] operators = get_operators();
 
-        TrajectProblemPlanner problem = new TrajectProblemPlanner("Loc-0", "Loc-6", operators);
+        TrajectProblemPlanner problem = new TrajectProblemPlanner(
+                "Loc-0",
+                "Loc-6",
+                operators
+        );
+
         Search search;
         Solution solution;
 
@@ -38,7 +44,9 @@ public class TrajectPlanner {
     }
 
     private static ConnectionOperator[] get_operators() {
+
         return new ConnectionOperator[] {
+
             new ConnectionOperator("Loc-0", "Loc-1", 5),
             new ConnectionOperator("Loc-0", "Loc-2", 25),
             new ConnectionOperator("Loc-1", "Loc-3", 12),
@@ -54,11 +62,14 @@ public class TrajectPlanner {
     }
 
     private static void show_traject(Solution solution) {
+
         if (solution == null) {
-            System.out.println("No solution");
+
+            return;
         }
 
         for (SolutionStep step : solution) {
+
             System.out.printf("%s (%s)\n", step.get_state().toString(), step.get_cost());
         }
     }

@@ -1,9 +1,9 @@
-package search_strategies.uninformed;
+package search.uninformed;
 
-import search_strategies.engine.tree.Node;
-import search_strategies.informed.BestFirstSearch;
-import search_strategies.problem.Problem;
-import search_strategies.engine.Search;
+import search.engine.tree.Node;
+import search.informed.BestFirstSearch;
+import search.problem.Problem;
+import search.engine.Search;
 
 public class UniformCostSearch extends BestFirstSearch<Problem> implements Search {
 

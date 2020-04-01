@@ -1,7 +1,7 @@
 package traject.models;
 
-import search_strategies.engine.tree.Operator;
-import search_strategies.engine.tree.State;
+import search.engine.tree.Operator;
+import search.engine.tree.State;
 
 public class ConnectionOperator implements Operator {
     private StateLocation origin_state;

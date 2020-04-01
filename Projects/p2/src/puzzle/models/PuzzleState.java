@@ -1,7 +1,7 @@
 package puzzle.models;
 
 import puzzle.Puzzle;
-import search_strategies.engine.tree.State;
+import search.engine.tree.State;
 
 public class PuzzleState extends State {
 

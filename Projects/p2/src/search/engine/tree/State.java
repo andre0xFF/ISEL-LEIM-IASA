@@ -1,4 +1,4 @@
-package search_strategies.engine.tree;
+package search.engine.tree;
 
 public abstract class State {
 

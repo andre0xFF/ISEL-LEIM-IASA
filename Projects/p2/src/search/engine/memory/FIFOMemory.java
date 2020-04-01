@@ -1,6 +1,6 @@
-package search_strategies.engine.memory;
+package search.engine.memory;
 
-import search_strategies.engine.tree.Node;
+import search.engine.tree.Node;
 
 import java.util.LinkedList;
 

@@ -1,7 +1,7 @@
-package search_strategies.problem;
+package search.problem;
 
-import search_strategies.engine.tree.Operator;
-import search_strategies.engine.tree.State;
+import search.engine.tree.Operator;
+import search.engine.tree.State;
 
 public abstract class Problem {
 

@@ -1,4 +1,4 @@
-package search_strategies.problem;
+package search.problem;
 
 import java.util.Iterator;
 

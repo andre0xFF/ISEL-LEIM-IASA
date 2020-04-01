@@ -1,8 +1,8 @@
 package puzzle.models;
 
 import puzzle.Puzzle;
-import search_strategies.engine.tree.Operator;
-import search_strategies.engine.tree.State;
+import search.engine.tree.Operator;
+import search.engine.tree.State;
 import puzzle.Puzzle.Movimento;
 
 public class PuzzleOperator implements Operator {

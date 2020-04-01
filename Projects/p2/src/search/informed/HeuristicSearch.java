@@ -1,7 +1,7 @@
-package search_strategies.informed;
+package search.informed;
 
-import search_strategies.problem.HeuristicProblem;
-import search_strategies.problem.Solution;
+import search.problem.HeuristicProblem;
+import search.problem.Solution;
 
 public interface HeuristicSearch {
 

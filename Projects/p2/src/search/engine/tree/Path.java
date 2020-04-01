@@ -1,7 +1,7 @@
-package search_strategies.engine.tree;
+package search.engine.tree;
 
-import search_strategies.problem.Solution;
-import search_strategies.problem.SolutionStep;
+import search.problem.Solution;
+import search.problem.SolutionStep;
 
 import java.util.Iterator;
 import java.util.LinkedList;

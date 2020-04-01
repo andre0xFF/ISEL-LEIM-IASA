@@ -1,7 +1,7 @@
 package traject.models;
 
-import search_strategies.problem.Problem;
-import search_strategies.engine.tree.State;
+import search.problem.Problem;
+import search.engine.tree.State;
 
 public class TrajectProblemPlanner extends Problem {
 

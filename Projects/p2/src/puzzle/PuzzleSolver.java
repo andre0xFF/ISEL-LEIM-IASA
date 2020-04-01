@@ -2,15 +2,15 @@ package puzzle;
 
 import puzzle.models.PuzzleOperator;
 import puzzle.models.PuzzleProblem;
-import search_strategies.informed.AStarSearch;
-import search_strategies.informed.GreedyBestFirstSearch;
-import search_strategies.uninformed.UniformCostSearch;
-import search_strategies.uninformed.BreadthFirstSearch;
-import search_strategies.uninformed.DepthFirstSearch;
-import search_strategies.uninformed.IterativeSearch;
-import search_strategies.engine.SearchMechanism;
-import search_strategies.problem.Solution;
-import search_strategies.problem.SolutionStep;
+import search.informed.AStarSearch;
+import search.informed.GreedyBestFirstSearch;
+import search.uninformed.UniformCostSearch;
+import search.uninformed.BreadthFirstSearch;
+import search.uninformed.DepthFirstSearch;
+import search.uninformed.IterativeSearch;
+import search.engine.SearchMechanism;
+import search.problem.Solution;
+import search.problem.SolutionStep;
 
 public class PuzzleSolver {
 
