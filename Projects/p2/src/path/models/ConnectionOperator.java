@@ -1,4 +1,4 @@
-package traject.models;
+package path.models;
 
 import search.engine.tree.Operator;
 import search.engine.tree.State;

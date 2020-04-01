@@ -1,4 +1,4 @@
-package traject;
+package path;
 
 import search.uninformed.BreadthFirstSearch;
 import search.uninformed.DepthFirstSearch;
@@ -6,16 +6,16 @@ import search.uninformed.IterativeSearch;
 import search.engine.Search;
 import search.problem.Solution;
 import search.problem.SolutionStep;
-import traject.models.ConnectionOperator;
-import traject.models.TrajectProblemPlanner;
+import path.models.ConnectionOperator;
+import path.models.PathProblemPlanner;
 
-public class TrajectPlanner {
+public class PathPlanner {
 
     public static void main(String[] args) {
 
         ConnectionOperator[] operators = get_operators();
 
-        TrajectProblemPlanner problem = new TrajectProblemPlanner(
+        PathProblemPlanner problem = new PathProblemPlanner(
                 "Loc-0",
                 "Loc-6",
                 operators
@@ -24,23 +24,23 @@ public class TrajectPlanner {
         Search search;
         Solution solution;
 
-        System.out.printf("\n$ Depth First Search\n");
+        System.out.format("\n$ Depth First Search\n");
 
         search = new DepthFirstSearch();
         solution = search.solve(problem);
-        show_traject(solution);
+        show_path(solution);
 
-        System.out.printf("\n$ Breadth First Search\n");
+        System.out.format("\n$ Breadth First Search\n");
 
         search = new BreadthFirstSearch();
         solution = search.solve(problem);
-        show_traject(solution);
+        show_path(solution);
 
-        System.out.printf("\n$ Iterative Search\n");
+        System.out.format("\n$ Iterative Search\n");
 
         search = new IterativeSearch();
         solution = search.solve(problem);
-        show_traject(solution);
+        show_path(solution);
     }
 
     private static ConnectionOperator[] get_operators() {
@@ -61,7 +61,7 @@ public class TrajectPlanner {
         };
     }
 
-    private static void show_traject(Solution solution) {
+    private static void show_path(Solution solution) {
 
         if (solution == null) {
 
@@ -70,7 +70,7 @@ public class TrajectPlanner {
 
         for (SolutionStep step : solution) {
 
-            System.out.printf("%s (%s)\n", step.get_state().toString(), step.get_cost());
+            System.out.format("%s (%s)\n", step.get_state().toString(), step.get_cost());
         }
     }
 }
