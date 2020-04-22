@@ -1,23 +1,24 @@
 package search.uninformed;
 
+import search.engine.SearchMechanism;
 import search.problem.Problem;
 import search.engine.Search;
 import search.problem.Solution;
 
 public class IterativeSearch extends DepthFirstSearch implements Search {
 
-    private int depth_increment = 1;
+    private int increment = 1;
 
-    public int get_depth_increment() {
-        return this.depth_increment;
+    public int get_increment() {
+        return this.increment;
     }
 
-    public void set_depth_increment(int depth_increment) {
-        this.depth_increment = depth_increment;
+    public void set_increment(int increment) {
+        this.increment = increment;
     }
 
-    private Solution solve(Problem problem, int max_depth, int depth_increment) {
-        for (int i = depth_increment; i <= max_depth || max_depth == -1; i += depth_increment) {
+    private Solution solve(Problem problem, int max_depth, int increment) {
+        for (int i = increment; i <= max_depth || max_depth == SearchMechanism.INFINITE_DEPTH; i += increment) {
             Solution s = super.solve(problem, i);
 
             if (s != null) {
@@ -29,7 +30,7 @@ public class IterativeSearch extends DepthFirstSearch implements Search {
     }
 
     public Solution solve(Problem problem, int max_depth) {
-        return this.solve(problem, max_depth, this.depth_increment);
+        return this.solve(problem, max_depth, this.increment);
     }
 
     @Override

@@ -5,9 +5,9 @@ import search.engine.tree.State;
 
 public class ConnectionOperator implements Operator {
 
-    private StateLocation origin_state;
-    private StateLocation destination_state;
-    private float connection_cost;
+    private final StateLocation origin_state;
+    private final StateLocation destination_state;
+    private final float connection_cost;
 
     public ConnectionOperator(String initial_location, String final_location, float connection_cost) {
         this.origin_state = new StateLocation(initial_location);
