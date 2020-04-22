@@ -21,7 +21,15 @@ public class SearchMemory {
         return this.frontier_nodes;
     }
 
+    public int get_spacial_complexity() {
+        return this.frontier_nodes;
+    }
+
     public int get_max_expanded_nodes() {
+        return this.explored_nodes;
+    }
+
+    public int get_temporal_complexity() {
         return this.explored_nodes;
     }
 
