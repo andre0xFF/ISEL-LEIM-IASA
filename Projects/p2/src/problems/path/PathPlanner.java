@@ -1,4 +1,4 @@
-package path_problem;
+package problems.path;
 
 import search.uninformed.BreadthFirstSearch;
 import search.uninformed.DepthFirstSearch;
@@ -6,8 +6,8 @@ import search.uninformed.IterativeSearch;
 import search.engine.Search;
 import search.problem.Solution;
 import search.problem.SolutionStep;
-import path_problem.models.ConnectionOperator;
-import path_problem.models.PathProblemPlanner;
+import problems.path.models.ConnectionOperator;
+import problems.path.models.PathProblemPlanner;
 
 public class PathPlanner {
 

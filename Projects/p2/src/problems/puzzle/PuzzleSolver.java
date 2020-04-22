@@ -1,8 +1,8 @@
-package puzzle_problem;
+package problems.puzzle;
 
 import puzzle.Puzzle;
-import puzzle_problem.models.PuzzleOperator;
-import puzzle_problem.models.PuzzleProblem;
+import problems.puzzle.models.PuzzleOperator;
+import problems.puzzle.models.PuzzleProblem;
 import search.informed.AStarSearch;
 import search.informed.GreedyBestFirstSearch;
 import search.uninformed.UniformCostSearch;

@@ -1,4 +1,4 @@
-package puzzle_problem.models;
+package problems.puzzle.models;
 
 import puzzle.Puzzle;
 import search.engine.tree.Operator;
