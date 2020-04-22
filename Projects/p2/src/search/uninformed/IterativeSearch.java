@@ -34,7 +34,7 @@ public class IterativeSearch extends DepthFirstSearch implements Search {
     }
 
     @Override
-    public String get_title() {
+    public String toString() {
         return "Iterative Search";
     }
 }

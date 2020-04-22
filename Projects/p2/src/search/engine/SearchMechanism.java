@@ -75,5 +75,5 @@ public abstract class SearchMechanism<P extends Problem> {
         return path;
     }
 
-    public abstract String get_title();
+    public abstract String toString();
 }

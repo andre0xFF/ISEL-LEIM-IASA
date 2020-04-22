@@ -86,7 +86,7 @@ public class PuzzleSolver {
         if (solution == null) {
             String s = String.format(
                 LINE_FORMAT,
-                search.get_title(),
+                search,
                 puzzle_name,
                 "",
                 "",
@@ -105,7 +105,7 @@ public class PuzzleSolver {
 
         String s = String.format(
             LINE_FORMAT,
-            search.get_title(),
+            search,
             puzzle_name,
             cost,
             search.get_search_memory().get_max_frontier_nodes(),

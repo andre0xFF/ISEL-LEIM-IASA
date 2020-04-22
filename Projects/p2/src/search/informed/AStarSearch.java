@@ -11,7 +11,7 @@ public class AStarSearch extends BestFirstSearch<HeuristicProblem> implements He
     }
 
     @Override
-    public String get_title() {
+    public String toString() {
         return "A* Search";
     }
 }

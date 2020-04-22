@@ -13,7 +13,7 @@ public class UniformCostSearch extends BestFirstSearch<Problem> implements Searc
     }
 
     @Override
-    public String get_title() {
+    public String toString() {
         return "Uniform Cost Search";
     }
 }

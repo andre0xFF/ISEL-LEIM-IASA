@@ -8,6 +8,7 @@ import search.problem.Solution;
 import search.problem.SolutionStep;
 import problems.path.models.ConnectionOperator;
 import problems.path.models.PathProblemPlanner;
+import search.uninformed.UniformCostSearch;
 
 public class PathPlanner {
 
@@ -16,29 +17,19 @@ public class PathPlanner {
 
 		PathProblemPlanner problem = new PathProblemPlanner(
             "Loc-0",
-            "Loc-6",
+            "Loc-4",
             operators
 		);
 
-		Search search;
-		Solution solution;
+		run_experiment(new DepthFirstSearch(), problem);
+		run_experiment(new BreadthFirstSearch(), problem);
+		run_experiment(new IterativeSearch(), problem);
+		run_experiment(new UniformCostSearch(), problem);
+	}
 
-		System.out.format("\n$ Depth First Search\n");
-
-		search = new DepthFirstSearch();
-		solution = search.solve(problem);
-		show_path(solution);
-
-		System.out.format("\n$ Breadth First Search\n");
-
-		search = new BreadthFirstSearch();
-		solution = search.solve(problem);
-		show_path(solution);
-
-		System.out.format("\n$ Iterative Search\n");
-
-		search = new IterativeSearch();
-		solution = search.solve(problem);
+	private static void run_experiment(Search type, PathProblemPlanner problem) {
+		System.out.format("$ %s\n", type);
+		Solution solution = type.solve(problem);
 		show_path(solution);
 	}
 
@@ -64,7 +55,7 @@ public class PathPlanner {
 		}
 
 		for (SolutionStep step : solution) {
-			System.out.format("%s (%s)\n", step.get_state().toString(), step.get_cost());
+			System.out.format("%s (%s)\n", step.get_state(), step.get_cost());
 		}
 	}
 }

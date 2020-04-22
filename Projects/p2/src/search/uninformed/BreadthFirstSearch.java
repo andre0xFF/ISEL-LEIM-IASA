@@ -14,7 +14,7 @@ public class BreadthFirstSearch extends SearchMechanism<Problem> implements Sear
     }
 
     @Override
-    public String get_title() {
+    public String toString() {
         return "Breadth First Search";
     }
 }

@@ -13,7 +13,7 @@ public class DepthFirstSearch extends SearchMechanism implements Search {
     }
 
     @Override
-    public String get_title() {
+    public String toString() {
         return "Depth First Search";
     }
 }

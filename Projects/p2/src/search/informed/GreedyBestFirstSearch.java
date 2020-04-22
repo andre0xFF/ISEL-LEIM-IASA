@@ -11,7 +11,7 @@ public class GreedyBestFirstSearch extends BestFirstSearch<HeuristicProblem> imp
     }
 
     @Override
-    public String get_title() {
+    public String toString() {
         return "Greedy Best First Search";
     }
 }
