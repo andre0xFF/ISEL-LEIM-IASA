@@ -1,8 +1,6 @@
 iasa-apoio/
 Exams/
-!Projects/p3/.venv/lib/python3.7/site-packages/pee
-!Projects/p3/.venv/lib/python3.7/site-packages/psa
-
+**/.vscode/
 
 
 # Created by https://www.gitignore.io/api/java,python,virtualenv,pycharm+all,intellij+all,visualstudiocode
