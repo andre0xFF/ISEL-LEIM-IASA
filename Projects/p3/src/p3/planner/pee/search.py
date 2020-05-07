@@ -2,7 +2,7 @@
 class Search():
 
     def __init__(self):
-        abstract
+        raise NotImplementedError("Abstract Method")
 
     def solve(self, problem):
-        abstract
+        raise NotImplementedError("Abstract Method")

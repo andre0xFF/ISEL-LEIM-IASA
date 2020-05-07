@@ -5,4 +5,4 @@ class ReinforcementLearning(object):
         self._action_selection = action_selection
 
     def learn(self, state, action, r, next_state):
-        abstract
+        raise NotImplementedError("Abstract Method")

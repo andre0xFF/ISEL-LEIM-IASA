@@ -1,7 +1,7 @@
 class LearningMemory(object):
 
     def update(self, state, action, q):
-        abstract
+        raise NotImplementedError("Abstract Method")
 
     def acquire(self, state, action):
-        abstract
+        raise NotImplementedError("Abstract Method")

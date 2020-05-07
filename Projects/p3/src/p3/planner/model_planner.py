@@ -1,7 +1,7 @@
 class ModelPlanner():
 
     def states(self):
-        abstract
+        raise NotImplementedError("Abstract Method")
 
     def operators(self):
-        abstract
+        raise NotImplementedError("Abstract Method")
