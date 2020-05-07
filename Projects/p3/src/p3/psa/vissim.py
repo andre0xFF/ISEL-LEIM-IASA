@@ -267,9 +267,8 @@ def viselem(vis, elem, fs_comut=False):
     if isinstance(elem, elementos.Agente):
         vis.agente(elem.pos, elem.dir, elem.col, elem.carga(), elem.varang)
         elem.varang = None
-    elif elem.alterado or fs_comut:
-        if isinstance(elem, elementos.Obstaculo):
-            vis.obstaculo(elem.pos)
+    elif (elem.alterado or fs_comut) and isinstance(elem, elementos.Obstaculo):
+        vis.obstaculo(elem.pos)
     elif isinstance(elem, elementos.Alvo):
         vis.alvo(elem.pos)
     elif isinstance(elem, elementos.Base):
