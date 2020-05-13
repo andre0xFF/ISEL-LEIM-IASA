@@ -8,8 +8,9 @@ authors = [
 ]
 
 [tool.poetry.dependencies]
-python = "~3.7"
-pygame = "^1.9.6"
+python = "~3.6.9"
+psa = {git = "git@github.com:andrewfonseca/ISEL-LEIM-IASA-PSA.git"}
+pee = {git = "git@github.com:andrewfonseca/ISEL-LEIM-IASA-PEE.git"}
 
 [tool.poetry.dev-dependencies]
 pycodestyle = "^2.5.0"

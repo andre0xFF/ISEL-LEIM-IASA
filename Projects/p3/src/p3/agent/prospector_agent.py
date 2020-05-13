@@ -1,10 +1,12 @@
 from psa.agente import Agente as Agent
+from psa.accao import Mover as Move
+from .control import Control
 
 
 class ProspectorAgent(Agent):
-    def __init__(self, control):
-        super().__init__()
-        self._control = control
+    def __init__(self, control: Control):
+        Agent.__init__(self)
+        self._control: Control = control
 
     # Overwrite
     def executar(self):
@@ -19,7 +21,7 @@ class ProspectorAgent(Agent):
         # Inherited from Agente
         return self.sensor_multiplo.detectar()
 
-    def _process(self, perception):
+    def _process(self, perception) -> Move:
         return self._control.process(perception)
 
     def _act(self, action):
