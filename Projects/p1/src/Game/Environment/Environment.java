@@ -1,4 +1,4 @@
-package Game.Environment;
+package game.environment;
 
 import java.util.HashMap;
 import java.util.Map;

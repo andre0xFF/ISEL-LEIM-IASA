@@ -1,3 +1,3 @@
-package Game.Environment;
+package game.environment;
 
 public interface Stimulus {}

@@ -1,10 +1,10 @@
-package Game.NPC.Behaviors;
+package game.npc.behaviors;
 
-import Game.AI.Behavior;
-import Game.AI.HierarchicalBehavior;
-import Game.AI.Reaction;
-import Game.Environment.EnvironmentAction;
-import Game.Environment.EnvironmentEvent;
+import game.environment.EnvironmentAction;
+import game.environment.EnvironmentEvent;
+import machine.intelligence.Behavior;
+import machine.intelligence.HierarchicalBehavior;
+import machine.intelligence.Reaction;
 
 public class Defend extends HierarchicalBehavior {
 

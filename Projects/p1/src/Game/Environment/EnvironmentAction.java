@@ -1,6 +1,6 @@
-package Game.Environment;
+package game.environment;
 
-import Game.AI.Action;
+import machine.intelligence.Action;
 
 public enum EnvironmentAction implements Action {
     PATROL, DEFEND, START, SEARCH, ATTACK, APPROACH;

@@ -1,6 +1,6 @@
-import Game.Environment.Environment;
-import Game.Environment.EnvironmentEvent;
-import Game.NPC.Character;
+import game.environment.Environment;
+import game.environment.EnvironmentEvent;
+import game.npc.Character;
 
 import java.util.Scanner;
 

@@ -1,11 +1,10 @@
-package Game.NPC.Behaviors;
+package game.npc.behaviors;
 
-import Game.AI.Behavior;
-import Game.AI.HierarchicalBehavior;
-import Game.AI.Reaction;
-import Game.Environment.Environment;
-import Game.Environment.EnvironmentAction;
-import Game.Environment.EnvironmentEvent;
+import machine.intelligence.Behavior;
+import machine.intelligence.HierarchicalBehavior;
+import machine.intelligence.Reaction;
+import game.environment.EnvironmentAction;
+import game.environment.EnvironmentEvent;
 
 public class Patrol extends HierarchicalBehavior {
 

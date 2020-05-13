@@ -1,8 +1,8 @@
-package Game.NPC;
+package game.npc;
 
-import Game.AI.Action;
-import Game.Environment.Stimulus;
-import Game.Environment.Environment;
+import machine.intelligence.Action;
+import game.environment.Stimulus;
+import game.environment.Environment;
 
 public class Character {
 
