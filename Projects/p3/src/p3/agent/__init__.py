@@ -1,4 +1,2 @@
+from .control import Control
 from .prospector_agent import ProspectorAgent
-from .deliberative_control.deliberative_control import DeliberativeControl
-from .reactive_control.reactive_control import ReactiveControl
-from .reinforcement_learning_control.reinforcement_learning_control import ReinforcementLearningControl

@@ -7,7 +7,7 @@ python-versions = "^3.6"
 version = "1.0.0"
 
 [package.source]
-reference = "7676846a422a73d6eef4a377b4dedc55c61708b6"
+reference = "e44392a33654d3cd86ee6a15136ac7e37f4e8836"
 type = "git"
 url = "git@github.com:andrewfonseca/ISEL-LEIM-IASA-PEE.git"
 [[package]]
@@ -42,8 +42,8 @@ python-versions = "*"
 version = "1.9.6"
 
 [metadata]
-content-hash = "cbd1fcdf15686e86bcb632c624ffd6b3740ed47cee7597080ceed603f3d0b775"
-python-versions = "~3.7"
+content-hash = "af9da0c3e68aa741fcf9429dec1fc0fe6ed7615286d7df54ff0181203f359d6a"
+python-versions = "~3.6.9"
 
 [metadata.files]
 pee = []

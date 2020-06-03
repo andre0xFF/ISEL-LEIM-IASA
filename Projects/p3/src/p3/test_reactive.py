@@ -1,13 +1,13 @@
 import os
 
-from agent.prospector_agent import ProspectorAgent
-from agent.reactive_control.reactions.catch import Catch
-from agent.reactive_control.reactive_control import ReactiveControl
 from psa import executar as execute
 from psa import iniciar as init
+from agent import ProspectorAgent
+from agent.controls.reactive.reactions import Catch
+from agent.controls import ReactiveControl
 
 
-def main():
+def run():
     init(os.environ["AGENT_ENV"])
 
     execute(
@@ -20,4 +20,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run()

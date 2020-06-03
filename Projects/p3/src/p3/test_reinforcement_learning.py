@@ -1,12 +1,12 @@
 import os
 
 from agent import ProspectorAgent
-from agent import ReinforcementLearningControl
+from agent.controls import ReinforcementLearningControl
 from psa import executar as execute
 from psa import iniciar as init
 
 
-def main():
+def run():
     init(os.environ["AGENT_ENV"])
 
     execute(
@@ -17,4 +17,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run()

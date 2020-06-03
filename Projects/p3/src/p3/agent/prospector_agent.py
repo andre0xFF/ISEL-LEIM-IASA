@@ -1,5 +1,6 @@
-from psa.agente import Agente as Agent
 from psa.accao import Mover as Move
+from psa.agente import Agente as Agent
+
 from .control import Control
 
 

@@ -1,13 +1,13 @@
 import os
 
-from agent.deliberative_control.deliberative_control import DeliberativeControl
-from agent.prospector_agent import ProspectorAgent
-from planner.mdp.mdp_planner import MDPPlanner
 from psa import executar as execute
 from psa import iniciar as init
+from agent.controls import DeliberativeControl
+from agent import ProspectorAgent
+from planner.mdp.mdp_planner import MDPPlanner
 
 
-def main():
+def run():
     init(os.environ["AGENT_ENV"])
 
     execute(
@@ -20,5 +20,4 @@ def main():
 
 
 if __name__ == "__main__":
-
-    main()
+    run()

@@ -1,14 +1,15 @@
 import os
 
-from agent.deliberative_control.deliberative_control import DeliberativeControl
-from agent.prospector_agent import ProspectorAgent
-from pee.melhorprim.procura_aa import ProcuraAA as AStarSearch
-from planner.pee.pee_planner import PEEPlanner
 from psa import executar as execute
 from psa import iniciar as init
+from pee.larg.procura_larg import ProcuraLarg as BreadthFirstSearch
+from pee.melhorprim.procura_aa import ProcuraAA as AStarSearch
+from agent import ProspectorAgent
+from agent.controls import DeliberativeControl
+from planner.pee.pee_planner import PEEPlanner
 
 
-def main():
+def run():
     init(os.environ["AGENT_ENV"])
 
     execute(
@@ -23,4 +24,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run()

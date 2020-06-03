@@ -23,11 +23,11 @@ class PEEPlanner(Planner):
 
     def obtain_action(self, state):
         # state is not used here
-        if self._plan is not None and self._plan.__len__() > 0:
+        if self._plan is not None and len(self._plan) > 0:
             return self._plan.pop(0)
 
     def pending_plan(self):
-        return self._plan is not None and self._plan.__len__() > 0
+        return self._plan is not None and len(self._plan) > 0
 
     def finish_plan(self):
         self._plan = []
