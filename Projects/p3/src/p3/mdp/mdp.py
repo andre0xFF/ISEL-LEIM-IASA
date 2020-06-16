@@ -1,4 +1,4 @@
-from mdp import MDPModel
+from .mdp_model import MDPModel
 
 
 class MDP(MDPModel):

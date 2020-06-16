@@ -6,7 +6,7 @@ from pee.larg.procura_larg import ProcuraLarg as BreadthFirstSearch
 from pee.melhorprim.procura_aa import ProcuraAA as AStarSearch
 from agent import ProspectorAgent
 from agent.controls import DeliberativeControl
-from planner.pee.pee_planner import PEEPlanner
+from planner.search import SearchPlanner
 
 
 def run():
@@ -15,7 +15,7 @@ def run():
     execute(
         ProspectorAgent(
             DeliberativeControl(
-                PEEPlanner(
+                SearchPlanner(
                     AStarSearch()
                 )
             )

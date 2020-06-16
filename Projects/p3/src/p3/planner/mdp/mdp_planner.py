@@ -1,6 +1,7 @@
 from mdp.mdp import MDP
-from planner.mdp.mdp_model_plan import MDPModelPlan
-from planner.planner import Planner
+
+from .. import Planner
+from .mdp_model_plan import MDPModelPlan
 
 
 class MDPPlanner(Planner):
